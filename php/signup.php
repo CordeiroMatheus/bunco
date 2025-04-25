@@ -6,35 +6,43 @@ include_once("conexao.php");
 $conn = conexao();
 
 try {
+    $arr = [];
     //Verifica se algum valor não foi passado pelo método post
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
-    } else {
-        echo json_encode(["sucesso" => "false"]);
+    $campos = ["username", "nome", "email", "senha"];
+foreach ($campos as $campo) {
+    if (empty($_POST[$campo])) {
+        $arr["sucesso"] = "false";
+        $arr["mensagem"] = "o campo '$campo' está vazio.";
+        echo json_encode($arr);
         exit;
     }
+    $$campo = $_POST[$campo];
+}
+$senha = md5($senha);
 
-    if (isset($_POST["nome"])) {
-        $nome = $_POST["nome"];
-    } else {
-        echo json_encode(["sucesso" => "false"]);
-        exit;
-    }
+// Verifica se username já existe
+$query = "SELECT COUNT(*) FROM usuarios WHERE username = ?";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(1, $username);
+$stmt->execute();
+if ($stmt->fetchColumn() > 0) {
+    $arr["sucesso"] = "false";
+    $arr["mensagem"] = "username existe.";
+    echo json_encode($arr);
+    exit;
+}
 
-    if (isset($_POST["email"])) {
-        $email = $_POST["email"];
-    } else {
-        echo json_encode(["sucesso" => "false"]);
-        exit;
-    }
-
-    if (isset($_POST["senha"])) {
-        $senha = $_POST["senha"];
-        $senha = md5($senha);
-    } else {
-        echo json_encode(["sucesso" => "false"]);
-        exit;
-    }
+// Verifica se email já existe
+$query = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(1, $email);
+$stmt->execute();
+if ($stmt->fetchColumn() > 0) {
+    $arr["sucesso"] = "false";
+    $arr["mensagem"] = "email existe.";
+    echo json_encode($arr);
+    exit;
+}
 
     //Cria a query da tabela usuários, passa os parâmetros necessários e executa ela (true ou false)
     $query = "INSERT INTO usuarios(username, nome, email, senha) VALUES (?, ?, ?, ?)";
@@ -47,7 +55,9 @@ try {
 
 
     if ((!$resultado)) {
-        echo json_encode(["sucesso" => "false"]);
+        $arr["sucesso"] = "false";
+        $arr["mensagem"] = "erro ao cadastrar usuário";
+        echo json_encode($arr);
         exit;
     }
 
@@ -67,11 +77,12 @@ try {
     }
 
     //Retorna se esse processo deu certo
-    $arr = [];
     if ($resultado) {
         $arr["sucesso"] = "true";
+        $arr["mensagem"] = "Usuário cadastrado com sucesso."
     } else {
         $arr["sucesso"] = "false";
+        $arr["mensagem"] = "erro do servidor";
     }
     echo json_encode($arr);
 } catch (Exception $e) {
