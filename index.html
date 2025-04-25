@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--Tipografia aqui-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-bunco">
+                <img src="" alt="BuncoLogo">
+            </div>
+            <div id="buttons">
+                <button id="signin-button" class="button">Sign In</button>
+                <button id="signup-button" class="button">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="background">
+            <img src="" alt="backgroundImage">
+        </div>
+        <div id="form-section">
+            <h1>Comece Agora</h1>
+                <div id="form">
+                    <form action="/php/signup.php">
+                        
+                        <div id="circles">
+                            <div id="circle" class="circle"></div>
+                            <div id="circle" class="circle"></div>
+                            <div id="circle" class="circle"></div>
+                        </div>
+                        
+                        <div id="campos">
+                            
+                            <p>
+                                <label for="nomeusuario">Nome:</label>
+                                <input type="text" name="nomeusuario" id="nomeusuariotxt" class="input" placeholder="Digite seu nome">
+                            </p>
+
+                            <p>
+                                <label for="apelido">Apelido:</label>
+                                <input type="text" name="apelido" id="apelidotxt" class="input" placeholder="Nome de usuário">
+                            </p>
+                            
+                            <p>
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com">
+                            </p>
+
+                            <p>
+                                <label for="apelido">Senha:</label>
+                                <input type="password" name="apelido" id="apelidotxt" class="input" placeholder="Digite sua senha">
+                            </p>
+                            
+                            <p>
+                                <input type="button" value="Criar">
+                            </p>
+                        
+                        </div> 
+
+                    </form>
+                </div>
+        </div>
+
+        <div id="card-section">
+            <div id="title">
+                <h3>Aprenda python de uma maneira interativa</h1>
+                <img src="buncoestudante.jpg" alt="buncoestudante">
+            </div>
+            <div id="cards-container">
+                <div id="card-iniciante" class="cards"></div>
+                <div id="card-intermediario" class="cards"></div>
+                <div id="card-avancado" class="cards"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/assets/js/script.js" defer></script>
+    <script src="/assets/js/formaudio.js"></script>
+</body>
+</html>
