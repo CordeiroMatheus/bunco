@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bunco</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!--Tipografia aqui-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 </head>
 <body>
     <header>
@@ -18,8 +18,8 @@
                 <img src="" alt="BuncoLogo">
             </div>
             <div id="buttons">
-                <button id="signin-button" class="button">Sign In</button>
-                <button id="signup-button" class="button">Sign Up</button>
+                <button id="signin-button" class="button"><a href="/pages/signin.html">Sign In</a></button>
+                <button id="signup-button" class="button"><a href="/pages/signup.html">Sign Up</a></button>
             </div>
         </nav>
     </header>
@@ -30,7 +30,7 @@
         <div id="form-section">
             <h1>Comece Agora</h1>
                 <div id="form">
-                    <form action="/php/signup.php" method="post">
+                    <form action="/php/signup.php">
                         
                         <div id="circles">
                             <div id="circle" class="circle"></div>
@@ -46,7 +46,7 @@
                             </p>
 
                             <p>
-                                <label for="apelido">Username:</label>
+                                <label for="apelido">Apelido:</label>
                                 <input type="text" name="apelido" id="apelidotxt" class="input" placeholder="Nome de usuário">
                             </p>
                             
@@ -72,20 +72,136 @@
 
         <div id="card-section">
             <div id="title">
-                <h3>Aprenda python de uma maneira interativa</h1>
-                <img src="buncoestudante.jpg" alt="buncoestudante">
+                <h3>Aprenda python de uma maneira interativa</h3>
+                <img src="/assets/img/buncoestudante.jpg" alt="buncoestudante" width="100px">
             </div>
             <div id="cards-container">
-                <div id="card-iniciante" class="cards"></div>
-                <div id="card-intermediario" class="cards"></div>
-                <div id="card-avancado" class="cards"></div>
+                <div id="card-iniciante" class="cards">
+                    <div id="card-title">
+                        <h1>Iniciante</h1>
+                    </div>
+                    <span class="card-text">
+                        <p>Sintaxe básica e tipos</p>
+                        <p>Entrada e saída de dados</p>
+                        <p>Operadores</p>
+                        <p>Condicionais</p>
+                        <p>Laços de repetição</p>
+                    </span>
+                </div>
+                <div id="card-intermediario" class="cards">
+                    <div id="card-title">
+                        <h1>Intermediário</h1>
+                    </div>
+                    <span class="card-text">
+                        <p>Funções e parâmetros</p>
+                        <p>Estruturas de dados</p>
+                        <p>Compreensão de listas</p>
+                        <p>Manipulação de arquivos</p>
+                        <p>Tratamento de exceções</p>
+                    </span>
+                </div>
+                <div id="card-avancado" class="cards">
+                    <div id="card-title">
+                        <h1>Avançado</h1>
+                    </div>
+                    <span class="card-text">
+                        <p>Programação orientada a objetos</p>
+                        <p>Módulos e pacotes</p>
+                        <p>Funções lambda</p>
+                        <p>Decoradores</p>
+                        <p>Geradores e iteradores</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="icons-section">
+            <div id="icons-container">
+                <div id="icon-a" class="icons">
+                    <img src="/assets/img/logo.pn" alt="imga">
+                    <p>lorem AAA Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                </div>
+                <div id="icon-b" class="icons">
+                    <img src="/assets/img/logo.pn" alt="imgb">
+                    <p>lorem BBB Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div id="icon-c" class="icons">
+                    <img src="/assets/img/logo.pn" alt="imgc">
+                    <p>lorem CCC Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div id="icon-d" class="icons">
+                    <img src="/assets/img/logo.pn" alt="imgd">
+                    <p>lorem DDD Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-section">
+            <div class="wrapper">
+            <div id="about-container">
+                    <div id="img-container">
+                    <img src="/assets/img/" id="pessoa-img" alt="pessoaimg">
+                    </div>
+                        <h4 id="nome"></h4>
+                        <p id="funcao"></p>
+                        <p id="info"></p>
+            </div>
+            <div id="button-container">
+                <button class="prev-btn">
+                <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="next-btn">
+                <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
-    <script src="/assets/js/script.js" defer></script>
+        <footer>
+        <div id="footer-section">
+                <div id="footer-logo">
+                    <img src="logo.png" alt="buncoLogo">
+                </div>
+                <div id="footer-container">
+                    <div id="footer-wrap">
+                        <div class="footer-column">
+                            <h3>Title</h3>
+                            <ul>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Title</h3>
+                            <ul>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Title</h3>
+                            <ul>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Title</h3>
+                            <ul>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                                <li><a href="">Item</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-copy">&copy; Bunco 2025</div>
+            </div>
+        </footer>
+    <script src="/assets/js/sobre.js"></script>
     <script src="/assets/js/formaudio.js"></script>
 </body>
 </html>

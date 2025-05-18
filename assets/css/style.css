@@ -5,6 +5,11 @@
     padding: 0;    
 }
 
+:root{
+    /*Variáveis CSS*/
+    --cor-principal: #232323
+}
+
 @media screen and (max-width: 767px){
 
 header{
@@ -26,6 +31,11 @@ nav .button{
     margin: 10px;
 }
 
+nav #buttons a{
+    text-decoration: none;
+    color: black;
+}
+
 nav #logo-bunco{
     margin: 0;
 }
@@ -36,9 +46,6 @@ nav button{
     border-radius: 5px;
 }
 
-main{
-    height: 200vh;
-}
 
 #background{
     height: 360px;
@@ -146,28 +153,164 @@ main{
     background-color: hsl(120, 100%, 30%);
 }
 
+#card-section #title{
+    display: flex;
+}
+
 #card-section{
     margin: 5%;
 }
 
-#card-section #title{
+#card-section #card-title h1{
+    font-size: 16px;
+}
+
+#card-section #cards-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 2%;
+}
+
+#card-section .cards{
+    border-radius: 5px;
+    border: 1px solid hsl(200, 7%, 10%);
+    padding: 2%;
+    text-align: center;
+    background-color: hsl(200, 7%, 20%);
+    color: white;
+}
+
+#card-section .card-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 10px;
+}
+
+#card-section #card-title{
+    color: hsl(200, 100%, 31%);
+}
+
+#card-section .card-text{
+    color: white;   
+}
+
+#icons-section{
+    margin: 5%;
+}
+
+#icons-section #icons-container{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: clamp(10px, 3vw, 30px);
+}
+
+#icons-section .icons{
+    padding: 5%;
+    width: 85%;
+    background-color: hsl(200, 100%, 31%);
+    color: white;
+    font-family: 'Inter';
+    border-radius: 5px;
+}
+
+#icons-section .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: clamp(10px, 5vw, 30px);
+}
+
+#about-section{
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 5%;
+    padding: 5%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 5%;
+    height: 25vh;
+}
+
+#img-container{
+    margin-bottom: 5%;
+}
+
+#img-container img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.prev-btn, .next-btn{
+    margin: 10px;
+}
+
+#button-container{
+    margin-top: 10%;
+}
+
+
+/*Reformar toda essa parte do footer*/
+
+
+footer{
+    color: white;
+    background-color: #202020;
+    height: auto;
+    display: flow-root;
+}
+
+footer li{
+    list-style-type: none;;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#footer-section{
+    margin: 5%;
+}
+
+#footer-container{
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#footer-wrap{
     display: flex;
     justify-content: space-between;
-    /*gap: 10px;*/
+    flex-wrap: wrap;
 }
 
-#card-section #cards{
-
+.footer-column{
+    width: auto;
 }
 
 }
 
-/*Continuar personalizando o formulário pra ficar parecido com carbon.sh e desenvolver o resto, tenho
-que ver o javascript do print e do card do sobre*/
-
-/*O placeholder pode ser cinza da cor de um comentário, os nomes podem ser coloridos tipo código*/
-
-/*Pode ter um som de digitação no forms*/
 
 
 
@@ -180,13 +323,305 @@ que ver o javascript do print e do card do sobre*/
 
 /* Tablet na vertical */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
-    body{
-        background-color: hsl(200, 85%, 45%);
-    }
-    body p::after{
-        color: white;
-        content: 'Tablet na vertical';
-    }
+    header{
+    /*position: sticky;
+    top: 0;*/
+    padding: 0;
+}
+
+nav{
+    background-color: hsl(0, 0%, 15%);
+    color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .button{
+    margin: 10px;
+}
+
+nav #buttons a{
+    text-decoration: none;
+    color: black;
+}
+
+nav #logo-bunco{
+    margin: 0;
+}
+
+nav button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+#background{
+    height: 360px;
+    background-color: hsl(34, 78%, 91%);
+    background-image: url();
+}
+
+#form-section{
+    /*background-color: hsl(200, 100%, 23%);*/
+    margin: 5%;
+    background-color: white;
+    display: flow-root;
+}
+#form-section h1{
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: normal;
+}
+#form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 280px;
+}
+
+#form-section #form form{
+    width: 50%;
+}
+
+#form-section #form form{
+    border-radius: 10px;
+}
+
+#form-section #form form #campos{
+    padding: 25px;
+}
+
+#form form input[type="text"], input[type="password"], input[type="email"], input[type="button"]{
+    font-family: 'Inter';
+    background-color: hsl(200, 7%, 16%);
+    margin: 5px;
+    padding: 1px;
+    border: 1px solid hsl(0, 0%, 10%);
+    border-radius: 5px;
+    width: 65%;
+    color: white;
+}
+
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+    outline: 1px solid hsl(255, 90%, 60%);
+}
+
+#form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
+    color: hsl(200, 87%, 40%);
+    text-align: center;
+    margin: 1px;
+}
+
+#form form input[type="button"]{
+    cursor: pointer;
+}
+
+#form form input:hover{
+    background-color: hsl(200, 7%, 20%);
+}
+
+#form form p:last-child{
+    display: flex;
+    justify-content: center;
+}
+
+#form form label{
+    font-family: 'Jetbrains Mono';
+}
+
+#form-section #form form{
+    background-color: hsl(200, 7%, 16%);
+}
+
+#form-section #form form label:nth-child(1){
+    color: hsl(40, 100%, 70%);
+}
+
+#circles{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 3px;
+}
+
+.circle:nth-child(1){
+    background-color: hsl(0, 100%, 60%);
+}
+.circle:nth-child(2){
+    background-color: hsl(39, 100%, 60%);
+}
+.circle:nth-child(3){
+    background-color: hsl(120, 100%, 30%);
+}
+
+#card-section #title{
+    display: flex;
+    justify-content: space-between;
+}
+
+#card-section{
+    margin: 5%;
+}
+
+#card-section #card-title h1{
+    font-size: 16px;
+}
+
+#card-section #cards-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 2%;
+}
+
+#card-section .cards{
+    border-radius: 5px;
+    border: 1px solid hsl(200, 7%, 10%);
+    padding: 2%;
+    text-align: center;
+    background-color: hsl(200, 7%, 20%);
+    color: white;
+    width: 33%;
+}
+
+#card-section .card-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    gap: 10px;
+}
+
+#card-section #card-title{
+    color: hsl(200, 100%, 31%);
+}
+
+#card-section .card-text{
+    color: white;   
+}
+
+#icons-section{
+    overflow: hidden;
+    margin: 5%;
+}
+
+#icons-section #icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(10px, 2vw, 30px);
+}
+
+#icons-section .icons{
+    padding: 5%;
+    width: 45%;
+    background-color: hsl(200, 100%, 31%);
+    color: white;
+    font-family: 'Inter';
+    border-radius: 5px;
+}
+
+#icons-section .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: clamp(10px, 5vw, 30px);
+}
+
+#about-section{
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 5%;
+    padding: 5%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 5%;
+    height: 25vh;
+}
+
+#img-container{
+    margin-bottom: 5%;
+}
+
+#img-container img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.prev-btn, .next-btn{
+    margin: 10px;
+}
+
+#button-container{
+    margin-top: 10%;
+}
+
+
+/*Reformar toda essa parte do footer*/
+
+
+footer{
+    color: white;
+    background-color: #202020;
+    height: auto;
+    display: flow-root;
+}
+
+footer li{
+    list-style-type: none;;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#footer-section{
+    margin: 5%;
+}
+
+#footer-container{
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#footer-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column{
+    width: auto;
+}
 }
 
 /* Tablet na horizontal */
@@ -223,6 +658,13 @@ que ver o javascript do print e do card do sobre*/
     }
     body p::after{
         color: white;
-        content: 'Desktop Full HD 4k kkkkkkkkkk';
+        content: 'Desktop HD';
     }
+    header{
+    /*position: sticky;
+    top: 0;*/
+    padding: 0;
 }
+
+}
+

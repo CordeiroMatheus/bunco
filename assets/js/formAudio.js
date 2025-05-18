@@ -1,4 +1,4 @@
-const inputs = document.querySelectorAll('.input') // troca aqui, já explico!
+const inputs = document.querySelectorAll('.input')
 const audio = new Audio('/assets/audio/tecla.ogg')
 
 inputs.forEach(input => {

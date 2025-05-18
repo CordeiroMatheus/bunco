@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/php-icon.png">
+    <title>Enviar E-mail com PHP</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="img/PHP-logo.svg.png" alt="imagem">
+        </div>
+        <div class="form">
+            <form action="enviar.php" method="post" enctype="multipart/form-data">
+
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Enviar E-mail com PHP</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="texto">Texto</label>
+                        <textarea name="mensagem" id="texto" placeholder="Digite um texto" required cols="40"></textarea>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="assunto">Assunto</label>
+                        <input id="assunto" type="text" name="assunto" placeholder="Digite o assunto do email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="arquivo">Arquivo</label>
+                        <input id="arquivo" type="file" name="arquivo">
+                    </div>
+
+                <div class="continue-button">
+                    <button>Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
