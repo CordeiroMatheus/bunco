@@ -1,39 +1,52 @@
 <?php
 
-//Configurações padrão do código
+// Configurações padrão do código
 header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
 try {
-    //Verifica se algum valor não foi passado pelo método post
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
+    // Verifica se os campos foram enviados
+    if (isset($_POST["login"])) {
+        $login = $_POST["login"]; // pode ser username ou email
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Login não enviado"]);
         exit;
     }
 
     if (isset($_POST["senha"])) {
-        $senha = $_POST["senha"];
-        $senha = md5($senha);
+        $senha = md5($_POST["senha"]);
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Senha não enviada"]);
         exit;
     }
 
-    //Busca se existe algum usuário com o username e senha passados
-    $sql = "SELECT id, username, nome, email, link_github, link_instagram, link_linkedin FROM usuarios WHERE username = :username AND senha = :senha";
+    // Consulta que verifica se o login é username ou email
+    $sql = "SELECT id, username, nome, email, link_github, link_instagram, link_linkedin 
+            FROM usuarios 
+            WHERE (username = :login OR email = :login) AND senha = :senha";
+
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":login", $login);
     $stmt->bindParam(":senha", $senha);
     $stmt->execute();
-    $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($resultado) {
+    $resultado["sucesso"] = "true";
     echo json_encode($resultado);
+} else {
+    echo json_encode([
+        "sucesso" => "false",
+        "mensagem" => "Usuário ou senha inválidos"
+    ]);
+}
 } 
 catch (Exception $e) {
-    $erro = [];
-    $erro["erro"] = "true";
-    echo json_encode($erro);
+    echo json_encode([
+        "sucesso" => "false",
+        "mensagem" => "Erro no servidor"
+    ]);
 }
+
