@@ -1,30 +1,28 @@
 <?php
-
-//Configurações padrão do código
 header("Content-Type: application/json");
-include_once("conexao.php");
-$conn = conexao();
 
+include_once("conexao.php");
+
+$conn = conexao();
 try {
-    //Verifica se algum valor não foi passado pelo método post
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "username ausente"]);
         exit;
     }
 
     if (isset($_POST["nome"])) {
         $nome = $_POST["nome"];
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "nome ausente"]);
         exit;
     }
 
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "email ausente"]);
         exit;
     }
 
@@ -32,11 +30,37 @@ try {
         $senha = $_POST["senha"];
         $senha = md5($senha);
     } else {
-        echo json_encode(["sucesso" => "false"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "senha ausente"]);
         exit;
     }
 
-    //Cria a query da tabela usuários, passa os parâmetros necessários e executa ela (true ou false)
+    // Verificar se o username já existe
+    $query = "SELECT id FROM usuarios WHERE username = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(1, $username);
+    $stmt->execute();
+    if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo json_encode([
+            "sucesso" => "false",
+            "mensagem" => "Username já cadastrado"
+        ]);
+        exit;
+    }
+
+    // Verificar se o email já existe
+    $query = "SELECT id FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(1, $email);
+    $stmt->execute();
+    if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo json_encode([
+            "sucesso" => "false",
+            "mensagem" => "Email já cadastrado"
+        ]);
+        exit;
+    }
+
+    // INSERÇÃO DE NOVO USUÁRIO
     $query = "INSERT INTO usuarios(username, nome, email, senha) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $username);
@@ -45,20 +69,19 @@ try {
     $stmt->bindParam(4, $senha);
     $resultado = $stmt->execute();
 
-
-    if ((!$resultado)) {
-        echo json_encode(["sucesso" => "false"]);
+    if (!$resultado) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao inserir usuário"]);
         exit;
     }
 
-    //Pega o id do usuário que acabou de ser cadastrado
+    // Buscar ID do novo usuário
     $query = "SELECT id FROM usuarios WHERE username = ? LIMIT 1";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $username);
     $stmt->execute();
-    $resultado = $stmt->fetchALL(PDO::FETCH_OBJ);
 
-    //Cria a query da tabela status
+    $resultado = $stmt->fetchAll(PDO::FETCH_OBJ);
+
     foreach ($resultado as $r) {
         $query = "INSERT INTO status(usuario) VALUES (?)";
         $stmt = $conn->prepare($query);
@@ -66,16 +89,17 @@ try {
         $resultado = $stmt->execute();
     }
 
-    //Retorna se esse processo deu certo
     $arr = [];
     if ($resultado) {
         $arr["sucesso"] = "true";
     } else {
         $arr["sucesso"] = "false";
+        $arr["mensagem"] = "Erro ao cadastrar status";
     }
     echo json_encode($arr);
 } catch (Exception $e) {
-    $arr = [];
-    $arr["sucesso"] = "false";
-    echo json_encode($arr);
+    echo json_encode([
+        "sucesso" => "false",
+        "mensagem" => "Exceção: " . $e->getMessage()
+    ]);
 }
