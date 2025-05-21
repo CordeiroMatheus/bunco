@@ -1,61 +1,95 @@
 *{
-    /*CSS reset, adicionar mais coisas depois*/
     box-sizing: border-box;
     margin: 0;
     padding: 0;    
 }
 
 :root{
-    /*Variáveis CSS*/
-    --cor-principal: #232323
+    --azul-principal: #1CB0F6;
+    --azul-acinzentado: #586892;
+    --azul-escuro: #1453A3;
+    --cor-de-fundo: #0d141f;   
+}
+
+body{
+    background-color: #0d141f;
+    color: white;
 }
 
 @media screen and (max-width: 767px){
 
 header{
-    /*position: sticky;
-    top: 0;*/
-    padding: 0;
+    box-shadow: 0px 2px 0px var(--azul-principal);
 }
 
 nav{
-    background-color: hsl(0, 0%, 15%);
-    color: white;
-    height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-}
-
-nav .button{
-    margin: 10px;
-}
-
-nav #buttons a{
-    text-decoration: none;
-    color: black;
+    justify-content: center;
+    height: 70px;
 }
 
 nav #logo-bunco{
-    margin: 0;
+    width: 50%;
+}
+
+nav img{
+    width: 50%;
+    height: 60%;
+}
+
+nav #buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttons{
+    width: 45%;
+}
+
+nav #signin-button{
+    width: 35%;
+    background: none;
+    border: 1px solid var(--azul-principal);
+    border-radius: 15px;
+}
+
+nav #signin-button a:visited , nav #signin-button a:link{
+    color: var(--azul-principal);
+}
+
+nav #signup-button{
+    width: 50%;
+    background-color: var(--azul-principal);
+    color: var(--cor-de-fundo);
+    border: 2px solid var(--azul-escuro);
+    box-shadow: 0px 3px 0px var(--azul-escuro);
+}
+
+nav #signup-button a:visited, nav #signin-button a:link{
+    color: var(--cor-de-fundo);
+}
+
+nav img{
+    width: 50%;
 }
 
 nav button{
     border: none;
-    padding: 5px;
+    padding: 7px;
     border-radius: 5px;
 }
 
-
 #background{
-    height: 360px;
-    background-color: hsl(34, 78%, 91%);
-    background-image: url();
+    width: 100%;
+    height: 320px;
+    background-image: url(/assets/img/background.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #form-section{
-    /*background-color: hsl(200, 100%, 23%);*/
-    background-color: white;
     display: flow-root;
 }
 #form-section h1{
@@ -245,7 +279,6 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
     margin-top: 5%;
     height: 25vh;
 }
@@ -324,13 +357,12 @@ footer a{
 /* Tablet na vertical */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
     header{
-    /*position: sticky;
-    top: 0;*/
     padding: 0;
+    box-shadow: 0px 2px var(--azul-principal);
 }
 
 nav{
-    background-color: hsl(0, 0%, 15%);
+    background-color: var(--cor-de-fundo);
     color: white;
     height: 70px;
     display: flex;
@@ -338,43 +370,79 @@ nav{
     justify-content: space-around;
 }
 
+#buttons{
+    width: 25%;
+}
+
+nav #buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
+/*
 nav .button{
     margin: 10px;
 }
+*/
 
-nav #buttons a{
+nav a{
     text-decoration: none;
-    color: black;
+}
+
+nav #signin-button{
+    width: 35%;
+    background: none;
+    border: 1px solid var(--azul-principal);
+    border-radius: 15px;
+}
+
+nav #signin-button a:visited , nav #signin-button a:link{
+    color: var(--azul-principal);
+}
+
+nav #signup-button{
+    width: 50%;
+    background-color: var(--azul-principal);
+    color: var(--cor-de-fundo);
+    border: 2px solid var(--azul-escuro);
+    box-shadow: 0px 3px 0px var(--azul-escuro);
+}
+
+nav #signup-button a:visited, nav #signin-button a:link{
+    color: var(--cor-de-fundo);
 }
 
 nav #logo-bunco{
     margin: 0;
 }
 
+nav img{
+    width: 55%;
+    height: 70%;
+}
+
 nav button{
     border: none;
-    padding: 5px;
+    padding: 7px;
     border-radius: 5px;
 }
 
 
 #background{
-    height: 360px;
-    background-color: hsl(34, 78%, 91%);
-    background-image: url();
+    aspect-ratio: 19 / 8;
+    width: 100%;
+    background-image: url(/assets/img/background.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #form-section{
-    /*background-color: hsl(200, 100%, 23%);*/
     margin: 5%;
-    background-color: white;
     display: flow-root;
 }
-#form-section h1{
-    text-align: center;
-    font-family: 'Poppins';
-    font-weight: normal;
-}
+
 #form{
     display: flex;
     justify-content: flex-start;
@@ -442,8 +510,19 @@ nav button{
 
 #circles{
     display: flex;
+    align-items: center;
     margin-top: 5%;
     margin-left: 5%;
+}
+
+#form-text{
+    font-weight: bold;
+    color: var(--azul-principal);
+}
+
+#circles p{
+    margin-left: 5%;
+    font-family: 'Inter', 'sans-serif';
 }
 
 .circle{
@@ -559,7 +638,6 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
     margin-top: 5%;
     height: 25vh;
 }
