@@ -25,12 +25,12 @@ header{
 nav{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 70px;
 }
 
 nav #logo-bunco{
-    width: 50%;
+    width: 40%;
 }
 
 nav img{
@@ -43,7 +43,7 @@ nav #buttons{
     justify-content: space-between;
 }
 
-#buttons{
+nav #buttons{
     width: 45%;
 }
 
@@ -71,7 +71,7 @@ nav #signup-button a:visited, nav #signin-button a:link{
 }
 
 nav img{
-    width: 50%;
+    width: 85%;
 }
 
 nav button{
@@ -159,12 +159,9 @@ nav button{
     background-color: hsl(200, 7%, 16%);
 }
 
-#form-section #form form label:nth-child(1){
-    color: hsl(40, 100%, 70%);
-}
-
 #circles{
     display: flex;
+    align-items: center;
     margin-top: 5%;
     margin-left: 5%;
 }
@@ -175,6 +172,16 @@ nav button{
     border-radius: 10px;
     background-color: white;
     margin: 3px;
+}
+
+#circles p{
+    margin-left: 5%;
+    font-family: 'Inter', 'sans-serif';
+}
+
+#form-text{
+    font-weight: bold;
+    color: var(--azul-principal);
 }
 
 .circle:nth-child(1){
@@ -189,10 +196,23 @@ nav button{
 
 #card-section #title{
     display: flex;
+    justify-content: space-between;
 }
+
+/*
+#card-section #title img{
+    width: 100px !important;
+    height: 100px !important;
+}
+*/
 
 #card-section{
     margin: 5%;
+}
+
+#card-section #title img{
+    width: 100px;
+    height: 100px;
 }
 
 #card-section #card-title h1{
@@ -261,10 +281,12 @@ nav button{
 }
 
 #about-section{
-    border: 1px solid black;
+    border: 1px solid var(--azul-escuro);
+    box-shadow: 0 0 10px 2px var(--azul-escuro);
     border-radius: 5%;
     margin: 5%;
     padding: 5%;
+    background-color: hsla(0, 0%, 100%, 0.1);
 }
 
 .wrapper{
@@ -279,7 +301,7 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     height: 25vh;
 }
 
@@ -294,17 +316,18 @@ nav button{
     object-fit: cover;
 }
 
-.prev-btn, .next-btn{
-    margin: 10px;
-}
-
 #button-container{
-    margin-top: 10%;
+    display: flex;
+    gap: clamp(4em, 8em, 12em);
+    margin-top: 5%;
 }
 
-
-/*Reformar toda essa parte do footer*/
-
+#button-container .prev-btn, .next-btn{
+    background: none;
+    border: none;
+    color: var(--azul-principal);
+    cursor: pointer;
+}
 
 footer{
     color: white;
@@ -504,10 +527,6 @@ nav button{
     background-color: hsl(200, 7%, 16%);
 }
 
-#form-section #form form label:nth-child(1){
-    color: hsl(40, 100%, 70%);
-}
-
 #circles{
     display: flex;
     align-items: center;
@@ -620,10 +639,12 @@ nav button{
 }
 
 #about-section{
-    border: 1px solid black;
+    border: 1px solid var(--azul-escuro);
+    box-shadow: 0 0 10px 2px var(--azul-escuro);
     border-radius: 5%;
     margin: 5%;
     padding: 5%;
+    background-color: hsla(0, 0%, 100%, 0.1);
 }
 
 .wrapper{
@@ -638,7 +659,7 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     height: 25vh;
 }
 
@@ -653,12 +674,17 @@ nav button{
     object-fit: cover;
 }
 
-.prev-btn, .next-btn{
-    margin: 10px;
+#button-container{
+    display: flex;
+    gap: clamp(4em, 8em, 12em);
+    margin-top: 5%;
 }
 
-#button-container{
-    margin-top: 10%;
+#button-container .prev-btn, .next-btn{
+    background: none;
+    border: none;
+    color: var(--azul-principal);
+    cursor: pointer;
 }
 
 

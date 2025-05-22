@@ -3,21 +3,21 @@ let integrantes = [
         id: 1,
         nome: "Gabriel Linhares",
         trabalho: "Designer",
-        imagem: '/assets/img/buncoestudante.jpg',
+        imagem: '/assets/img/',
         texto: 'Trabalhou na parte de design do TCC'
     },
     {
         id: 2,
         nome: "João Pedro",
         trabalho: "Programador Back-end",
-        imagem: '/assets/img/buncoestudante.jpg',
+        imagem: '/assets/img/',
         texto: 'Trabalhou na parte back-end do TCC'
     },
     {
         id: 3,
         nome: "Matheus Cordeiro",
         trabalho: "Programador Front-end",
-        imagem: '/assets/img/buncoestudante.jpg',
+        imagem: '/assets/img/',
         texto: 'Trabalhou na parte front-end do TCC'
     }
 ]
