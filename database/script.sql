@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 22-Maio-2025 às 20:22
+-- Tempo de geração: 25-Maio-2025 às 15:55
 -- Versão do servidor: 8.0.30
 -- versão do PHP: 8.1.10
 
@@ -67,7 +67,8 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`id`, `usuario`, `vidas`, `ofensiva`) VALUES
 (1, 2, 5, 0),
-(2, 3, 5, 0);
+(2, 3, 5, 0),
+(4, 5, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -92,9 +93,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `nome`, `email`, `senha`, `link_github`, `link_instagram`, `link_linkedin`, `created_at`) VALUES
-(1, 'joana', 'Joana', 'joana@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, '2025-04-08 19:59:47'),
 (2, 'jp_p3dro', 'Joao Pedro', 'joao@email.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-20 18:38:43'),
-(3, 'antonio_rogerio', 'Antonio Rogerio', 'antonio@gmail.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-21 22:03:44');
+(3, 'antonio_rogerio', 'Antonio Rogerio', 'antonio@gmail.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-21 22:03:44'),
+(5, 'admin', 'Admin', 'admin@email.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-24 19:01:58');
 
 --
 -- Índices para tabelas despejadas
@@ -111,15 +112,15 @@ ALTER TABLE `licoes`
 --
 ALTER TABLE `progresso`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario` (`usuario`),
-  ADD KEY `licao` (`licao`);
+  ADD KEY `licao` (`licao`),
+  ADD KEY `progresso_ibfk_1` (`usuario`);
 
 --
 -- Índices para tabela `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario` (`usuario`);
+  ADD KEY `status_ibfk_1` (`usuario`);
 
 --
 -- Índices para tabela `usuarios`
@@ -149,13 +150,13 @@ ALTER TABLE `progresso`
 -- AUTO_INCREMENT de tabela `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
@@ -165,14 +166,14 @@ ALTER TABLE `usuarios`
 -- Limitadores para a tabela `progresso`
 --
 ALTER TABLE `progresso`
-  ADD CONSTRAINT `progresso_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `progresso_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `progresso_ibfk_2` FOREIGN KEY (`licao`) REFERENCES `licoes` (`id`);
 
 --
 -- Limitadores para a tabela `status`
 --
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
