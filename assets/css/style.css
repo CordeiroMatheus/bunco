@@ -44,7 +44,7 @@ nav #buttons{
 }
 
 nav #buttons{
-    width: 45%;
+    width: 46%;
 }
 
 nav #signin-button{
@@ -66,7 +66,7 @@ nav #signup-button{
     box-shadow: 0px 3px 0px var(--azul-escuro);
 }
 
-nav #signup-button a:visited, nav #signin-button a:link{
+nav #signup-button a:visited, nav #signup-button a:link{
     color: var(--cor-de-fundo);
 }
 
@@ -83,7 +83,7 @@ nav button{
 #background{
     width: 100%;
     height: 320px;
-    background-image: url(/assets/img/background.svg);
+    background-image: url(../img/background.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -199,13 +199,6 @@ nav button{
     justify-content: space-between;
 }
 
-/*
-#card-section #title img{
-    width: 100px !important;
-    height: 100px !important;
-}
-*/
-
 #card-section{
     margin: 5%;
 }
@@ -215,6 +208,7 @@ nav button{
     height: 100px;
 }
 
+/*
 #card-section #card-title h1{
     font-size: 16px;
 }
@@ -249,7 +243,7 @@ nav button{
 #card-section .card-text{
     color: white;   
 }
-
+*/
 #icons-section{
     margin: 5%;
 }
@@ -403,12 +397,6 @@ nav #buttons{
     gap: 2em;
 }
 
-/*
-nav .button{
-    margin: 10px;
-}
-*/
-
 nav a{
     text-decoration: none;
 }
@@ -432,7 +420,7 @@ nav #signup-button{
     box-shadow: 0px 3px 0px var(--azul-escuro);
 }
 
-nav #signup-button a:visited, nav #signin-button a:link{
+nav #signup-button a:visited, nav #signup-button a:link{
     color: var(--cor-de-fundo);
 }
 
@@ -455,7 +443,7 @@ nav button{
 #background{
     aspect-ratio: 19 / 8;
     width: 100%;
-    background-image: url(/assets/img/background.svg);
+    background-image: url(../img/background.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -571,6 +559,99 @@ nav button{
     margin: 5%;
 }
 
+#cards-container{
+    margin-top: 10%;
+}
+
+#cards-container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#card-section .card-body{
+        width: 30%;
+        background-color: #0d141f;
+        height: auto; /*antes era 50%*/
+        box-shadow: 0px 0px 10px 3px #1CB0F6;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        /*continuar abaixo a tentativa de animação*/
+        transition: transform 0.3 ease;
+        transform-origin: center center;
+    }
+
+#card-section .card-body:hover{
+    transform: scale(1.15);
+}
+
+#card-section .inner-card{
+        width: 90%;
+        height: auto; /*antes era 50%*/
+        background-color: #586892;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 3%;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 10%;
+    }
+#card-section .inner-card::before{
+        content: 'teste';
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: #586892;
+        width: 20%;
+        height: 15%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        /*border: 0.5px solid black;*/
+        position: absolute;
+        top: -10%;
+    }
+    /*
+        .inner-text p{
+            display: list-item;
+        }
+        .inner-card p::marker{
+            content: "";
+        }
+    */
+    .inner-text{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .infos{
+        color: white;
+        height: 50%;
+    }
+    .info-desc{
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+    .divider{
+        width: 1px;
+        height: 35px;
+        background-color: #586892;
+    }
+    .info-desc p{
+        color: #586892;
+    }
+
+
+
+
+
+
+
+/*
 #card-section #card-title h1{
     font-size: 16px;
 }
@@ -606,6 +687,12 @@ nav button{
 #card-section .card-text{
     color: white;   
 }
+*/
+
+
+
+
+
 
 #icons-section{
     overflow: hidden;
