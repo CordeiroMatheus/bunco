@@ -105,8 +105,9 @@ nav button{
     height: 280px;
 }
 
-#form-section #form form{
-    width: 90%;
+
+#form-section #formsection-img{
+    display: none;
 }
 
 #form-section #form form{
@@ -124,7 +125,7 @@ nav button{
     padding: 1px;
     border: 1px solid hsl(0, 0%, 10%);
     border-radius: 5px;
-    width: 65%;
+    width: 60%;
     color: white;
 }
 
@@ -203,31 +204,130 @@ nav button{
     margin: 5%;
 }
 
-#card-section #title img{
-    width: 100px;
-    height: 100px;
+
+#cards-container{
+    margin-top: 15%;
 }
+
+#cards-container{
+    /*position: relative;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#card-section .card-body{
+        position: relative;
+        width: 75%;
+        background-color: #0d141f;
+        height: auto; /*antes era 50%*/
+        box-shadow: 0px 0px 10px 3px #1CB0F6;
+        border-radius: 10px;
+        margin-bottom: 15%;
+    }
+
+#card-section .inner-card{
+        width: 90%;
+        height: auto; /*antes era 50%*/
+        background-color: #586892;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 3%;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 12.5%;
+    }
+#card-section .inner-card::before{
+        content: 'teste';
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: #586892;
+        width: 55%;
+        height: 15%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        /*border: 0.5px solid black;*/
+        position: absolute;
+        top: -10%;
+    }
+
+    #cards-container .card-body:nth-child(1) .inner-card::before {
+        content: 'Iniciante';
+    }
+
+    #cards-container .card-body:nth-child(2) .inner-card::before {
+        content: 'Intermediário';
+    }
+
+    #cards-container .card-body:nth-child(3) .inner-card::before {
+        content: 'Avançado';
+    }
+    /*
+        .inner-text p{
+            display: list-item;
+        }
+        .inner-card p::marker{
+            content: "";
+        }
+    */
+    .inner-text{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .infos{
+        color: white;
+        height: 50%;
+    }
+    .info-desc{
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+    .divider{
+        width: 1px;
+        height: 35px;
+        background-color: #586892;
+    }
+    .info-desc p{
+        color: #586892;
+    }
+
 
 #icons-section{
     margin: 5%;
 }
 
 #icons-section #icons-container{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: clamp(10px, 3vw, 30px);
+    gap: clamp(10px, 4vw, 30px);
 }
 
 #icons-section .icons{
     padding: 5%;
     width: 85%;
-    background-color: hsl(200, 100%, 31%);
     color: white;
     font-family: 'Inter';
     border-radius: 5px;
 }
+
+#icons-section .icon-divider{
+    display: none;
+}
+
+#icons-section .icons-img{
+    width: 100%;
+}
+
 
 #icons-section .icons{
     display: flex;
@@ -552,14 +652,7 @@ nav button{
         box-shadow: 0px 0px 10px 3px #1CB0F6;
         border-radius: 10px;
         margin-bottom: 5%;
-        /*continuar abaixo a tentativa de animação*/
-        transition: transform 0.3 ease;
-        transform-origin: center center;
     }
-
-#card-section .card-body:hover{
-    transform: scale(1.15);
-}
 
 #card-section .inner-card{
         width: 90%;
@@ -574,6 +667,7 @@ nav button{
         overflow: hidden;
         margin-bottom: 10%;
     }
+
 #card-section .inner-card::before{
         content: 'teste';
         display: flex;
@@ -589,6 +683,20 @@ nav button{
         position: absolute;
         top: -10%;
     }
+
+    #cards-container .card-body:nth-child(1) .inner-card::before {
+        content: 'Iniciante';
+    }
+
+    #cards-container .card-body:nth-child(2) .inner-card::before {
+        content: 'Intermediário';
+    }
+
+    #cards-container .card-body:nth-child(3) .inner-card::before {
+        content: 'Avançado';
+    }
+
+
     /*
         .inner-text p{
             display: list-item;
@@ -613,7 +721,7 @@ nav button{
         margin-bottom: 10%;
     }
     .divider{
-        width: 1px;
+        width: 2px;
         height: 35px;
         background-color: #586892;
     }
@@ -628,8 +736,6 @@ nav button{
 
 #icons-section #icons-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     gap: clamp(10px, 2vw, 30px);
 }
@@ -637,7 +743,6 @@ nav button{
 #icons-section .icons{
     padding: 5%;
     width: 45%;
-    background-color: hsl(200, 100%, 31%);
     color: white;
     font-family: 'Inter';
     border-radius: 5px;
@@ -645,12 +750,32 @@ nav button{
 
 #icons-section .icons{
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
     gap: clamp(10px, 5vw, 30px);
 }
+
+#icons-section .icons-img{
+    width: 25%;
+}
+
+#icons-section .icons-img img{
+    width: 100%;
+}
+
+#icons-section .icon-text{
+    width: 50%;
+}
+
+#icons-section .icon-text{
+    font-size: 14px;
+}
+
+.icon-divider{
+    width: 2px;
+    height: 100px;
+    background-color: var(--azul-acinzentado);
+}
+
 
 #about-section{
     border: 1px solid var(--azul-escuro);
@@ -673,7 +798,6 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*margin-top: 5%;*/
     height: 25vh;
 }
 

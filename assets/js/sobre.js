@@ -17,7 +17,7 @@ let integrantes = [
         id: 3,
         nome: "Matheus Cordeiro",
         trabalho: "Programador Front-end",
-        imagem: '/assets/img/logo.png',
+        imagem: '/assets/img/logo.pn',
         texto: 'Trabalhou na parte front-end do TCC'
     }
 ]
