@@ -208,42 +208,6 @@ nav button{
     height: 100px;
 }
 
-/*
-#card-section #card-title h1{
-    font-size: 16px;
-}
-
-#card-section #cards-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    gap: 2%;
-}
-
-#card-section .cards{
-    border-radius: 5px;
-    border: 1px solid hsl(200, 7%, 10%);
-    padding: 2%;
-    text-align: center;
-    background-color: hsl(200, 7%, 20%);
-    color: white;
-}
-
-#card-section .card-text{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-    gap: 10px;
-}
-
-#card-section #card-title{
-    color: hsl(200, 100%, 31%);
-}
-
-#card-section .card-text{
-    color: white;   
-}
-*/
 #icons-section{
     margin: 5%;
 }
@@ -451,7 +415,9 @@ nav button{
 
 #form-section{
     margin: 5%;
-    display: flow-root;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #form{
@@ -459,10 +425,23 @@ nav button{
     justify-content: flex-start;
     align-items: center;
     height: 280px;
+    width: 50%;
 }
 
 #form-section #form form{
-    width: 50%;
+    width: 100%;
+}
+
+#form-section #formsection-img{
+    position: relative;
+    width: 40%;
+}
+
+#formsection-img img{
+    top: 0;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-30%);
 }
 
 #form-section #form form{
@@ -550,10 +529,7 @@ nav button{
     background-color: hsl(120, 100%, 30%);
 }
 
-#card-section #title{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 #card-section{
     margin: 5%;
@@ -644,55 +620,6 @@ nav button{
     .info-desc p{
         color: #586892;
     }
-
-
-
-
-
-
-
-/*
-#card-section #card-title h1{
-    font-size: 16px;
-}
-
-#card-section #cards-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    gap: 2%;
-}
-
-#card-section .cards{
-    border-radius: 5px;
-    border: 1px solid hsl(200, 7%, 10%);
-    padding: 2%;
-    text-align: center;
-    background-color: hsl(200, 7%, 20%);
-    color: white;
-    width: 33%;
-}
-
-#card-section .card-text{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-    gap: 10px;
-}
-
-#card-section #card-title{
-    color: hsl(200, 100%, 31%);
-}
-
-#card-section .card-text{
-    color: white;   
-}
-*/
-
-
-
-
-
 
 #icons-section{
     overflow: hidden;
