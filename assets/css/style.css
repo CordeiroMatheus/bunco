@@ -225,6 +225,7 @@ nav button{
         box-shadow: 0px 0px 10px 3px #1CB0F6;
         border-radius: 10px;
         margin-bottom: 15%;
+        font-family: 'Inter', serif;
     }
 
 #card-section .inner-card{
@@ -239,9 +240,11 @@ nav button{
         text-align: center;
         overflow: hidden;
         margin-bottom: 12.5%;
+        color: var(--cor-de-fundo);
+        font-weight: bold;
     }
 #card-section .inner-card::before{
-        content: 'teste';
+        content: '';
         display: flex;
         justify-content: center;
         text-align: center;
@@ -289,6 +292,9 @@ nav button{
         justify-content: space-around;
         align-items: center;
         margin-bottom: 10%;
+    }
+    .info-desc .quant-desc{
+        color: var(--azul-principal);
     }
     .divider{
         width: 1px;
@@ -652,6 +658,7 @@ nav button{
         box-shadow: 0px 0px 10px 3px #1CB0F6;
         border-radius: 10px;
         margin-bottom: 5%;
+        font-family: 'Inter', serif;
     }
 
 #card-section .inner-card{
@@ -666,6 +673,9 @@ nav button{
         text-align: center;
         overflow: hidden;
         margin-bottom: 10%;
+        color: var(--cor-de-fundo);
+        font-weight: bold;
+        font-size: 15px;
     }
 
 #card-section .inner-card::before{
@@ -695,23 +705,17 @@ nav button{
     #cards-container .card-body:nth-child(3) .inner-card::before {
         content: 'Avançado';
     }
-
-
-    /*
-        .inner-text p{
+/*
+    .inner-text{
             display: list-item;
         }
-        .inner-card p::marker{
-            content: "";
-        }
-    */
+    .inner-card p::marker{
+            content: "a";
+    }
+*/
     .inner-text{
         margin-top: 5%;
         margin-bottom: 5%;
-    }
-    .infos{
-        color: white;
-        height: 50%;
     }
     .info-desc{
         text-align: center;
@@ -719,6 +723,13 @@ nav button{
         justify-content: space-around;
         align-items: center;
         margin-bottom: 10%;
+    }
+    .info-desc .quant-desc{
+        color: var(--azul-principal);
+    }
+    .infos{
+        color: white;
+        height: 50%;
     }
     .divider{
         width: 2px;
@@ -773,7 +784,7 @@ nav button{
 .icon-divider{
     width: 2px;
     height: 100px;
-    background-color: var(--azul-acinzentado);
+    background-color: var(--azul-principal);
 }
 
 
