@@ -20,6 +20,7 @@ let integrantes = [
         imagem: '/assets/img/logo.pn',
         texto: 'Trabalhou na parte front-end do TCC'
     }
+    /* Teste */
 ]
 
 let itemAtual = 0
