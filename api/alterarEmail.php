@@ -14,11 +14,11 @@ try {
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o nome novo!"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o email novo!"]);
         exit;
     }
 
-    //Atualiza o nome do usuário
+    //Atualiza o email do usuário
     $query = "UPDATE usuarios SET email = ? WHERE username = ?";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $email);
@@ -36,7 +36,8 @@ try {
 } catch (Exception $e) {
     echo json_encode([
         "sucesso" => "false",
-        "mensagem" => "Exceção: " . $e->getMessage()
+        //"mensagem" => "Exceção: " . $e->getMessage()
+        "mensagem" => "Erro no servidor"
     ]);
 }
 ?>

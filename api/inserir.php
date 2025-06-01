@@ -5,6 +5,7 @@ include_once("conexao.php");
 
 $conn = conexao();
 try {
+    //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
     } else {
@@ -82,6 +83,7 @@ try {
 
     $resultado = $stmt->fetchAll(PDO::FETCH_OBJ);
 
+    //Insere os dados na tabela status
     foreach ($resultado as $r) {
         $query = "INSERT INTO status(usuario) VALUES (?)";
         $stmt = $conn->prepare($query);
@@ -94,12 +96,14 @@ try {
         $arr["sucesso"] = "true";
     } else {
         $arr["sucesso"] = "false";
-        $arr["mensagem"] = "Erro ao cadastrar status";
+        $arr["mensagem"] = "Erro ao cadastrar o status do usuário";
     }
     echo json_encode($arr);
+
 } catch (Exception $e) {
     echo json_encode([
         "sucesso" => "false",
-        "mensagem" => "Exceção: " . $e->getMessage()
+        //"mensagem" => "Exceção: " . $e->getMessage()
+        "mensagem" => "Erro do servidor! Tente novamente mais tarde!"
     ]);
 }

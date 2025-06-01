@@ -18,14 +18,14 @@ try {
         exit;
     }
 
-    //Atualiza o nome do usuário
+    //Atualiza o username do usuário
     $query = "UPDATE usuarios SET username = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $usernamenovo);
     $stmt->bindParam(2, $id);
     $resultado = $stmt->execute();
     
-    //Verifica se a atualização do nome deu certo
+    //Verifica se a atualização do username deu certo
     if ($resultado) {
         echo json_encode(["sucesso" => "true", "mensagem" => "Username alterado com sucesso! Você será deslogado para os dados serem atualizados!"]);
     }
@@ -36,7 +36,8 @@ try {
 } catch (Exception $e) {
     echo json_encode([
         "sucesso" => "false",
-        "mensagem" => "Exceção: " . $e->getMessage()
+        //"mensagem" => "Exceção: " . $e->getMessage()
+        "mensagem" => "Erro no servidor"
     ]);
 }
 ?>

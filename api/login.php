@@ -20,11 +20,11 @@ try {
         echo json_encode(["sucesso" => "false", "mensagem" => "Senha não enviada"]);
         exit;
     }
-
-    // Consulta que verifica se o login é username ou email
-    $sql = "SELECT id, username, nome, email, link_github, link_instagram, link_linkedin 
-            FROM usuarios 
-            WHERE (username = :login OR email = :login) AND senha = :senha";
+    
+    //Verifica se o login e a senha estão corretos e passa os dados
+    $sql = "SELECT u.id, u.username, u.nome, u.email, u.link_github, u.link_instagram, u.link_linkedin,
+    st.vidas, st.ofensiva, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id
+    WHERE (u.username = :login OR u.email = :login) AND u.senha = :senha";
 
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":login", $login);
@@ -33,6 +33,7 @@ try {
 
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    //Se o login e senha estão corretos
 if ($resultado) {
     $resultado["sucesso"] = "true";
     echo json_encode($resultado);
