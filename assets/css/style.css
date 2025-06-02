@@ -196,8 +196,17 @@ nav button{
 }
 
 #card-section #title{
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+}
+
+#card-section #title h3{
+    font-size: 22px;
+    font-family: 'Poppins';
+    color: #a1dffc;
+}
+
+#card-section #title h3{
+    text-shadow: 0 0 50px var(--azul-principal);
 }
 
 #card-section{
@@ -419,10 +428,20 @@ nav button{
 
 footer{
     background-image: url(../img/patinhas.svg);
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
     color: white;
-    background-color: #202020;
+    background-color: hsl(217, 61%, 9%);
     height: auto;
     display: flow-root;
+}
+
+footer p{
+    margin-top: 3%;
+    text-align: center;
+    color: var(--azul-escuro);
+    font-size: 14px;
 }
 
 footer li{
@@ -453,6 +472,18 @@ footer a{
 .footer-column{
     width: auto;
 }
+#footer-logo{
+    display: flex;
+    justify-content: center;
+}
+
+#footer-logo img{
+    width: 100px;
+}
+
+#footer-copy{
+    color: var(--azul-escuro);
+}
 
 }
 
@@ -471,6 +502,10 @@ footer a{
     header{
     padding: 0;
     box-shadow: 0px 2px var(--azul-principal);
+    /*
+    position: sticky;
+    top: 0;
+    */
 }
 
 nav{
@@ -606,6 +641,7 @@ nav button{
 
 #form form input[type="button"]{
     cursor: pointer;
+    padding: 1%;
 }
 
 #form form input:hover{
@@ -664,6 +700,16 @@ nav button{
 
 #card-section{
     margin: 5%;
+}
+
+#card-section #title h3{
+    font-size: 22px;
+    color: #a1dffc;
+    font-family: 'Poppins';
+}
+
+#card-section #title h3{
+    text-shadow: 0 0 40px var(--azul-principal);
 }
 
 #cards-container{
@@ -881,6 +927,7 @@ nav button{
     align-items: center;
     justify-content: center;
     gap: 20%;
+    padding: 5%;
 }
 
 #about-info{
@@ -893,13 +940,14 @@ nav button{
 #about-info{
     color: var(--azul-acinzentado);
     font-weight: bold;
+    font-size: 18px;
 }
 
 #about-info::before{
     position: absolute;
     left: -5%;
     content: '';
-    width: 1px;
+    width: 2px;
     height: 75px;
     background-color: var(--azul-acinzentado);
 }
@@ -920,13 +968,22 @@ nav button{
 
 footer{
     color: white;
-    background-color: #202020;
+    background-color: hsl(217, 61%, 9%);
     height: auto;
     display: flow-root;
     background-image: url(../img/patinhas.svg);
     background-size: auto;
-    background-position: right;
+    background-position-x: right;
+    background-position-y: top;
     background-repeat: no-repeat;
+    box-shadow: 0 -4px 10px 4px rgba(95, 95, 95, 0.2);
+}
+
+footer p{
+    margin-top: 3%;
+    text-align: center;
+    color: var(--azul-escuro);
+    font-size: 12px;
 }
 
 footer li{
@@ -938,8 +995,19 @@ footer a{
     color: white;
 }
 
+#footer-logo{
+    display: flex;
+    justify-content: center;
+}
+
+#footer-logo img{
+    width: 15%;
+}
+
 #footer-section{
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
 }
 
 #footer-container{
@@ -956,6 +1024,10 @@ footer a{
 
 .footer-column{
     width: auto;
+}
+
+#footer-copy{
+    color: var(--azul-escuro);
 }
 }
 
