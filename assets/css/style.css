@@ -345,37 +345,61 @@ nav button{
 }
 
 #about-section{
-    border: 1px solid var(--azul-escuro);
-    box-shadow: 0 0 10px 2px var(--azul-escuro);
-    border-radius: 5%;
-    margin: 5%;
-    padding: 5%;
-    background-color: hsla(0, 0%, 100%, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-family: 'Inter', serif;
 }
 
-.wrapper{
+#about-container #about-top{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
+
+#about-container #about-top #nome-integrante{
+    color: var(--azul-principal);
+    font-weight: bold;
+}
+
+#about-container #about-bottom{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-container #about-bottom{
+    color: var(--azul-acinzentado);
+    font-weight: bold;
+}
+
+#about-info{
+    margin-top: 3%;
+}
+
+#about-container #button-container{
+    margin-top: 10%;
+}
+
 
 #about-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*margin-top: 5%;*/
-    height: 25vh;
+    box-shadow: 0 0 20px 5px var(--azul-escuro);
+    border-radius: 5%;
+    width: 85%;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    height: auto;
+    padding: 4%;
 }
 
 #img-container{
+    width: 35%;
     margin-bottom: 5%;
 }
 
 #img-container img{
-    width: 150px;
-    height: 150px;
+    width: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -383,17 +407,18 @@ nav button{
 #button-container{
     display: flex;
     gap: clamp(4em, 8em, 12em);
-    margin-top: 5%;
 }
 
 #button-container .prev-btn, .next-btn{
-    background: none;
+    background-color: rgba(0, 174, 255, 0.13);
     border: none;
     color: var(--azul-principal);
     cursor: pointer;
+    box-shadow: 0 0 10px 0px var(--azul-escuro);
 }
 
 footer{
+    background-image: url(../img/patinhas.svg);
     color: white;
     background-color: #202020;
     height: auto;
@@ -787,64 +812,121 @@ nav button{
     background-color: var(--azul-principal);
 }
 
-
 #about-section{
-    border: 1px solid var(--azul-escuro);
-    box-shadow: 0 0 10px 2px var(--azul-escuro);
-    border-radius: 5%;
-    margin: 5%;
-    padding: 5%;
-    background-color: hsla(0, 0%, 100%, 0.1);
-}
-
-.wrapper{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    height: 50vh;
+    font-family: 'Inter', serif;
 }
 
 #about-container{
+    box-shadow: 0 0 20px 5px var(--azul-escuro);
+    border-radius: 5%;
+    width: 70%;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    height: 70%;
+}
+
+#about-top{
+    border-top: 2px solid var(--cor-de-fundo);
+    border-left: 2px solid var(--cor-de-fundo);
+    border-right: 2px solid var(--cor-de-fundo);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--azul-acinzentado);
+    height: auto;
+    padding: 2%;
+}
+
+#about-top #nome-integrante{
+    width: 65%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    margin-bottom: 2%;
+    color: var(--cor-de-fundo);
+    font-weight: 500;
+}
+
+#about-top #nome-integrante #nome{
+    font-size: 32px;
+}
+
+#about-top #img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: auto;
+    margin-left: 5%;
+}
+
+#about-top #img-container img{
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--cor-de-fundo);
+}
+
+#about-bottom{
+    height: 65%;
+}
+
+#about-bottom{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 25vh;
+    justify-content: center;
+    gap: 20%;
 }
 
-#img-container{
-    margin-bottom: 5%;
-}
-
-#img-container img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-#button-container{
+#about-info{
+    position: relative;
     display: flex;
-    gap: clamp(4em, 8em, 12em);
-    margin-top: 5%;
+    justify-content: center;
+    flex-direction: column;
 }
+
+#about-info{
+    color: var(--azul-acinzentado);
+    font-weight: bold;
+}
+
+#about-info::before{
+    position: absolute;
+    left: -5%;
+    content: '';
+    width: 1px;
+    height: 75px;
+    background-color: var(--azul-acinzentado);
+}
+
+#about-bottom #button-container{
+    display: flex;
+    gap: 7em;
+}
+
 
 #button-container .prev-btn, .next-btn{
-    background: none;
+    background-color: rgba(0, 174, 255, 0.13);
     border: none;
     color: var(--azul-principal);
     cursor: pointer;
+    box-shadow: 0 0 10px 0px var(--azul-escuro);
 }
-
-
-/*Reformar toda essa parte do footer*/
-
 
 footer{
     color: white;
     background-color: #202020;
     height: auto;
     display: flow-root;
+    background-image: url(../img/patinhas.svg);
+    background-size: auto;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 footer li{
