@@ -22,7 +22,7 @@ try {
     }
     
     //Verifica se o login e a senha estão corretos e passa os dados
-    $sql = "SELECT u.id, u.username, u.nome, u.email, u.link_github, u.link_instagram, u.link_linkedin,
+    $sql = "SELECT u.id, u.username, u.nome, u.email, u.foto, u.cor, u.link_github, u.link_instagram, u.link_linkedin,
     st.vidas, st.ofensiva, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id
     WHERE (u.username = :login OR u.email = :login) AND u.senha = :senha";
 
