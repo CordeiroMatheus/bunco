@@ -1,302 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <title>Bunco</title>
-    <link rel= "icon" href="assets/img/buncosilhueta.svg">
+    <link rel="icon" href="assets/img/buncosilhueta.svg">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  </head>
+  <body>
     <header>
-        <nav>
-            <div id="logo-bunco">
-                <img src="assets/img/logo.svg" alt="BuncoLogo">
-            </div>
-            <div id="buttons">
-                <button id="signin-button" class="button"><a href="pages/signin.html">Sign In</a></button>
-                <button id="signup-button" class="button"><a href="pages/signup.html">Sign Up</a></button>
-            </div>
-        </nav>
+      <nav>
+        <div id="logo-bunco">
+          <img src="assets/img/logo.svg" alt="BuncoLogo" />
+        </div>
+        <div id="buttons">
+          <button id="signin-button" class="button">
+            <a href="pages/signin.html">Sign In</a>
+          </button>
+          <button id="signup-button" class="button">
+            <a href="pages/signup.html">Sign Up</a>
+          </button>
+        </div>
+      </nav>
     </header>
     <main>
-        <div id="background"></div>
-        <div id="form-section">
-                <div id="form">
-                    <form action="php/signup.php">
-                        
-                        <div id="circles">
-                            <div id="circle" class="circle"></div>
-                            <div id="circle" class="circle"></div>
-                            <div id="circle" class="circle"></div>
-                            <p>Que tal <span id="form-text">&nbsp;começar&nbsp;</span> algo épico?</p>
+      <div id="background"></div>
+      <div id="form-section">
+        <div id="form">
+          <form action="php/signup.php">
+            <div id="circles">
+              <div id="circle" class="circle"></div>
+              <div id="circle" class="circle"></div>
+              <div id="circle" class="circle"></div>
+              <p>
+                Que tal <span id="form-text">&nbsp;começar&nbsp;</span> algo
+                épico?
+              </p>
+            </div>
 
-                        </div>
-                        
-                        <div id="campos">
-                            
-                            <p>
-                                <label for="nomeusuario">Nome:</label>
-                                <input type="text" name="nomeusuario" id="nomeusuariotxt" class="input" placeholder="Digite seu nome">
-                            </p>
+            <div id="campos">
+              <p>
+                <label for="nomeusuario">Nome:</label>
+                <input type="text" name="nomeusuario" id="nomeusuariotxt" class="input" placeholder="Digite seu nome">
+              </p>
 
-                            <p>
-                                <label for="apelido">Apelido:</label>
-                                <input type="text" name="apelido" id="apelidotxt" class="input" placeholder="Nome de usuário">
-                            </p>
-                            
-                            <p>
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com">
-                            </p>
+              <p>
+                <label for="apelido">Apelido:</label>
+                <input type="text" name="apelido" id="apelidotxt" class="input" placeholder="Nome de usuário">
+              </p>
 
-                            <p>
-                                <label for="senha">Senha:</label>
-                                <input type="password" name="senha" id="senhatxt" class="input" placeholder="Digite sua senha">
-                            </p>
-                            
-                            <p>
-                                <input type="button" value="Criar">
-                            </p>
-                        
-                        </div> 
+              <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com">
+              </p>
 
-                    </form>
-                </div>
+              <p>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senhatxt" class="input" placeholder="Digite sua senha">
+              </p>
 
-                <div id="formsection-img">
-                    <img src="assets/img/buncoalienimg.svg" alt="formsection-img">
-                </div>
+              <p>
+                <input type="button" value="Criar">
+              </p>
+            </div>
+          </form>
         </div>
 
-        <div id="card-section">
-            <div id="title">
-                <h3>Aprenda python de uma maneira interativa</h3>
-            </div>
-            <div id="cards-container">
-            <div class="card-body">
-            <div class="inner-card"><!--Tópicos do curso-->
-                <div class="inner-text">
-                    <p>Sintaxe básica e tipos</p>
-                    <p>Entrada e saída de dados</p>
-                    <p>Operadores</p>
-                    <p>Condicionais</p>
-                    <p>Laços de repetição</p>
-                </div>
-            </div>
-            <div class="infos">
-                <div class="info-desc"><!--Informações dos módulos-->
-                    <div class="trofeus">
-                        <p>Troféus</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="modulos">
-                        <p>Módulos</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="atividades">
-                        <p>Atividades</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                </div>
-            </div>
+        <div id="formsection-img">
+          <img src="assets/img/buncoalienimg.svg" alt="formsection-img" />
         </div>
+      </div>
 
-        <div class="card-body">
+      <div id="card-section">
+        <div id="title">
+          <h3>Aprenda python de uma maneira interativa</h3>
+        </div>
+        <div id="cards-container">
+          <div class="card-body">
             <div class="inner-card">
-                <div class="inner-text">
-                    <p>Funções e parâmetros</p>
-                    <p>Estruturas de dados</p>
-                    <p>Compreensão de listas</p>
-                    <p>Manipulação de arquivos</p>
-                    <p>Tratamento de exceções</p>
-                </div>
+              <!--Tópicos do curso-->
+              <div class="inner-text">
+                <p>Sintaxe básica e tipos</p>
+                <p>Entrada e saída de dados</p>
+                <p>Operadores</p>
+                <p>Condicionais</p>
+                <p>Laços de repetição</p>
+              </div>
             </div>
             <div class="infos">
-                <div class="info-desc">
-                    <div class="trofeus">
-                        <p>Troféus</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="modulos">
-                        <p>Módulos</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="atividades">
-                        <p>Atividades</p>
-                        <div class="quant-desc">1</div>
-                    </div>
+              <div class="info-desc">
+                <!--Informações dos módulos-->
+                <div class="trofeus">
+                  <p>Troféus</p>
+                  <div class="quant-desc">1</div>
                 </div>
+                <div class="divider"></div>
+                <div class="modulos">
+                  <p>Módulos</p>
+                  <div class="quant-desc">1</div>
+                </div>
+                <div class="divider"></div>
+                <div class="atividades">
+                  <p>Atividades</p>
+                  <div class="quant-desc">1</div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="card-body">
+          </div>
+
+          <div class="card-body">
             <div class="inner-card">
-                <div class="inner-text">
-                    <p>POO</p>
-                    <p>Módulos e pacotes</p>
-                    <p>Funções lambda</p>
-                    <p>Decoradores</p>
-                    <p>Geradores e iteradores</p>
-                </div>
+              <div class="inner-text">
+                <p>Funções e parâmetros</p>
+                <p>Estruturas de dados</p>
+                <p>Compreensão de listas</p>
+                <p>Manipulação de arquivos</p>
+                <p>Tratamento de exceções</p>
+              </div>
             </div>
             <div class="infos">
-                <div class="info-desc">
-                    <div class="trofeus">
-                        <p>Troféus</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="modulos">
-                        <p>Módulos</p>
-                        <div class="quant-desc">1</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="atividades">
-                        <p>Atividades</p>
-                        <div class="quant-desc">1</div>
-                    </div>
+              <div class="info-desc">
+                <div class="trofeus">
+                  <p>Troféus</p>
+                  <div class="quant-desc">1</div>
                 </div>
+                <div class="divider"></div>
+                <div class="modulos">
+                  <p>Módulos</p>
+                  <div class="quant-desc">1</div>
+                </div>
+                <div class="divider"></div>
+                <div class="atividades">
+                  <p>Atividades</p>
+                  <div class="quant-desc">1</div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="card-body">
+            <div class="inner-card">
+              <div class="inner-text">
+                <p>POO</p>
+                <p>Módulos e pacotes</p>
+                <p>Funções lambda</p>
+                <p>Decoradores</p>
+                <p>Geradores e iteradores</p>
+              </div>
             </div>
+            <div class="infos">
+              <div class="info-desc">
+                <div class="trofeus">
+                  <p>Troféus</p>
+                  <div class="quant-desc">1</div>
+                </div>
+                <div class="divider"></div>
+                <div class="modulos">
+                  <p>Módulos</p>
+                  <div class="quant-desc">1</div>
+                </div>
+                <div class="divider"></div>
+                <div class="atividades">
+                  <p>Atividades</p>
+                  <div class="quant-desc">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>  
+      </div>
 
-        <div id="icons-section">
-            <div id="icons-container">
-
-                <div id="icon-a" class="icons">
-                    <div class="icons-img">
-                        <img src="assets/img/icones/Livro.svg" alt="imga">
-                    </div>
-                    <div class="icon-divider"></div>
-                    <div class="icon-text">
-                        <h1>Projetos</h1>
-                        <p>lorem AAA Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-
-                <div id="icon-b" class="icons">
-                    <div class="icons-img">
-                        <img src="assets/img/icones/Troféu.svg" alt="imga">
-                    </div>
-                    <div class="icon-divider"></div>
-                    <div class="icon-text">
-                        <h1>Leaderboards</h1>
-                        <p>lorem BBB Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-
-                <div id="icon-c" class="icons">
-                    <div class="icons-img">
-                        <img src="assets/img/icones/Blocos.svg" alt="imga">
-                    </div>
-                    <div class="icon-divider"></div>
-                    <div class="icon-text">
-                        <h1>Construção</h1>
-                        <p>lorem CCC Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-
-                <div id="icon-d" class="icons">
-                    <div class="icons-img">
-                        <img src="assets/img/icones/Controle.svg" alt="imga">
-                    </div>
-                    <div class="icon-divider"></div>
-                    <div class="icon-text">
-                        <h1>Gameficação</h1>
-                        <p>lorem DDD Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-
+      <div id="icons-section">
+        <div id="icons-container">
+          <div id="icon-a" class="icons">
+            <div class="icons-img">
+              <img src="assets/img/icones/Livro.svg" alt="imga" />
             </div>
+            <div class="icon-divider"></div>
+            <div class="icon-text">
+              <h1>Projetos</h1>
+              <p>
+                lorem AAA Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
+
+          <div id="icon-b" class="icons">
+            <div class="icons-img">
+              <img src="assets/img/icones/Troféu.svg" alt="imga" />
+            </div>
+            <div class="icon-divider"></div>
+            <div class="icon-text">
+              <h1>Leaderboards</h1>
+              <p>
+                lorem BBB Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
+
+          <div id="icon-c" class="icons">
+            <div class="icons-img">
+              <img src="assets/img/icones/Blocos.svg" alt="imga">
+            </div>
+            <div class="icon-divider"></div>
+            <div class="icon-text">
+              <h1>Construção</h1>
+              <p>
+                lorem CCC Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
+
+          <div id="icon-d" class="icons">
+            <div class="icons-img">
+              <img src="assets/img/icones/Controle.svg" alt="imga">
+            </div>
+            <div class="icon-divider"></div>
+            <div class="icon-text">
+              <h1>Gameficação</h1>
+              <p>
+                lorem DDD Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div id="about-section">
-            <div id="about-container">
-            <div id="about-top">
-                <div id="img-container">
-                    <img src="assets/img/" alt="pessoa-img" id="pessoa-img">
-                </div>
-                <div id="nome-integrante">
-                    <p id="nome"></p>
-                </div>
+      <div id="about-section">
+        <div id="about-container">
+          <div id="about-top">
+            <div id="img-container">
+              <img src="assets/img/" alt="pessoa-img" id="pessoa-img">
             </div>
-            <div id="about-bottom">
-                <div id="about-info">
-                    <p id="funcao"></p>
-                    <p id="info"></p>
-                </div>
-
-                <div id="button-container">
-                    <button class="prev-btn">
-                    <i class="fas fa-chevron-left fa-2x"></i>
-                    </button>
-                    <button class="next-btn">
-                    <i class="fas fa-chevron-right fa-2x"></i>
-                    </button>
-                </div>
-        
+            <div id="nome-integrante">
+              <p id="nome"></p>
+            </div>
+          </div>
+          <div id="about-bottom">
+            <div id="about-info">
+              <p id="funcao"></p>
+              <p id="info"></p>
             </div>
 
+            <div id="button-container">
+              <button class="prev-btn">
+                <i class="fas fa-chevron-left fa-2x"></i>
+              </button>
+              <button class="next-btn">
+                <i class="fas fa-chevron-right fa-2x"></i>
+              </button>
             </div>
+          </div>
         </div>
-
+      </div>
     </main>
-        <footer>
-        <div id="footer-section">
-                <div id="footer-logo">
-                    <img src="assets/img/buncosilhueta.svg" alt="buncoLogo">
-                </div>
-                <p>A lógica por trás das grandes ideias.</p>
-                <div id="footer-container">
-                    <div id="footer-wrap">
-                        <div class="footer-column">
-                            <h3>Title</h3>
-                            <ul>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Title</h3>
-                            <ul>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Title</h3>
-                            <ul>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Title</h3>
-                            <ul>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                                <li><a href="">Item</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div id="footer-copy">&copy;Bunco 2025</div>
+    <footer>
+      <div id="footer-section">
+        <div id="footer-logo">
+          <img src="assets/img/buncosilhueta.svg" alt="buncoLogo">
+        </div>
+        <p>A lógica por trás das grandes ideias.</p>
+        <div id="footer-container">
+          <div id="footer-wrap">
+            <div class="footer-column">
+              <h3>Title</h3>
+              <ul>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+              </ul>
             </div>
-        </footer>
+            <div class="footer-column">
+              <h3>Title</h3>
+              <ul>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Title</h3>
+              <ul>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Title</h3>
+              <ul>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+                <li><a href="">Item</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="footer-copy">&copy;Bunco 2025</div>
+      </div>
+    </footer>
     <script src="assets/js/sobre.js"></script>
     <script src="assets/js/formaudio.js"></script>
-</body>
+  </body>
 </html>
