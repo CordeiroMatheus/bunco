@@ -6,51 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/php-icon.png">
-    <title>Enviar E-mail com PHP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="../assets/img/buncosilhueta.svg">
+    <title>Sign In</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="form-image">
-            <img src="img/PHP-logo.svg.png" alt="imagem">
+        <div class="signin-image">
         </div>
         <div class="form">
-            <form action="enviar.php" method="post" enctype="multipart/form-data">
-
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Enviar E-mail com PHP</h1>
-                    </div>
-                </div>
-
+            <h1>Sign In</h1>
+            <form action="/php/signup.php" method="post">
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" id="email" placeholder="e-mail" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="texto">Texto</label>
-                        <textarea name="mensagem" id="texto" placeholder="Digite um texto" required cols="40"></textarea>
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="senha" id="senha" placeholder="password" required>
                     </div>
 
-                    <div class="input-box">
-                        <label for="assunto">Assunto</label>
-                        <input id="assunto" type="text" name="assunto" placeholder="Digite o assunto do email" required>
+                    <div class="continue-button">
+                        <button type="submit">Entrar</button>
                     </div>
-
-                    <div class="input-box">
-                        <label for="arquivo">Arquivo</label>
-                        <input id="arquivo" type="file" name="arquivo">
-                    </div>
-
-                <div class="continue-button">
-                    <button>Enviar</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
-
 </html>
