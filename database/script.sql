@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 25-Maio-2025 às 15:55
+-- Tempo de geração: 06-Jun-2025 às 20:49
 -- Versão do servidor: 8.0.30
 -- versão do PHP: 8.1.10
 
@@ -58,17 +58,18 @@ CREATE TABLE `status` (
   `id` int NOT NULL,
   `usuario` int NOT NULL,
   `vidas` int NOT NULL DEFAULT '5',
-  `ofensiva` int NOT NULL DEFAULT '0'
+  `ofensiva` int NOT NULL DEFAULT '0',
+  `xp` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `status`
 --
 
-INSERT INTO `status` (`id`, `usuario`, `vidas`, `ofensiva`) VALUES
-(1, 2, 5, 0),
-(2, 3, 5, 0),
-(4, 5, 5, 0);
+INSERT INTO `status` (`id`, `usuario`, `vidas`, `ofensiva`, `xp`) VALUES
+(1, 2, 5, 0, 0),
+(2, 3, 5, 0, 0),
+(4, 5, 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -82,6 +83,8 @@ CREATE TABLE `usuarios` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(64) NOT NULL,
+  `foto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'undefined.png',
+  `cor` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'FFFFFF',
   `link_github` varchar(255) DEFAULT NULL,
   `link_instagram` varchar(255) DEFAULT NULL,
   `link_linkedin` varchar(255) DEFAULT NULL,
@@ -92,10 +95,10 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `nome`, `email`, `senha`, `link_github`, `link_instagram`, `link_linkedin`, `created_at`) VALUES
-(2, 'jp_p3dro', 'Joao Pedro', 'joao@email.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-20 18:38:43'),
-(3, 'antonio_rogerio', 'Antonio Rogerio', 'antonio@gmail.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-21 22:03:44'),
-(5, 'admin', 'Admin', 'admin@email.com', '7580adf5151c6b79c90597aeab91838f', NULL, NULL, NULL, '2025-05-24 19:01:58');
+INSERT INTO `usuarios` (`id`, `username`, `nome`, `email`, `senha`, `foto`, `cor`, `link_github`, `link_instagram`, `link_linkedin`, `created_at`) VALUES
+(2, 'jp_p3dro', 'Joao Pedro', 'joao@email.com', '7580adf5151c6b79c90597aeab91838f', 'undefined.png', 'FFFFFF', NULL, NULL, NULL, '2025-05-20 18:38:43'),
+(3, 'antonio_rogerio', 'Antonio Rogerio', 'antonio@gmail.com', '7580adf5151c6b79c90597aeab91838f', 'undefined.png', 'FFFFFF', NULL, NULL, NULL, '2025-05-21 22:03:44'),
+(5, 'administrador', 'Administrador', 'administrador@email.com', '7580adf5151c6b79c90597aeab91838f', 'foto1.png', '009688', 'https://github.com/BuncoTCC', 'https://www.instagram.com/joaopedrodallessio', 'https://www.linkedin.com/in/joão-pedro-dallessio-de-barros/', '2025-05-24 19:01:58');
 
 --
 -- Índices para tabelas despejadas
@@ -150,13 +153,13 @@ ALTER TABLE `progresso`
 -- AUTO_INCREMENT de tabela `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas
