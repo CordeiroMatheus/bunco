@@ -50,7 +50,7 @@ h1{
     width: 100%;
     height: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -60,7 +60,7 @@ h1{
     width: 100%;
     height: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -162,7 +162,7 @@ h1{
 .signup-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -171,7 +171,7 @@ h1{
 .signin-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -276,7 +276,7 @@ h1{
 .signup-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -285,7 +285,7 @@ h1{
 .signin-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -388,7 +388,7 @@ h1{
 .signup-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -397,7 +397,7 @@ h1{
 .signin-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -497,7 +497,7 @@ h1{
 .signup-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -506,7 +506,7 @@ h1{
 .signin-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -613,7 +613,7 @@ h1{
 .signup-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signupimage.svg);
+    background-image: url(../img/formimg/signupimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -622,7 +622,7 @@ h1{
 .signin-image{
     width: 50%;
     background-color: var(--cor-de-fundo);
-    background-image: url(../assets/img/formimg/signinimage.svg);
+    background-image: url(../img/formimg/signinimage.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
