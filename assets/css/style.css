@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0;    
+    padding: 0;  
 }
 *, *::before, *::after{
     box-sizing: border-box;
@@ -62,8 +62,14 @@ nav #signup-button{
     width: 50%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
     box-shadow: 0px 3px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 1.5px 0px var(--azul-escuro);
+    transform: translateY(4px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -165,14 +171,9 @@ nav button{
     color: white;
 }
 
-/*
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: 1px solid hsl(255, 90%, 60%);
-}
-*/
-
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -244,7 +245,7 @@ nav button{
 #card-section .inner-card{
         width: 93%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -262,7 +263,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 55%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -298,6 +299,9 @@ nav button{
     .infos{
         color: white;
         height: 50%;
+    }
+    .infos{
+        font-family: 'Inter', serif, sans-serif;
     }
     .info-desc{
         text-align: center;
@@ -438,7 +442,7 @@ footer{
     background-position-y: top;
     background-repeat: no-repeat;
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     font-family: 'Inter', sans-serif, serif;
@@ -537,8 +541,14 @@ nav #signup-button{
     width: 50%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
     box-shadow: 0px 3px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 1.5px 0px var(--azul-escuro);
+    transform: translateY(4px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -640,14 +650,9 @@ nav button{
     color: white;
 }
 
-/*
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: 1px solid hsl(255, 90%, 60%);
-}
-*/
-
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -720,7 +725,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -738,7 +743,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 55%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -766,6 +771,9 @@ nav button{
     .infos{
         color: white;
         height: 50%;
+    }
+    .infos{
+        font-family: 'Inter', serif, sans-serif;
     }
     .info-desc{
         text-align: center;
@@ -904,7 +912,7 @@ footer{
     background-position-y: top;
     background-repeat: no-repeat;
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     font-family: 'Inter', sans-serif, serif;
@@ -1017,8 +1025,14 @@ nav #signup-button{
     width: 50%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
     box-shadow: 0px 3px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 1.5px 0px var(--azul-escuro);
+    transform: translateY(4px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -1104,7 +1118,8 @@ nav button{
 }
 
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -1215,7 +1230,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -1235,7 +1250,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -1281,6 +1296,10 @@ nav button{
     .infos{
         color: white;
         height: 50%;
+    }
+    .infos{
+        font-family: 'Inter', serif, sans-serif;
+        font-size: 14px;
     }
     .divider{
         width: 2px;
@@ -1347,7 +1366,7 @@ nav button{
 
 #about-container{
     box-shadow: 0 0 20px 5px var(--azul-escuro);
-    border-radius: 20px;
+    border-radius: 40px;
     width: 70%;
     background-color: var(--cor-de-fundo);
     height: 70%;
@@ -1357,8 +1376,8 @@ nav button{
     border-top: 4px solid var(--cor-de-fundo);
     border-left: 4px solid var(--cor-de-fundo);
     border-right: 4px solid var(--cor-de-fundo);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     display: flex;
     justify-content: space-between;
     background-color: var(--azul-acinzentado);
@@ -1446,7 +1465,7 @@ nav button{
 
 footer{
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     background-image: url(../img/patinhas.svg);
@@ -1454,7 +1473,7 @@ footer{
     background-position-x: right;
     background-position-y: top;
     background-repeat: no-repeat;
-    box-shadow: 0 -4px 10px 4px rgba(95, 95, 95, 0.2);
+    box-shadow: 0 -2px 25px 2px var(--azul-acinzentado);
     font-family: 'Inter', sans-serif, serif;
     font-weight: bolder;
 }
@@ -1561,8 +1580,14 @@ nav #signup-button{
     width: 50%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
     box-shadow: 0px 3px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 1.5px 0px var(--azul-escuro);
+    transform: translateY(4px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -1605,7 +1630,7 @@ nav button{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 40%;
+    width: 45%;
 }
 
 #form-section #form form{
@@ -1645,7 +1670,8 @@ nav button{
 }
 
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -1757,7 +1783,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -1777,7 +1803,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -1823,6 +1849,9 @@ nav button{
     .infos{
         color: white;
         height: 50%;
+    }
+    .infos{
+        font-family: 'Inter', serif, sans-serif;
     }
     .divider{
         width: 2px;
@@ -1889,7 +1918,7 @@ nav button{
 
 #about-container{
     box-shadow: 0 0 20px 5px var(--azul-escuro);
-    border-radius: 20px;
+    border-radius: 40px;
     width: 70%;
     background-color: var(--cor-de-fundo);
     height: 75%;
@@ -1899,8 +1928,8 @@ nav button{
     border-top: 6px solid var(--cor-de-fundo);
     border-left: 6px solid var(--cor-de-fundo);
     border-right: 6px solid var(--cor-de-fundo);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     display: flex;
     justify-content: space-between;
     background-color: var(--azul-acinzentado);
@@ -1988,7 +2017,7 @@ nav button{
 
 footer{
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     background-image: url(../img/patinhas.svg);
@@ -1996,7 +2025,7 @@ footer{
     background-position-x: right;
     background-position-y: top;
     background-repeat: no-repeat;
-    box-shadow: 0 -4px 10px 4px rgba(95, 95, 95, 0.2);
+    box-shadow: 0 -2px 25px 2px var(--azul-acinzentado);
     font-family: 'Inter', sans-serif, serif;
     font-weight: bolder;
 }
@@ -2103,8 +2132,14 @@ nav #signup-button{
     width: 50%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
-    box-shadow: 0px 3px 0px var(--azul-escuro);
+    box-shadow: 0px 5.5px 0px var(--azul-escuro);
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 2.25px 0px var(--azul-escuro);
+    transform: translateY(6px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -2187,7 +2222,8 @@ nav button{
 }
 
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -2305,7 +2341,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -2325,7 +2361,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -2435,7 +2471,7 @@ nav button{
 
 #about-container{
     box-shadow: 0 0 20px 5px var(--azul-escuro);
-    border-radius: 20px;
+    border-radius: 40px;
     width: 70%;
     background-color: var(--cor-de-fundo);
 }
@@ -2444,8 +2480,8 @@ nav button{
     border-top: 6px solid var(--cor-de-fundo);
     border-left: 6px solid var(--cor-de-fundo);
     border-right: 6px solid var(--cor-de-fundo);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     display: flex;
     justify-content: space-between;
     background-color: var(--azul-acinzentado);
@@ -2533,7 +2569,8 @@ nav button{
 
 footer{
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    /*background-color: hsl(217, 61%, 9%);*/
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     background-image: url(../img/patinhas.svg);
@@ -2541,7 +2578,7 @@ footer{
     background-position-x: right;
     background-position-y: top;
     background-repeat: no-repeat;
-    box-shadow: 0 -4px 10px 4px rgba(95, 95, 95, 0.2);
+    box-shadow: 0 -2px 25px 2px var(--azul-acinzentado);
     font-family: 'Inter', serif, sans-serif;
     font-weight: bolder;
 }
@@ -2621,7 +2658,7 @@ nav{
 }
 
 #buttons{
-    width: 30%;
+    width: 40%;
 }
 
 nav #buttons{
@@ -2651,8 +2688,14 @@ nav #signup-button{
     width: 30%;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
-    border: 2px solid var(--azul-escuro);
-    box-shadow: 0px 4px 0px var(--azul-escuro);
+    box-shadow: 0px 5.5px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+nav #signup-button:active{
+    box-shadow: 0px 2.25px 0px var(--azul-escuro);
+    transform: translateY(6px);
 }
 
 nav #signup-button a:visited, nav #signup-button a:link{
@@ -2745,7 +2788,8 @@ nav button{
 }
 
 #form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
-    outline: none;
+    outline: 1px solid black;
+    transition: outline 0.3s ease;
 }
 
 #form form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="button"]::placeholder{
@@ -2855,7 +2899,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -2875,7 +2919,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: #586892;
+        background-color: var(--azul-escuro);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -2896,14 +2940,6 @@ nav button{
     #cards-container .card-body:nth-child(3) .inner-card::before {
         content: 'Avançado';
     }
-/*
-    .inner-text{
-            display: list-item;
-        }
-    .inner-card p::marker{
-            content: "a";
-    }
-*/
     .inner-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -2992,7 +3028,7 @@ nav button{
 
 #about-container{
     box-shadow: 0 0 20px 5px var(--azul-escuro);
-    border-radius: 20px;
+    border-radius: 40px;
     width: 70%;
     background-color: var(--cor-de-fundo);
     height: 85%;
@@ -3002,8 +3038,8 @@ nav button{
     border-top: 12px solid var(--cor-de-fundo);
     border-left: 12px solid var(--cor-de-fundo);
     border-right: 12px solid var(--cor-de-fundo);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     display: flex;
     justify-content: space-between;
     background-color: var(--azul-acinzentado);
@@ -3091,7 +3127,8 @@ nav button{
 
 footer{
     color: white;
-    background-color: hsl(217, 61%, 9%);
+    /*background-color: hsl(217, 61%, 9%);*/
+    background-color: var(--cor-de-fundo);
     height: auto;
     display: flow-root;
     background-image: url(../img/patinhas.svg);
@@ -3099,7 +3136,7 @@ footer{
     background-position-x: right;
     background-position-y: top;
     background-repeat: no-repeat;
-    box-shadow: 0 -4px 10px 10px rgba(95, 95, 95, 0.2);
+    box-shadow: 0 -2px 25px 2px var(--azul-acinzentado);
     font-family: 'Inter', serif, sans-serif;
     font-weight: bolder;
 }
@@ -3156,5 +3193,4 @@ footer a{
     font-size: 28px;
     color: var(--azul-escuro);
 }
-
 }
