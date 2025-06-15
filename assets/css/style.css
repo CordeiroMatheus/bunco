@@ -24,7 +24,7 @@ body{
 @media screen and (max-width: 767px) and (orientation: portrait){
 
 header{
-    box-shadow: 0px 2px 0px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
 }
 
 nav{
@@ -52,6 +52,67 @@ nav #signin-button{
     background: none;
     border: 1px solid var(--azul-principal);
     border-radius: 15px;
+    color: var(--azul-principal);
+}
+
+nav #signin-button {
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -503,7 +564,7 @@ footer a{
 @media screen and (max-width: 767px) and (orientation: landscape){
     
     header{
-    box-shadow: 0px 2px 0px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
 }
 
 nav{
@@ -527,10 +588,63 @@ nav #buttons{
 }
 
 nav #signin-button{
-    width: 35%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -980,7 +1094,7 @@ footer a{
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
     header{
     padding: 0;
-    box-shadow: 0px 2px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
     /*
     position: sticky;
     top: 0;
@@ -1011,10 +1125,63 @@ nav a{
 }
 
 nav #signin-button{
-    width: 35%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -1535,7 +1702,7 @@ footer a{
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
     header{
     padding: 0;
-    box-shadow: 0px 2px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
     /*
     position: sticky;
     top: 0;
@@ -1566,10 +1733,63 @@ nav a{
 }
 
 nav #signin-button{
-    width: 35%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -2087,7 +2307,7 @@ footer a{
 @media screen and (min-width: 1025px) and (max-width: 1440px){
     header{
     padding: 0;
-    box-shadow: 0px 2px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
     /*
     position: sticky;
     top: 0;
@@ -2118,10 +2338,64 @@ nav a{
 }
 
 nav #signin-button{
-    width: 35%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  width: 35%;
+  max-width: 100px;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -2130,6 +2404,7 @@ nav #signin-button a:visited , nav #signin-button a:link{
 
 nav #signup-button{
     width: 50%;
+    max-width: 175px;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
     box-shadow: 0px 5.5px 0px var(--azul-escuro);
@@ -2153,6 +2428,8 @@ nav #logo-bunco{
 nav img{
     width: 70%;
     height: 70%;
+    max-width: 300px;
+    max-height: 65px;
 }
 
 nav button{
@@ -2188,6 +2465,7 @@ nav button{
 
 #form-section #form form{
     width: 100%;
+    max-width: 500px;
     border-radius: 15px;
 }
 
@@ -2200,6 +2478,8 @@ nav button{
     top: 0;
     position: absolute;
     width: 100%;
+    max-width: 400px;
+    max-height: 400px;
     transform: translateY(-40%);
 }
 
@@ -2325,6 +2605,8 @@ nav button{
 
 #card-section .card-body{
         width: 25%;
+        max-width: 300px;
+        max-height: 250px;
         background-color: #0d141f;
         height: auto; /*antes era 50%*/
         box-shadow: 0px 0px 10px 3px var(--azul-escuro);
@@ -2363,6 +2645,8 @@ nav button{
         align-items: center;
         background-color: var(--azul-escuro);
         width: 20%;
+        max-width: 240px;
+        max-height: 40px;
         height: 15%;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
@@ -2431,6 +2715,8 @@ nav button{
     color: white;
     font-family: 'Inter';
     border-radius: 5px;
+    max-width: 550px;
+    max-height: 250px;
 }
 
 #icons-section .icons{
@@ -2473,6 +2759,8 @@ nav button{
     box-shadow: 0 0 20px 5px var(--azul-escuro);
     border-radius: 40px;
     width: 70%;
+    max-width: 1000px;
+    max-height: 500px;
     background-color: var(--cor-de-fundo);
 }
 
@@ -2612,6 +2900,7 @@ footer a{
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
+    max-width: 1500px;
 }
 
 #footer-container{
@@ -2641,7 +2930,7 @@ footer a{
 @media screen and (min-width: 1441px){
     header{
     padding: 0;
-    box-shadow: 0px 2px var(--azul-principal);
+    border-bottom: 2px solid var(--azul-principal);
     /*
     position: sticky;
     top: 0;
@@ -2672,11 +2961,66 @@ nav a{
 }
 
 nav #signin-button{
-    width: 25%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
-    font-size: 26px;
+  position: relative;
+  overflow: hidden;
+  width: 25%;
+  max-width: 210px;
+  max-height: 50px;
+  background: none;
+  border: 1px solid var(--azul-principal);
+  border-radius: 15px;
+  font-size: 22px;
+  transition: all 0.4s ease;
+  color: var(--azul-principal);
+  z-index: 1;
+  cursor: pointer;
+}
+
+nav #signin-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--azul-principal);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s ease-in-out;
+  z-index: -1;
+}
+
+nav #signin-button:hover {
+  color: var(--cor-de-fundo);
+  border: 1px solid var(--azul-escuro);
+}
+
+nav #signin-button:hover::before {
+  top: -35%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+nav #signin-button:hover::after {
+  top: -45%;
+  background-color: var(--azul-principal);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 nav #signin-button a:visited , nav #signin-button a:link{
@@ -2684,8 +3028,10 @@ nav #signin-button a:visited , nav #signin-button a:link{
 }
 
 nav #signup-button{
-    font-size: 26px;
+    font-size: 22px;
     width: 30%;
+    max-width: 250px;
+    max-height: 50px;
     background-color: var(--azul-principal);
     color: var(--cor-de-fundo);
     box-shadow: 0px 5.5px 0px var(--azul-escuro);
@@ -2709,6 +3055,8 @@ nav #logo-bunco{
 nav img{
     width: 100%;
     height: 80%;
+    max-width: 350px;
+    max-height: 80px;
 }
 
 nav button{
@@ -2760,13 +3108,8 @@ nav button{
     top: 0;
     position: absolute;
     width: 100%;
+    max-width: 525px;
     transform: translateY(-40%);
-}
-
-#form-section #form form{
-    width: 520px;
-    max-width: 620px;
-    border-radius: 15px;
 }
 
 #form-section #form form #campos{
@@ -2881,7 +3224,7 @@ nav button{
     justify-content: space-around;
 }
 
-#card-section .card-body{
+    #card-section .card-body{
         width: 25%;
         background-color: #0d141f;
         height: auto; /*antes era 50%*/
@@ -2892,11 +3235,11 @@ nav button{
         transition: 0.7s ease;
     }
 
-#card-section .card-body:hover{
-    box-shadow: 0px 0px 10px 8px var(--azul-escuro);
-}
+    #card-section .card-body:hover{
+        box-shadow: 0px 0px 10px 8px var(--azul-escuro);
+    }
 
-#card-section .inner-card{
+    #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
         background-color: var(--azul-escuro);
@@ -2913,7 +3256,7 @@ nav button{
         font-size: 24px;
     }
 
-#card-section .inner-card::before{
+    #card-section .inner-card::before{
         content: 'teste';
         display: flex;
         justify-content: center;
@@ -3193,4 +3536,9 @@ footer a{
     font-size: 28px;
     color: var(--azul-escuro);
 }
+
+@media screen and (min-width: 2560px){
+    
+}
+
 }
