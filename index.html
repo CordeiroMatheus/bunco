@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
@@ -32,7 +32,7 @@
       <div id="background"></div>
       <div id="form-section">
         <div id="form">
-          <form action="php/signup.php">
+          <form id="formCadastro">
             <div id="circles">
               <div id="circle" class="circle"></div>
               <div id="circle" class="circle"></div>
@@ -45,26 +45,26 @@
             <div id="campos">
               <p>
                 <i class="fas fa-user"></i>
-                <input type="text" name="nomeusuario" id="nomeusuariotxt" class="input" placeholder="Digite seu nome">
+                <input type="text" name="nome" id="nomeusuariotxt" class="input" placeholder="Digite seu nome" required>
               </p>
 
               <p>
                 <i class="fas fa-user-circle"></i>
-                <input type="text" name="apelido" id="apelidotxt" class="input" placeholder="Nome de usuário">
+                <input type="text" name="username" id="apelidotxt" class="input" placeholder="Nome de usuário" required>
               </p>
 
               <p>
                 <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com">
+                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com" required>
               </p>
 
               <p>
                 <i class="fas fa-lock"></i>
-                <input type="password" name="senha" id="senhatxt" class="input" placeholder="Digite sua senha">
+                <input type="password" name="senha" id="senhatxt" class="input" placeholder="Digite sua senha" required>
               </p>
 
               <p>
-                <input type="button" value="Criar">
+                <input type="button" value="Criar" id="btnCadastro">
               </p>
             </div>
           </form>
@@ -303,6 +303,67 @@
         <div id="footer-copy">&copy;Bunco 2025</div>
       </div>
     </footer>
+    <script>
+        document.getElementById('btnCadastro').addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o envio tradicional do formulário
+            
+            // Coletar dados do formulário
+            const form = document.getElementById('formCadastro');
+            const formData = new FormData(form);
+
+            const nome = document.getElementById('nomeusuariotxt').value.trim();
+            const username = document.getElementById('apelidotxt').value.trim();
+            const email = document.getElementById('emailtxt').value.trim();
+            const senha = document.getElementById('senhatxt').value.trim();
+
+            if (!nome || !username || !email || !senha) {
+            alert("Preencha todos os campos!")
+            return;
+            }
+            if (username.includes(' ')) {
+    alert("Username não pode conter espaços!")
+    return;
+}
+
+const regex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
+if (!regex.test(email)) {
+  alert("Digite um email válido!")
+    return;
+}
+
+if (nome.length < 4 || username.length < 4) {
+    alert("Nome e username precisam ter no mínimo 4 caracteres")
+    return;
+}
+            
+            // Enviar requisição para o PHP
+            fetch('php/cadastrar.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Verificar se a resposta é JSON
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    return response.json();
+                }
+                throw new TypeError("Resposta não é JSON");
+            })
+            .then(data => {    
+                // Mostrar mensagem de acordo com a resposta
+                if(data.sucesso === "true") {
+                    alert("Cadastro feito com sucesso!")
+                    // Limpar formulário
+                    document.getElementById('formCadastro').reset();
+                } else {
+                    alert(data.mensagem)
+                }
+            })
+            .catch(error => {
+                alert(error)
+            });
+        });
+    </script>
     <script src="assets/js/sobre.js"></script>
     <script src="assets/js/formaudio.js"></script>
     <script src="assets/js/btnsignup.js"></script>
