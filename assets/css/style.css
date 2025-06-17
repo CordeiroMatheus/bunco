@@ -306,7 +306,7 @@ nav button{
 #card-section .inner-card{
         width: 93%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -324,7 +324,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 55%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -540,6 +540,7 @@ footer a{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2em;
 }
 
 .footer-column{
@@ -839,7 +840,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -857,7 +858,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 55%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -1397,7 +1398,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -1417,7 +1418,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -2003,7 +2004,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -2023,7 +2024,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -2623,7 +2624,7 @@ nav button{
 #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -2643,7 +2644,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 20%;
         max-width: 240px;
         max-height: 40px;
@@ -3242,7 +3243,7 @@ nav button{
     #card-section .inner-card{
         width: 94%;
         height: auto; /*antes era 50%*/
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         border-radius: 10px;
         border-top-left-radius: 0px;
         margin-left: 3%;
@@ -3262,7 +3263,7 @@ nav button{
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-color: var(--azul-escuro);
+        background-color: var(--azul-acinzentado);
         width: 20%;
         height: 15%;
         border-top-right-radius: 10px;
@@ -3492,7 +3493,7 @@ footer p{
 }
 
 footer li{
-    list-style-type: none;;
+    list-style-type: none;
 }
 
 footer a{
@@ -3529,6 +3530,10 @@ footer a{
 
 .footer-column{
     width: auto;
+    font-size: 24px;
+}
+
+.footer-column h3{
     font-size: 32px;
 }
 

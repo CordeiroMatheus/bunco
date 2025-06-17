@@ -4,5 +4,5 @@ btnin.addEventListener('click', () => {
     btnin.style.cursor = "default"
     setTimeout(function(){
         document.location.href = "pages/signin.html"
-    }, 600)
+    }, 200)
 })
