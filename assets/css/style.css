@@ -44,26 +44,19 @@ nav #buttons{
 }
 
 nav #buttons{
-    width: 46%;
-}
-
-nav #signin-button{
-    width: 35%;
-    background: none;
-    border: 1px solid var(--azul-principal);
-    border-radius: 15px;
-    color: var(--azul-principal);
+    width: 45%;
 }
 
 nav #signin-button {
   position: relative;
   overflow: hidden;
-  width: 35%;
+  width: 40%;
   background: none;
   border: 1px solid var(--azul-principal);
   border-radius: 15px;
   transition: all 0.4s ease;
   color: var(--azul-principal);
+  font-size: 12px;
   z-index: 1;
   cursor: pointer;
 }
@@ -125,6 +118,7 @@ nav #signup-button{
     color: var(--cor-de-fundo);
     box-shadow: 0px 3px 0px var(--azul-escuro);
     transition: all box-shadow 0.4s ease, transform 0.2s ease;
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -194,6 +188,7 @@ nav button{
 
 #circles p{
     margin-left: 5%;
+    font-size: 14px;
     font-family: 'Inter', 'sans-serif';
 }
 
@@ -210,6 +205,26 @@ nav button{
 #form-text{
     font-weight: bold;
     color: var(--azul-principal);
+}
+
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 #form form #campos{
@@ -345,14 +360,6 @@ nav button{
     #cards-container .card-body:nth-child(3) .inner-card::before {
         content: 'Avançado';
     }
-    /*
-        .inner-text p{
-            display: list-item;
-        }
-        .inner-card p::marker{
-            content: "";
-        }
-    */
     .inner-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -745,6 +752,26 @@ nav button{
     color: var(--azul-principal);
 }
 
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #form form #campos{
     background-color: var(--cinza-escuro);
     border-bottom-left-radius: 15px;
@@ -1112,7 +1139,7 @@ nav{
 }
 
 #buttons{
-    width: 25%;
+    width: 35%;
 }
 
 nav #buttons{
@@ -1331,6 +1358,26 @@ nav button{
     color: var(--azul-principal);
 }
 
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #circles p{
     margin-left: 5%;
     font-family: 'Inter', 'sans-serif';
@@ -1423,7 +1470,6 @@ nav button{
         height: 15%;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
-        /*border: 0.5px solid black;*/
         position: absolute;
         top: -10%;
     }
@@ -1439,14 +1485,6 @@ nav button{
     #cards-container .card-body:nth-child(3) .inner-card::before {
         content: 'Avançado';
     }
-/*
-    .inner-text{
-            display: list-item;
-        }
-    .inner-card p::marker{
-            content: "a";
-    }
-*/
     .inner-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -1936,6 +1974,26 @@ nav button{
     color: var(--azul-principal);
 }
 
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #circles p{
     margin-left: 5%;
     font-family: 'Inter', 'sans-serif';
@@ -2045,14 +2103,6 @@ nav button{
     #cards-container .card-body:nth-child(3) .inner-card::before {
         content: 'Avançado';
     }
-/*
-    .inner-text{
-            display: list-item;
-        }
-    .inner-card p::marker{
-            content: "a";
-    }
-*/
     .inner-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -2555,6 +2605,26 @@ nav button{
     color: var(--azul-principal);
 }
 
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #circles p{
     margin-left: 5%;
     font-family: 'Inter', 'sans-serif';
@@ -2921,6 +2991,10 @@ footer a{
     font-size: 22px;
 }
 
+.footer-column h3{
+    font-size: 36px;
+}
+
 #footer-copy{
     font-size: 18px;
     color: var(--azul-escuro);
@@ -3177,16 +3251,38 @@ nav button{
     color: var(--azul-principal);
 }
 
+#form-text {
+    position: relative; 
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: #4285f4;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+    margin-right: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #circles p{
-    margin-left: 5%;
+    flex: 1;
     font-family: 'Inter', 'sans-serif';
+    font-size: 20px;
+    margin-right: 5%;
 }
 
 .circle{
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border-radius: 10px;
-    margin: 3px;
+    margin: 5px;
 }
 
 .circle:nth-child(1){
@@ -3268,7 +3364,6 @@ nav button{
         height: 15%;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
-        /*border: 0.5px solid black;*/
         position: absolute;
         top: -10%;
     }
@@ -3541,9 +3636,4 @@ footer a{
     font-size: 28px;
     color: var(--azul-escuro);
 }
-
-@media screen and (min-width: 2560px){
-    
-}
-
 }
