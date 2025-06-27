@@ -23,11 +23,27 @@ body {
     background: hsl(217, 41%, 12%);
 }
 h1 {
-    font-family: 'Baloo 2';
+    font-family: 'Baloo 2', serif, sans-serif;
 }
 .continue-button button {
-    font-family: 'Baloo 2';
+    font-family: 'Baloo 2', serif, sans-serif;
 }
+.redirect p, a, span{
+    font-family: 'Baloo 2', serif, sans-serif;
+}
+.redirect a{
+    text-decoration: none;
+    color: inherit;
+}
+.redirect{
+    margin-top: auto;
+    text-align: center;
+}
+.redirect span{
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
 
 @media screen and (max-width: 767px) and (orientation: portrait){
     .container {
@@ -39,6 +55,7 @@ h1 {
     }
 
 h1{
+    margin-top: auto;
     text-align: center;
     font-weight: bolder;
     font-size: 36px;
@@ -74,7 +91,7 @@ h1{
 .form {
     width: 100%;
     background-color: #ffffffec;
-    padding: 3rem;
+    padding: 2rem;
     height: 50%;
 }
 
@@ -116,7 +133,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -140,6 +156,10 @@ form{
     font-size: 18px;
     color: #fff;
 }
+
+.redirect{
+    font-size: 13.5px;
+}
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape){
@@ -153,7 +173,8 @@ form{
 h1{
     text-align: center;
     font-weight: bolder;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    margin-top: auto;
     font-size: 32px;
 }
 
@@ -185,6 +206,7 @@ h1{
 .form {
     width: 50%;
     background-color: #ffffffec;
+    padding: 0.5rem;
     height: auto;
 }
 
@@ -230,7 +252,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -253,6 +274,9 @@ form{
     font-size: 16px;
     color: #fff;
 }
+.redirect{
+    font-size: 13.5px;
+}
 }
 
 
@@ -267,7 +291,7 @@ form{
 h1{
     text-align: center;
     font-weight: bolder;
-    margin-bottom: 5%;
+    margin-top: auto;
     font-size: 36px;
 }
 
@@ -300,6 +324,7 @@ h1{
     width: 50%;
     background-color: #ffffffec;
     height: auto;
+    padding: 1rem;
 }
 
 .form{
@@ -339,7 +364,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -367,7 +391,7 @@ form{
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
     .container {
     width: 85%;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     }
@@ -375,7 +399,7 @@ form{
 h1{
     text-align: center;
     font-weight: bolder;
-    margin-bottom: 3%;
+    margin-top: auto;
     font-size: 36px;
 }
 
@@ -434,7 +458,7 @@ form{
 }
 
 .input-box input {
-    margin: 0.6rem 0;
+    margin: 0.7rem 0;
     padding: 0.7rem 1.2rem;
     border: none;
     border-radius: 10px;
@@ -448,7 +472,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -468,7 +491,7 @@ form{
 
 .continue-button button {
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #fff;
 }
 }
@@ -486,6 +509,7 @@ h1{
     font-weight: bolder;
     font-size: 36px;
     margin-bottom: 5%;
+    margin-top: auto;
 }
 
 .input-group{
@@ -517,7 +541,7 @@ h1{
     min-width: 50%;
     max-width: 50%;
     background-color: #ffffffec;
-    padding: 3rem;
+    padding: 1rem;
     height: auto;
 }
 
@@ -564,7 +588,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -590,7 +613,7 @@ form{
 }
 
 @media screen and (min-width: 1441px){
-    .container {
+.container {
     width: 80%;
     height: 80vh;
     display: flex;
@@ -601,7 +624,8 @@ h1{
     text-align: center;
     font-weight: bolder;
     margin-bottom: 5%;
-    font-size: 36px;
+    font-size: 42px;
+    margin-top: auto;
 }
 
 .input-group{
@@ -677,7 +701,6 @@ form{
 }
 
 .input-box input:focus-visible {
-    /*outline: 1px solid #6c63ff;*/
     outline: 1px solid var(--azul-escuro);
 }
 
@@ -697,7 +720,10 @@ form{
 
 .continue-button button {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
+}
+.redirect{
+    font-size: 18px;
 }
 }
