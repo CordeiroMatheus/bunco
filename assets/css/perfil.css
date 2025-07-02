@@ -2,5 +2,405 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Inter', serif, sans-serif;
+    font-family: 'Baloo 2', serif, sans-serif;
 }
+:root{
+    --azul-principal: #1CB0F6;
+    --azul-acinzentado: #586892;
+    --azul-escuro: #1453A3;
+    --cor-de-fundo: #0d141f;   
+    --cinza: #4D4D4D;
+    --cinza-escuro: #333333;
+}
+
+body{
+    height: 100%;
+    color: white;
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#settings-container{
+    border-right: 2px solid var(--azul-acinzentado);
+    background-color: var(--cor-de-fundo);
+    width: 20%;
+    height: 100vh;
+}
+
+#settings-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#settings{
+    width: 100%;
+    overflow: auto;
+    flex: 1;
+}
+
+#config-icon{
+    text-align: center;
+}
+
+#titulo{
+    text-align: center;
+    color: var(--azul-principal);
+}
+
+#opcoes-alterar{
+    text-align: center;
+}
+
+.alterar{
+    cursor: pointer;
+}
+
+#opcoes-conta{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#ranking{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#ranking h1{
+    color: yellow;
+}
+
+#ranking img{
+    width: 50px;
+}
+
+#profile-container{
+    flex: 1;
+    background-color: var(--cor-de-fundo);
+}
+
+#profile-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#profile-options{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#alterar-img{
+    cursor: pointer;
+}
+
+#alterar-cor{
+    cursor: pointer;
+}
+
+#names{
+    display: flex;
+    flex-direction: column;
+}
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#profile-container{
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+#profile-user{
+    display: flex;
+    align-items: center;
+}
+
+#profile-status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    flex: 1;
+}
+
+.status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azul-acinzentado);
+}
+
+
+
+/*Modal de alterar*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #2e2e2e;
+    border-radius: 10px;
+    width: 35%;
+    position: relative;
+}
+
+#top-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+    background-color: var(--cinza);
+}
+
+.circles{
+    display: flex;
+}
+
+.circle{
+    margin: 3px;
+}
+
+.circles #red{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(0, 100%, 60%);
+}
+
+.circles #orange{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(39, 100%, 60%);
+}
+
+.circles #green{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(120, 100%, 30%);
+}
+
+#modalTitle{
+    text-align: center;
+    flex: 1;
+}
+
+.campos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 20px;
+}
+
+.campos input{
+    padding: 3px;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;
+}
+
+.campos p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.campos button{
+    border: none;
+    color: #fff;
+    width: 50%;
+    background-color: var(--azul-principal);
+    box-shadow: 2px 2px 0px 1.5px var(--azul-escuro);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.0em;
+    transition: 0.1s ease;
+}
+
+.campos button:active{
+    transform: translateY(6px);
+    box-shadow: 1px 1px 0px 0px var(--azul-escuro);
+}
+
+#prealterar-cor{
+    width: 125px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 60%);
+}
+
+#prealterar-cor img{
+    width: 80%;
+}
+
+#cores{
+    display: flex;
+    justify-content: center;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.opcaocores{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+#prealterar-img{
+    width: 125px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#prealterar-img img{
+    width: 80%;
+}
+
+#imagens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.opcaoimg{
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 90px;
+    border: 1px solid white;
+    background-color: rgb(194, 194, 194);
+}
+
+.opcaoimg img{
+    width: 100%;
+}
+
+
+
+
+/*           Configurações de primeiro desenvolvimento: tela é desktop pequeno               */
+
+#config-icon img{
+    width: 48px;
+}
+
+#profile-info{
+    background-color: var(--azul-acinzentado);
+    padding: 3%;
+    min-height: 30%;
+}
+
+#profile-img{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: hsl(0, 0%, 60%);
+}
+
+#profile-img img{
+    width: 80%;
+}
+
+#names{
+    margin-left: 3%;
+}
+
+.status{
+    width: 30%;
+    height: 75%;
+    padding: 25px;
+    gap: 1em;
+}
+
+.status img{
+    width: 70px;
+    height: 70px;
+}
+
+#xp #numero-xp{
+    color: rgb(76, 0, 121);
+    font-size: 1.3em;
+}
+
+#coracao #numero-vidas{
+    color: red;
+    font-size: 1.3em;
+}
+
+#ofensiva #numero-ofensiva{
+    color: orange;
+    font-size: 1.3em;
+}
+
+
+
+
+
+/*
+@media screen and (max-width: 767px) and (orientation: portrait){
+    
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape){
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px){
+
+}
+
+@media screen and (min-width: 1441px){
+
+}
+*/
