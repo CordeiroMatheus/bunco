@@ -14,7 +14,7 @@ btnExcluir.addEventListener('click', () => {
     .then(data => {
         if (data.sucesso) {
             alert(data.mensagem);
-            window.location.href = "../index.html"; // ou login.html
+            window.location.href = "../index.html";
         } else {
             alert("Erro: " + data.mensagem);
         }
