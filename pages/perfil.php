@@ -12,6 +12,36 @@
     <title>Perfil</title>
   </head>
   <body>
+    <?php session_start(); ?>
+    <?php
+
+      if (!isset($_SESSION["usuario_id"])) {
+
+          header("Location: signin.html");
+          exit;
+      }
+
+      include_once("../api/conexao.php");
+      $conn = conexao();
+
+      $usuario_id = $_SESSION["usuario_id"];
+
+      $sql = "SELECT u.username, u.nome, u.email, u.foto, u.cor, u.link_github, u.link_instagram, u.link_linkedin,
+              st.vidas, st.ofensiva, st.xp
+              FROM usuarios u 
+              INNER JOIN status st ON st.usuario = u.id
+              WHERE u.id = :id";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->bindParam(":id", $usuario_id);
+      $stmt->execute();
+
+      $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if (!$usuario) {
+    die("Usuário não encontrado");
+}
+?>
     <div id="container">
       <div id="settings-container">
         <div id="settings">
@@ -45,15 +75,15 @@
         <div id="profile">
           <div id="profile-info">
             <div id="profile-user">
-              <div id="profile-img">
-                <img src="../assets/img/buncomimo.svg" alt="profile-img" id="img-profile">
+              <div id="profile-img" style="background-color: #<?php echo htmlspecialchars($usuario['cor']); ?>;">
+                <img src="../assets/img/<?php echo htmlspecialchars($usuario['foto']); ?>" alt="profile-img" id="img-profile">
               </div>
               <div id="names">
                 <div id="name">
-                  <h1 id="">Matheus</h1>
+                  <h1 id=""><?php echo htmlspecialchars($usuario['nome']); ?></h1>
                 </div>
                 <div id="username">
-                  <h5 id="">@aronnax</h5>
+                  <h5 id="">@<?php echo htmlspecialchars($usuario['username']); ?></h5>
                 </div>
               </div>
             </div>
@@ -69,17 +99,17 @@
           <div id="profile-status">
             <div id="xp" class="status">
               <img src="../assets/img/icones/xp.svg" alt="user_xp">
-              <div id="numero-xp">500 <span>xp</span></div>
+              <div id="numero-xp"><?php echo $usuario['xp']; ?>  <span>xp</span></div>
               <div>Quantidade de xp</div>
             </div>
             <div id="coracao" class="status">
               <img src="../assets/img/icones/vidas.svg" alt="user_life">
-              <div id="numero-vidas">5 <span>corações</span></div>
+              <div id="numero-vidas"><?php echo $usuario['vidas']; ?>  <span>corações</span></div>
               <div>Quantidade de vidas</div>
             </div>
             <div id="ofensiva" class="status">
               <img src="../assets/img/icones/ofensiva.svg" alt="user_ofensive">
-              <div id="numero-ofensiva">0 <span>dias</span></div>
+              <div id="numero-ofensiva"><?php echo $usuario['ofensiva']; ?> <span>dias</span></div>
               <div>Dias de ofensiva</div>
             </div>
           </div>
@@ -146,8 +176,7 @@
                     </div>
 
                     <div id="imagens">
-                        <div id="buncocavalheiro" class="opcaoimg"><img src="../assets/img/buncocavalheiro.svg" alt="buncocavalheiro">
-                        </div>
+                        <div id="buncocavalheiro" class="opcaoimg"><img src="../assets/img/buncocavalheiro.svg" class="opcaoimagens" alt="buncocavalheiro"></div>
                         <div id="buncolegal" class="opcaoimg"><img src="../assets/img/buncolegal.svg" alt="buncolegal" class="opcaoimagens"></div>
                         <div id="buncoandroid" class="opcaoimg"><img src="../assets/img/buncoandroid.svg" alt="buncoandroid" class="opcaoimagens"></div>
                         <div id="buncoapple" class="opcaoimg"><img src="../assets/img/buncoapple.svg" alt="buncoapple" class="opcaoimagens"></div>
@@ -164,5 +193,7 @@
     <script src="../assets/js/alterardados.js"></script>
     <script src="../assets/js/trocacor.js"></script>
     <script src="../assets/js/trocaimagem.js"></script>
+    <script src="../assets/js/excluir.js"></script>
+    <script src="../assets/js/logout.js"></script>
   </body>
 </html>

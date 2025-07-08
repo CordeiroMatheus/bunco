@@ -1,32 +1,42 @@
 <?php 
+session_start(); // SEMPRE que usar $_SESSION
+
 header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
 try {
-    //Verifica se o username foi passado
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
-    } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "username ausente"]);
+    if (!isset($_SESSION["usuario_id"])) {
+        echo json_encode(["sucesso" => false, "mensagem" => "Usuário não está logado!"]);
         exit;
     }
-    //Deleta o usuário e consequentemente os dados das tabelas com chave estrangeira desse usuário
-    $query = "DELETE FROM usuarios WHERE username = ?";
+
+    $id = $_SESSION["usuario_id"];
+
+    // Deleta o usuário usando o ID corretamente
+    $query = "DELETE FROM usuarios WHERE id = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(1, $username);
+    $stmt->bindParam(1, $id);
     $resultado = $stmt->execute();
-    //Verifica se a deleção deu certo
+
     if ($resultado) {
-        echo json_encode(["sucesso" => "true", "mensagem" => "Usuário excluído com sucesso!"]);
-    }
-    else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao excluir o usuário!"]);
+        // Destrói a sessão, pois o usuário foi excluído
+        session_unset();
+        session_destroy();
+
+        echo json_encode([
+            "sucesso" => true,
+            "mensagem" => "Usuário excluído com sucesso!"
+        ]);
+    } else {
+        echo json_encode([
+            "sucesso" => false,
+            "mensagem" => "Erro ao excluir o usuário!"
+        ]);
     }
 } catch (Exception $e) {
     echo json_encode([
-        "sucesso" => "false",
-        //"mensagem" => "Exceção: " . $e->getMessage()
+        "sucesso" => false,
         "mensagem" => "Erro do servidor! Tente novamente mais tarde!"
     ]);
 }

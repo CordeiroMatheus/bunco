@@ -72,19 +72,127 @@ function confirmarAlteracao(){
         let atual = document.querySelector('#senhaAtual').value
         let nova = document.querySelector('#novaSenha').value
         let confirmar = document.querySelector('#confirmarSenha').value
-        console.log("Senha:", atual, nova, confirmar)
+        if (nova !== confirmar) {
+            alert("A nova senha e a confirmação não coincidem!");
+            return;
+        }
+        fetch("../api/alterarSenha.php",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            credentials: "include",
+            body: `senhaatual=${encodeURIComponent(atual)}&senhanova=${encodeURIComponent(nova)}`
+            
+        })
+        .then(res => res.json())
+        .then(data => {
+        if (data.sucesso === true) {
+            alert(data.mensagem);
+            window.location.reload()
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+        })
+        .catch(err => {
+            alert("Erro na requisição: " + err.message);
+        });
+
     }
-    else if (titulo === "Alterar links"){
+    if (titulo === "Alterar links"){ 
         let github = document.querySelector('#linkGithub').value
         let linkedin = document.querySelector('#linkLinkedin').value
-        let outro = document.querySelector('#linkOutro').value
-        console.log("Links:", github, linkedin, outro)
+        let instagram = document.querySelector('#linkInstagram').value
+        fetch("../api/alterarLinks.php",{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            credentials: "include",
+            body: `github=${encodeURIComponent(github)}&linkedin=${encodeURIComponent(linkedin)}&instagram=${encodeURIComponent(instagram)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+        if (data.sucesso === true) {
+            alert(data.mensagem);
+            window.location.reload()
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+        })
+        .catch(err => {
+            alert("Erro na requisição: " + err.message);
+        });
     }
-    else{
+    if(titulo === "Alterar username"){ 
         let valor = document.querySelector('#modalInput').value
-        console.log(valor)
+        fetch("../api/alterarUsername.php",{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            credentials: "include",
+            body: `usernamenovo=${encodeURIComponent(valor)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+        if (data.sucesso === true) {
+            alert(data.mensagem);
+            window.location.reload()
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+        })
+        .catch(err => {
+            alert("Erro na requisição: " + err.message);
+        });
     }
-    /* código pra alterar no bd fica aí */
+    if(titulo === "Alterar nome"){
+        let valor = document.querySelector('#modalInput').value
+        fetch("../api/alterarNome.php",{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            credentials: "include",
+            body: `nomenovo=${encodeURIComponent(valor)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+        if (data.sucesso === true) {
+            alert(data.mensagem);
+            window.location.reload()
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+        })
+        .catch(err => {
+            alert("Erro na requisição: " + err.message);
+        });
+    }
+    if(titulo === "Alterar email"){
+        let valor = document.querySelector('#modalInput').value
+        fetch("../api/alterarEmail.php",{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            credentials: "include",
+            body: `email=${encodeURIComponent(valor)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+        if (data.sucesso === true) {
+            alert(data.mensagem);
+            window.location.reload()
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+        })
+        .catch(err => {
+            alert("Erro na requisição: " + err.message);
+        });
+    }
 }
 
 function fecharModal(){

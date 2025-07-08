@@ -261,10 +261,6 @@ body{
     background-color: hsl(0, 0%, 60%);
 }
 
-#prealterar-cor img{
-    width: 80%;
-}
-
 #cores{
     display: flex;
     justify-content: center;
@@ -288,10 +284,6 @@ body{
     border: 1px solid black;
     border-radius: 50%;
     background-color: white;
-}
-
-#prealterar-img img{
-    width: 80%;
 }
 
 #imagens{

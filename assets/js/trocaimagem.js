@@ -23,6 +23,27 @@ opcoesimg.forEach(opcao =>{
 })
 
 function confirmarImagem(){
-    document.querySelector('#img-profile').src = prealtimg.src
-    /*código pra alterar no bd*/
+    const novaImagem = prealtimg.src.split('/').pop();
+    
+    fetch('../api/alterarFoto.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        credentials: 'include',
+        body: `foto=${encodeURIComponent(novaImagem)}`
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.sucesso === true){
+            document.querySelector('#img-profile').src = prealtimg.src;
+            alert(data.mensagem)
+            window.location.reload()
+        } else {
+            alert('Erro: ' + data.mensagem);
+        }
+    })
+    .catch(err => {
+        alert('Erro ao alterar imagem: ' + err.message);
+    });
 }
