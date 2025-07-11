@@ -33,7 +33,7 @@ function confirmarCor() {
 
     const corHex = rgbParaHex(novaCor);
 
-    fetch('../api/alterarCor.php', {
+    fetch('../php/alterarCor.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

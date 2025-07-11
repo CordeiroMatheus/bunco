@@ -3,7 +3,7 @@ btnExcluir.addEventListener('click', () => {
     const confirmar = window.confirm("Tem certeza que deseja excluir sua conta?")
     if(!confirmar) return
     
-    fetch("../api/excluir.php", {
+    fetch("../php/excluir.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"

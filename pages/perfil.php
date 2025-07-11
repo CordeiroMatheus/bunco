@@ -21,7 +21,7 @@
           exit;
       }
 
-      include_once("../api/conexao.php");
+      include_once("../php/conexao.php");
       $conn = conexao();
 
       $usuario_id = $_SESSION["usuario_id"];

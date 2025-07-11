@@ -20,5 +20,6 @@ function conexao()
     //Erro caso a conexão der errado
     catch (PDOException $e) {
         echo "Erro ao conectar: " . $e->getMessage();
+        return null;
     }
 }

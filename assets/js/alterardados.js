@@ -76,7 +76,7 @@ function confirmarAlteracao(){
             alert("A nova senha e a confirmação não coincidem!");
             return;
         }
-        fetch("../api/alterarSenha.php",{
+        fetch("../php/alterarSenha.php",{
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -103,7 +103,7 @@ function confirmarAlteracao(){
         let github = document.querySelector('#linkGithub').value
         let linkedin = document.querySelector('#linkLinkedin').value
         let instagram = document.querySelector('#linkInstagram').value
-        fetch("../api/alterarLinks.php",{
+        fetch("../php/alterarLinks.php",{
             method: "POST",
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -126,7 +126,7 @@ function confirmarAlteracao(){
     }
     if(titulo === "Alterar username"){ 
         let valor = document.querySelector('#modalInput').value
-        fetch("../api/alterarUsername.php",{
+        fetch("../php/alterarUsername.php",{
             method: "POST",
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -149,7 +149,7 @@ function confirmarAlteracao(){
     }
     if(titulo === "Alterar nome"){
         let valor = document.querySelector('#modalInput').value
-        fetch("../api/alterarNome.php",{
+        fetch("../php/alterarNome.php",{
             method: "POST",
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -172,7 +172,7 @@ function confirmarAlteracao(){
     }
     if(titulo === "Alterar email"){
         let valor = document.querySelector('#modalInput').value
-        fetch("../api/alterarEmail.php",{
+        fetch("../php/alterarEmail.php",{
             method: "POST",
             headers:{
                 "Content-Type": "application/x-www-form-urlencoded"

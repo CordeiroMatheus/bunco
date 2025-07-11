@@ -25,7 +25,7 @@ opcoesimg.forEach(opcao =>{
 function confirmarImagem(){
     const novaImagem = prealtimg.src.split('/').pop();
     
-    fetch('../api/alterarFoto.php', {
+    fetch('../php/alterarFoto.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

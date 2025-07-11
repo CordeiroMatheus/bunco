@@ -1,7 +1,5 @@
 <?php
 
-// Configurações padrão do código
-header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
@@ -35,8 +33,13 @@ try {
 
     //Se o login e senha estão corretos
 if ($resultado) {
-    $resultado["sucesso"] = "true";
-    echo json_encode($resultado);
+    session_start();
+    $_SESSION["usuario_id"] = $resultado["id"];
+    $_SESSION["nome"] = $resultado["nome"];
+    $_SESSION["username"] = $resultado["username"];
+    
+    header("Location: ../pages/perfil.php");
+    exit;
 } else {
     echo json_encode([
         "sucesso" => "false",
@@ -47,7 +50,7 @@ if ($resultado) {
 catch (Exception $e) {
     echo json_encode([
         "sucesso" => "false",
-        "mensagem" => "Erro no servidor"
+        "mensagem" => $e->getMessage()
     ]);
 }
 
