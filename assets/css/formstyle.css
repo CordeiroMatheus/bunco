@@ -22,6 +22,10 @@ body {
     align-items: center;
     background: hsl(217, 41%, 12%);
 }
+body{
+    max-width: 2000px;
+    margin: 0 auto;
+}
 h1 {
     font-family: 'Baloo 2', serif, sans-serif;
 }
@@ -42,6 +46,12 @@ h1 {
 .redirect span{
     font-weight: 1000;
     text-decoration: underline;
+}
+#opcaosenha{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    cursor: pointer;
 }
 
 
@@ -618,6 +628,8 @@ form{
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    max-width: 1800px;
+    max-height: 900px;
     }
 
 h1{

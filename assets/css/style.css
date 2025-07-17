@@ -19,6 +19,8 @@ body{
     overflow: auto;
     background-color: #0d141f;
     color: white;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait){

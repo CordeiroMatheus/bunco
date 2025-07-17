@@ -53,4 +53,3 @@ catch (Exception $e) {
         "mensagem" => $e->getMessage()
     ]);
 }
-

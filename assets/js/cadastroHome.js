@@ -8,7 +8,7 @@ document.getElementById('btnCadastro').addEventListener('click', function(e) {
             const nome = document.getElementById('nomeusuariotxt').value.trim();
             const username = document.getElementById('apelidotxt').value.trim();
             const email = document.getElementById('emailtxt').value.trim();
-            const senha = document.getElementById('senhatxt').value.trim();
+            const senha = document.getElementById('senha').value.trim();
 
             if (!nome || !username || !email || !senha) {
             alert("Preencha todos os campos!")

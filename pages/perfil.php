@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" href="../assets/img/buncosilhueta.svg">
     <link rel="stylesheet" href="../assets/css/perfil.css">
     <title>Perfil</title>
@@ -68,6 +69,8 @@
           </div>
           <div id="ranking">
             <h1><img src="../assets/img/icones/Troféu.svg" alt="">Ranking</h1>
+            <div id="posicao-usuario"></div>
+            <ol id="lista-ranking"></ol>
           </div>
         </div>
       </div>
@@ -132,9 +135,9 @@
           </div>
 
           <div id="camposenha" class="campos">
-            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual"></p>
-            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha"></p>
-            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha"></p>
+            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
             <p><button onclick="confirmarAlteracao()">Confirmar</button></p>
           </div>
 
@@ -195,5 +198,6 @@
     <script src="../assets/js/trocaimagem.js"></script>
     <script src="../assets/js/excluir.js"></script>
     <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/mostrarsenhaperfil.js"></script>
   </body>
 </html>
