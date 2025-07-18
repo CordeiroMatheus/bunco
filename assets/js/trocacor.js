@@ -4,6 +4,7 @@ document.querySelector('#alterar-cor').onclick = () => {
     document.querySelector('#campolink').style.display = "none"
     document.querySelector('#camposenha').style.display = "none"
     document.querySelector('#campoimagem').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "none"
     document.querySelector('.modal-overlay').style.display = "flex"
     document.querySelector('#campocor').style.display = "flex"
     document.querySelector('.modal').style.width = "30%"
@@ -24,11 +25,11 @@ cores.forEach(cor =>
 
 
 function confirmarCor() {
-    const novaCor = preimg.style.backgroundColor;
+    const novaCor = preimg.style.backgroundColor
 
     function rgbParaHex(rgb) {
-        const result = rgb.match(/\d+/g).map(x => parseInt(x).toString(16).padStart(2, '0'));
-        return result ? result.join('').toUpperCase() : null;
+        const result = rgb.match(/\d+/g).map(x => parseInt(x).toString(16).padStart(2, '0'))
+        return result ? result.join('').toUpperCase() : null
     }
 
     const corHex = rgbParaHex(novaCor);
@@ -44,15 +45,14 @@ function confirmarCor() {
     .then(res => res.json()) 
     .then(data => {
         if (data.sucesso === true) {
-            document.querySelector('#profile-img').style.backgroundColor = `#${corHex}`;
-            alert(data.mensagem);
-            window.location.reload()
+            document.querySelector('#profile-img').style.backgroundColor = `#${corHex}`
+            abrirModalAviso(data.mensagem)
         } else {
-            throw new Error(data.mensagem);
+            throw new Error(data.mensagem)
         }
     })
     .catch(err => {
-        console.error("Erro completo:", err);
-        alert(`Erro ao atualizar a cor:\n${err.message}`);
+        console.error("Erro completo:", err)
+        abrirModalAviso(err.message)
     });
 }

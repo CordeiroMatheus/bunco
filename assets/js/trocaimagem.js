@@ -6,6 +6,7 @@ document.querySelector('#alterar-img').onclick = () => {
     document.querySelector('#campolink').style.display = "none"
     document.querySelector('#camposenha').style.display = "none"
     document.querySelector('#campocor').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "none"
     document.querySelector('.modal-overlay').style.display = "flex"
     document.querySelector('#campoimagem').style.display = "flex"
     document.querySelector('#prealterar-img').style.backgroundColor = corAtual
@@ -23,7 +24,7 @@ opcoesimg.forEach(opcao =>{
 })
 
 function confirmarImagem(){
-    const novaImagem = prealtimg.src.split('/').pop();
+    const novaImagem = prealtimg.src.split('/').pop().split('.')[0]
     
     fetch('../php/alterarFoto.php', {
         method: 'POST',
@@ -36,14 +37,13 @@ function confirmarImagem(){
     .then(res => res.json())
     .then(data => {
         if(data.sucesso === true){
-            document.querySelector('#img-profile').src = prealtimg.src;
-            alert(data.mensagem)
-            window.location.reload()
+            document.querySelector('#img-profile').src = prealtimg.src
+            abrirModalAviso(data.mensagem)
         } else {
-            alert('Erro: ' + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
     })
     .catch(err => {
-        alert('Erro ao alterar imagem: ' + err.message);
+        abrirModalAviso(err.message)
     });
 }

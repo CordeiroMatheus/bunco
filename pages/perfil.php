@@ -79,7 +79,7 @@
           <div id="profile-info">
             <div id="profile-user">
               <div id="profile-img" style="background-color: #<?php echo htmlspecialchars($usuario['cor']); ?>;">
-                <img src="../assets/img/<?php echo htmlspecialchars($usuario['foto']); ?>" alt="profile-img" id="img-profile">
+                <img src="../assets/img/<?php echo htmlspecialchars($usuario['foto'].'.svg'); ?>" alt="profile-img" id="img-profile">
               </div>
               <div id="names">
                 <div id="name">
@@ -189,6 +189,12 @@
                     </div>
                     <button onclick="confirmarImagem()">Confirmar</button>
             </div>
+
+            <div id="campoaviso" class="campos">
+                <p id="aviso"></p>
+                <button onclick="confirmarAviso()">Ok</button>
+            </div>
+            
         </div>
       </div>
 

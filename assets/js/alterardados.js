@@ -1,4 +1,3 @@
-let icones = document.querySelector('#icon')
 let opcoesAlterar = document.querySelectorAll('.alterar')
 opcoesAlterar.forEach(
     opcao => {
@@ -26,9 +25,6 @@ opcoesAlterar.forEach(
     }
 )
 
-let alterarNome = document.querySelector('#alterar-nome')
-let btn = alterarNome.addEventListener('click', abrirModal())
-
 function abrirModal(titulo){
     document.querySelector('#modalTitle').textContent = titulo
     let input = document.querySelector('#modalInput')
@@ -39,6 +35,7 @@ function abrirModal(titulo){
     document.querySelector('#campolink').style.display = "none"
     document.querySelector('#campocor').style.display = "none"
     document.querySelector('#campoimagem').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "none"
     document.querySelector('.modal').style.width = "30%"
 }
 
@@ -50,6 +47,7 @@ function abrirModalSenha(){
     document.querySelector('#campolink').style.display = "none"
     document.querySelector('#campocor').style.display = "none"
     document.querySelector('#campoimagem').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "none"
     document.querySelector('.modal').style.width = "30%"
     
 }
@@ -62,9 +60,25 @@ function abrirModalLinks(){
     document.querySelector('#camposenha').style.display = "none"
     document.querySelector('#campocor').style.display = "none"
     document.querySelector('#campoimagem').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "none"
     document.querySelector('.modal').style.width = "30%"
     
 }
+
+function abrirModalAviso(mensagem){
+    document.querySelector('#modalTitle').textContent = "Aviso"
+    document.querySelector('.modal-overlay').style.display = "flex"
+    document.querySelector('#campopadrao').style.display = "none"
+    document.querySelector('#camposenha').style.display = "none"
+    document.querySelector('#campolink').style.display = "none"
+    document.querySelector('#campocor').style.display = "none"
+    document.querySelector('#campoimagem').style.display = "none"
+    document.querySelector('#campoaviso').style.display = "flex"
+
+    document.querySelector('#aviso').textContent = mensagem
+    document.querySelector('.modal').style.width = "30%"
+}
+
 
 function confirmarAlteracao(){
     let titulo = document.querySelector('#modalTitle').textContent
@@ -73,8 +87,8 @@ function confirmarAlteracao(){
         let nova = document.querySelector('#novaSenha').value
         let confirmar = document.querySelector('#confirmarSenha').value
         if (nova !== confirmar) {
-            alert("A nova senha e a confirmação não coincidem!");
-            return;
+            alert("A nova senha e a confirmação não coincidem!")
+            return
         }
         fetch("../php/alterarSenha.php",{
             method: "POST",
@@ -88,15 +102,14 @@ function confirmarAlteracao(){
         .then(res => res.json())
         .then(data => {
         if (data.sucesso === true) {
-            alert(data.mensagem);
-            window.location.reload()
+            abrirModalAviso(data.mensagem)
         } else {
-            alert("Erro: " + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
         })
         .catch(err => {
-            alert("Erro na requisição: " + err.message);
-        });
+            abrirModalAviso(err.message)
+        })
 
     }
     if (titulo === "Alterar links"){ 
@@ -114,15 +127,14 @@ function confirmarAlteracao(){
         .then(res => res.json())
         .then(data => {
         if (data.sucesso === true) {
-            alert(data.mensagem);
-            window.location.reload()
+            abrirModalAviso(data.mensagem)
         } else {
-            alert("Erro: " + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
         })
         .catch(err => {
-            alert("Erro na requisição: " + err.message);
-        });
+            abrirModalAviso(err.message)
+        })
     }
     if(titulo === "Alterar username"){ 
         let valor = document.querySelector('#modalInput').value
@@ -137,15 +149,14 @@ function confirmarAlteracao(){
         .then(res => res.json())
         .then(data => {
         if (data.sucesso === true) {
-            alert(data.mensagem);
-            window.location.reload()
+            abrirModalAviso(data.mensagem)
         } else {
-            alert("Erro: " + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
         })
         .catch(err => {
-            alert("Erro na requisição: " + err.message);
-        });
+            abrirModalAviso(err.message)
+        })
     }
     if(titulo === "Alterar nome"){
         let valor = document.querySelector('#modalInput').value
@@ -160,15 +171,14 @@ function confirmarAlteracao(){
         .then(res => res.json())
         .then(data => {
         if (data.sucesso === true) {
-            alert(data.mensagem);
-            window.location.reload()
+            abrirModalAviso(data.mensagem)
         } else {
-            alert("Erro: " + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
         })
         .catch(err => {
-            alert("Erro na requisição: " + err.message);
-        });
+            abrirModalAviso(err.message)
+        })
     }
     if(titulo === "Alterar email"){
         let valor = document.querySelector('#modalInput').value
@@ -183,20 +193,25 @@ function confirmarAlteracao(){
         .then(res => res.json())
         .then(data => {
         if (data.sucesso === true) {
-            alert(data.mensagem);
-            window.location.reload()
+            abrirModalAviso(data.mensagem)
         } else {
-            alert("Erro: " + data.mensagem);
+            abrirModalAviso(data.mensagem)
         }
         })
         .catch(err => {
-            alert("Erro na requisição: " + err.message);
-        });
+            abrirModalAviso(err.message)
+        })
     }
 }
 
 function fecharModal(){
+    document.querySelectorAll('input').forEach(input => {
+        if(input.type === "text" || input.type === "password" || input.type === "email"){
+        input.value = ""
+    }})
     document.querySelector('.modal-overlay').style.display = "none"
 }
 
-fecharModal()
+function confirmarAviso(){
+    window.location.reload()
+}
