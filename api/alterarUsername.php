@@ -27,7 +27,7 @@ try {
     
     //Verifica se a atualização do username deu certo
     if ($resultado) {
-        echo json_encode(["sucesso" => "true", "mensagem" => "Username alterado com sucesso! Você será deslogado para os dados serem atualizados!"]);
+        echo json_encode(["sucesso" => "true", "mensagem" => "Username alterado com sucesso!"]);
     }
     else {
         echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao alterar o username do usuário!"]);

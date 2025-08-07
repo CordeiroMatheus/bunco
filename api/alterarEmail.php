@@ -27,7 +27,7 @@ try {
     
     //Verifica se a atualização do nome deu certo
     if ($resultado) {
-        echo json_encode(["sucesso" => "true", "mensagem" => "Email alterado com sucesso! Você será deslogado para os dados serem atualizados!"]);
+        echo json_encode(["sucesso" => "true", "mensagem" => "Email alterado com sucesso!"]);
     }
     else {
         echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao alterar o email do usuário!"]);

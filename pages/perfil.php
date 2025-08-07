@@ -157,9 +157,9 @@
           </div>
 
           <div id="camposenha" class="campos">
-            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
-            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
-            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
             <p><button onclick="confirmarAlteracao()" id="botaoConfirmarSenha">Confirmar</button></p>
           </div>
 

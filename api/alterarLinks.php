@@ -42,7 +42,7 @@ try {
     $resultado = $stmt->execute();
 
     if ($resultado) {
-        echo json_encode(["sucesso" => "true", "mensagem" => "Links alterados com sucesso! Você será deslogado para os dados serem atualizados!"]);
+        echo json_encode(["sucesso" => "true", "mensagem" => "Links alterados com sucesso!"]);
     }
     else {
         echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao alterar os links do usuário!"]);

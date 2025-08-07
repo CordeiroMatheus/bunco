@@ -46,7 +46,7 @@ try {
     $resultado = $stmt->execute();
 
     if ($resultado) {
-        echo json_encode(["sucesso" => "true", "mensagem" => "Senha alterada com sucesso! Você será deslogado para os dados serem atualizados!"]);
+        echo json_encode(["sucesso" => "true", "mensagem" => "Senha alterada com sucesso!"]);
     }
     else {
         echo json_encode(["sucesso" => "false", "mensagem" => "Erro ao alterar a senha do usuário!"]);

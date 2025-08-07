@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.innerHTML = `
           <div class="usuario-ranking" style="display: flex; align-items: center; gap: 10px;">
             <span><strong>#${index + 1}</strong></span>
-            <span style="color: #fff">${usuario.username}</span>
+            <span style="color: #fff">${usuario.nome}</span>
             <span>XP: ${usuario.xp}</span>
           </div>
         `
