@@ -11,19 +11,20 @@ try {
         echo json_encode(["sucesso" => "false", "mensagem" => "Usuário não está logado!"]);
         exit;
     }
-    if (isset($_POST["id"])) {
-        $id = $_POST["id"];
+    if (isset($_POST["username"])) {
+        $username = $_POST["username"];
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o username novo!"]);
         exit;
     }
 
     //Atualiza o username do usuário
-    $query = "UPDATE usuarios SET username = ? WHERE id = ?";
+    $query = "UPDATE usuarios SET username = ? WHERE username = ?";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $usernamenovo);
-    $stmt->bindParam(2, $id);
+    $stmt->bindParam(2, $username);
     $resultado = $stmt->execute();
+    $linhasAfetadas = $stmt->rowCount();
     
     //Verifica se a atualização do username deu certo
     if ($resultado) {
