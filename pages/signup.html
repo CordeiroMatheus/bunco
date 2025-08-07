@@ -15,6 +15,22 @@
 </head>
 
 <body>
+    <div class="modal-overlay" id="modalOverlay" onclick="fecharModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+          <div id="top-modal">
+            <div class="circles">
+                <div id="red" class="circle"></div>
+                <div id="orange" class="circle"></div>
+                <div id="green" class="circle"></div>
+            </div>
+            <h2 id="modalTitle">Aviso</h2>
+          </div>
+          <div id="campoaviso" class="campos">
+            <p id="aviso"></p>
+            <button onclick="confirmarAviso()">Ok</button>
+          </div>
+        </div>
+    </div>
     <div class="container">
         <div class="signup-image">
         </div>

@@ -5,10 +5,10 @@ include_once("conexao.php");
 $conn = conexao();
 
 try {
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
+    if (isset($_SESSION["usuario_id"])) {
+    $id = $_SESSION["usuario_id"];
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "Usuário não está logado!"]);
+        echo json_encode(["sucesso" => false, "mensagem" => "Usuário não está logado!"]);
         exit;
     }
 
@@ -19,17 +19,18 @@ try {
     $primeiros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Pega o XP do usuário atual
-    $sql = "SELECT st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id WHERE u.username = :username";
+    $sql = "SELECT u.username, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id WHERE u.id = :id";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":id", $id);
     $stmt->execute();
     $dadosUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$dadosUsuario) {
-        echo json_encode(["sucesso" => "false", "mensagem" => "Usuário não encontrado no ranking!"]);
+        echo json_encode(["sucesso" => false, "mensagem" => "Usuário não encontrado no ranking!"]);
         exit;
     }
 
+    $username = $dadosUsuario['username'];
     $xpUsuario = (int)$dadosUsuario['xp'];
 
     // Conta quantos usuários têm mais XP que o usuário atual
@@ -50,7 +51,7 @@ try {
 
 } catch (Exception $e) {
     echo json_encode([
-        "sucesso" => "false",
+        "sucesso" => false,
         "mensagem" => "Exceção: " . $e->getMessage()
         //"mensagem" => "Erro do servidor! Tente novamente mais tarde!"
     ]);

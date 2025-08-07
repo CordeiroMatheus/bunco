@@ -41,15 +41,10 @@ if ($resultado) {
     header("Location: ../pages/perfil.php");
     exit;
 } else {
-    echo json_encode([
-        "sucesso" => "false",
-        "mensagem" => "Usuário ou senha inválidos"
-    ]);
+    header("Location: ../pages/signin.html?erro=1");
+    exit;
 }
 } 
 catch (Exception $e) {
-    echo json_encode([
-        "sucesso" => "false",
-        "mensagem" => $e->getMessage()
-    ]);
+    header("Location: ../pages/login.html?erro=4");
 }

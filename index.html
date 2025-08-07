@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -29,6 +30,22 @@
       </nav>
     </header>
     <main>
+      <div class="modal-overlay" id="modalOverlay" onclick="fecharModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+          <div id="top-modal">
+            <div class="circles">
+                <div id="red" class="circle"></div>
+                <div id="orange" class="circle"></div>
+                <div id="green" class="circle"></div>
+            </div>
+            <h2 id="modalTitle">Aviso</h2>
+          </div>
+          <div id="campoaviso" class="campos">
+            <p id="aviso"></p>
+            <button onclick="confirmarAviso()">Ok</button>
+          </div>
+        </div>
+      </div>
       <div id="background"></div>
       <div id="form-section">
         <div id="form">
@@ -43,29 +60,30 @@
             </div>
                         
             <div id="campos">
-              <p>
+              <div>
                 <i class="fas fa-user"></i>
                 <input type="text" name="nome" id="nomeusuariotxt" class="input" placeholder="Digite seu nome" required>
-              </p>
+              </div>
 
-              <p>
+              <div>
                 <i class="fas fa-user-circle"></i>
                 <input type="text" name="username" id="apelidotxt" class="input" placeholder="Nome de usuário" required>
-              </p>
+              </div>
 
-              <p>
+              <div>
                 <i class="fas fa-envelope"></i>
                 <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com" required>
-              </p>
+              </div>
 
-              <p id="senhatxt">
+              <div id="senhatxt">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="senha" id="senha" class="input" placeholder="Digite sua senha" required>
-              </p>
+                <p id="opcaosenha"><i class="fa-solid fa-eye" id="openedeye"></i><i class="fa-solid fa-eye-slash" id="closedeye"></i></p>
+              </div>
 
-              <p>
+              <div>
                 <input type="button" value="Criar" id="btnCadastro">
-              </p>
+              </div>
             </div>
           </form>
         </div>
@@ -308,5 +326,6 @@
     <script src="assets/js/btnsignup.js"></script>
     <script src="assets/js/btnsignin.js"></script>
     <script src="assets/js/formtext.js"></script>
+    <script src="assets/js/mostrarsenha.js"></script>
   </body>
 </html>

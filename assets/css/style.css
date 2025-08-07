@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;  
 }
+
 *, *::before, *::after{
     box-sizing: border-box;
 }
@@ -21,6 +22,142 @@ body{
     color: white;
     max-width: 2000px;
     margin: 0 auto;
+}
+
+#senhatxt{
+    position: relative;
+}
+
+#opcaosenha{
+    position: absolute;
+    top: 30%;
+    right: 17%;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+}
+
+#form form input[type="button"]{
+    padding: 6px 0px;
+    background-color: var(--azul-principal);
+    color: #fff;
+    font-weight: bolder;
+    box-shadow: 1px 2px 0px 1px var(--azul-escuro);
+    border-radius: 20px;
+    width: 40%;
+    font-family: 'Baloo 2', 'times new roman';
+    font-size: 18px;
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
+}
+
+#form form input[type="button"]:active{
+    box-shadow: 0.5px 1.5px 0px var(--azul-escuro);
+    transform: translateY(4px);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.modal {
+    background: #2e2e2e;
+    border-radius: 10px;
+    width: 35%;
+    position: relative;
+    /*Alterar essas duas linhas debaixo mais pra frente*/
+    max-width: 500px;
+    min-width: 400px;
+    text-align: center;
+    z-index: 2;
+}
+
+#top-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+    background-color: var(--cinza);
+}
+
+.circles{
+    display: flex;
+}
+
+.circle{
+    margin: 3px;
+}
+
+.circles #red{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(0, 100%, 60%);
+}
+
+.circles #orange{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(39, 100%, 60%);
+}
+
+.circles #green{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: hsl(120, 100%, 30%);
+}
+
+#modalTitle{
+    text-align: center;
+    flex: 1;
+}
+
+.campos p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.campos button{
+    border: none;
+    color: #fff;
+    width: 50%;
+    background-color: var(--azul-principal);
+    box-shadow: 2px 2px 0px 1.5px var(--azul-escuro);
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 1.0em;
+    transition: 0.1s ease;
+    margin-bottom: 10%;
+}
+
+.campos button:active{
+    transform: translateY(6px);
+    box-shadow: 1px 1px 0px 0px var(--azul-escuro);
+}
+
+#aviso{
+    text-align: center;
+    font-size: 18px;
+    padding: 30px;
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait){
@@ -249,7 +386,13 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#opcaosenha{
+    position: absolute;
+    top: 30%;
+    right: 20%;
+}
+
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -264,12 +407,6 @@ nav button{
     margin-top: 3%;
     cursor: pointer;
     padding: 4px;
-}
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
 }
 
 #card-section #title{
@@ -794,7 +931,7 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -808,13 +945,7 @@ nav button{
 #form form input[type="button"]{
     margin-top: 3%;
     cursor: pointer;
-    padding: 4px;
-}
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
+    padding: 3px;
 }
 
 #card-section #title{
@@ -1314,7 +1445,7 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -1328,13 +1459,6 @@ nav button{
 #form form input[type="button"]{
     margin-top: 3%;
     cursor: pointer;
-    padding: 4px;
-}
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
 }
 
 #form form p:last-child{
@@ -1930,7 +2054,7 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -1944,13 +2068,6 @@ nav button{
 #form form input[type="button"]{
     margin-top: 3%;
     cursor: pointer;
-    padding: 4px;
-}
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
 }
 
 #form form p:last-child{
@@ -2554,7 +2671,7 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -2568,17 +2685,8 @@ nav button{
 #form form input[type="button"]{
     margin-top: 3%;
     cursor: pointer;
-    padding: 5px;
+    width: 55%;
 }
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
-}
-
-
-
 
 #form form p:last-child{
     display: flex;
@@ -3207,7 +3315,7 @@ nav button{
     color: white;
 }
 
-#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="button"]:focus{
+#form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     outline: 1px solid black;
     transition: outline 0.3s ease;
 }
@@ -3221,13 +3329,6 @@ nav button{
 #form form input[type="button"]{
     margin-top: 3%;
     cursor: pointer;
-    padding: 6px;
-}
-
-#form form input[type="button"]{
-    background-color: var(--azul-principal);
-    color: var(--cinza-escuro);
-    font-weight: bolder;
 }
 
 #form form p:last-child{

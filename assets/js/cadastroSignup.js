@@ -1,3 +1,14 @@
+function abrirModalAvisoCadastro(mensagem){
+    document.querySelector('#modalOverlay').style.display = "flex"
+    document.querySelector('#modalTitle').textContent = "Aviso"
+    document.querySelector('#aviso').textContent = mensagem
+    document.querySelector('.modal').style.width = "30%"
+}
+
+function confirmarAviso(){
+    window.location.reload()
+}
+
 document.getElementById('formCadastro').addEventListener('submit', function(e) {
     e.preventDefault(); // Impede o envio tradicional do formulário
     
@@ -9,23 +20,23 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 
     // Validações
     if (!nome || !username || !email || !senha) {
-        alert("Preencha todos os campos!");
+        abrirModalAvisoCadastro("Preencha todos os campos!");
         return;
     }
 
     if (username.includes(' ')) {
-        alert("Username não pode conter espaços!");
+        abrirModalAvisoCadastro("Username não pode conter espaços!");
         return;
     }
 
     const regex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
     if (!regex.test(email)) {
-        alert("Digite um email válido!");
+        abrirModalAvisoCadastro("Digite um email válido!");
         return;
     }
 
     if (nome.length < 4 || username.length < 4) {
-        alert("Nome e username precisam ter no mínimo 4 caracteres");
+        abrirModalAvisoCadastro("Nome e username precisam ter no mínimo 4 caracteres");
         return;
     }
     
@@ -47,16 +58,16 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     .then(data => {
         // Mostrar mensagem de acordo com a resposta
         if(data.sucesso === "true") {
-            alert("Cadastro feito com sucesso!");
+            abrirModalAvisoCadastro("Cadastro feito com sucesso!");
             
             // Limpar formulário
             this.reset();
         } else {
-            alert(data.mensagem || "Erro desconhecido no cadastro");
+            abrirModalAvisoCadastro(data.mensagem || "Erro desconhecido no cadastro");
         }
     })
     .catch(error => {
         console.error('Erro:', error);
-        alert(`Erro na comunicação com o servidor: ${error.message}`);
+        abrirModalAvisoCadastro(`Erro na comunicação com o servidor: ${error.message}`);
     });
 });

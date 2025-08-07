@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../pages/signin.html")
+header("Location: ../index.html")
 ?>

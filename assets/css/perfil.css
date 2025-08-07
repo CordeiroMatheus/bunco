@@ -8,12 +8,12 @@
     --azul-principal: #1CB0F6;
     --azul-acinzentado: #586892;
     --azul-escuro: #1453A3;
-    --cor-de-fundo: #0d141f;   
+    --cor-de-fundo: #0d141f;
     --cinza: #4D4D4D;
     --cinza-escuro: #333333;
 }
 
-body{
+html, body{
     height: 100%;
     color: white;
     background-color: var(--cor-de-fundo);
@@ -31,7 +31,7 @@ body{
 }
 
 #settings-container{
-    border-right: 2px solid var(--azul-acinzentado);
+    border-right: 2px solid var(--azul-principal);
     background-color: var(--cor-de-fundo);
     width: 20%;
     height: 100vh;
@@ -72,17 +72,13 @@ body{
     text-align: center;
 }
 
-#ranking{
-    text-align: center;
-    margin-top: 10%;
-}
 
-#ranking h1{
-    color: yellow;
-}
 
-#ranking img{
-    width: 50px;
+#lista-ranking{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
 }
 
 #profile-container{
@@ -91,10 +87,13 @@ body{
 }
 
 #profile-info{
+    padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid var(--azul-principal);
     width: 100%;
+    max-height: 30vh;
 }
 
 #profile-options{
@@ -137,10 +136,19 @@ body{
 
 #profile-status{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5%;
+    justify-content: space-around;
     flex: 1;
+    margin: 2%;
+    max-height: 65vh;
+}
+
+#status-container{
+    width: 30%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
 }
 
 .status{
@@ -148,7 +156,72 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--azul-acinzentado);
+    background-color: hsl(210, 15%, 30%);
+    box-shadow: 2px 3px 5px 2px var(--cinza);
+    border-radius: 20px;
+}
+
+#medal-container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
+
+
+#title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    margin-bottom: 3%;
+    background-color: var(--cinza);
+}
+
+#medals-container{
+    background-color: var(--cinza);
+    width: 100%;
+    display: flex;
+    padding: 5%;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.medals{
+    width: 55px;
+    height: 55px;
+    margin: 3%;
+    border-radius: 50%;
+    background-color: var(--cinza-escuro);
+}
+
+#ranking-container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
+
+#ranking{
+    text-align: center;
+    background-color: var(--cinza);
+    flex: 1;
+}
+
+#ranking h1{
+    color: yellow;
+}
+
+#posicao-usuario{
+    margin-top: 3%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: var(--cinza);
 }
 
 
@@ -170,7 +243,7 @@ body{
     width: 35%;
     position: relative;
     /*Alterar essas duas linhas debaixo mais pra frente*/
-    max-width: 400px;
+    max-width: 500px;
     min-width: 400px;
 }
 
@@ -276,13 +349,17 @@ body{
 }
 
 #prealterar-cor{
-    width: 125px;
-    height: 125px;
+    width: 135px;
+    height: 135px;
     display: flex;
     justify-content: center;
     border: 1px solid black;
     border-radius: 50%;
     background-color: hsl(0, 0%, 60%);
+}
+
+#prealterar-cor img{
+    width: 70%;
 }
 
 #cores{
@@ -301,13 +378,17 @@ body{
 }
 
 #prealterar-img{
-    width: 125px;
-    height: 125px;
+    width: 135px;
+    height: 135px;
     display: flex;
     justify-content: center;
     border: 1px solid black;
     border-radius: 50%;
     background-color: white;
+}
+
+#prealterar-img img{
+    width: 70%;
 }
 
 #imagens{
@@ -321,81 +402,31 @@ body{
 .opcaoimg{
     display: flex;
     align-items: center;
-    width: 60px;
-    height: 90px;
-    border: 1px solid white;
-    background-color: rgb(194, 194, 194);
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--cinza);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .opcaoimg img{
-    width: 100%;
-}
-
-
-
-
-/*           Configurações de primeiro desenvolvimento: tela é desktop pequeno               */
-
-#config-icon img{
-    width: 48px;
-}
-
-#profile-info{
-    background-color: var(--azul-acinzentado);
-    padding: 3%;
-    min-height: 30%;
-}
-
-#profile-img{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid black;
-    background-color: hsl(0, 0%, 60%);
-}
-
-#profile-img img{
-    width: 80%;
-}
-
-#names{
-    margin-left: 3%;
-}
-
-.status{
-    width: 30%;
-    height: 75%;
-    padding: 25px;
-    gap: 1em;
-}
-
-.status img{
-    width: 70px;
-    height: 70px;
+    width: 90%;
+    height: 90%;
 }
 
 #xp #numero-xp{
     color: rgb(76, 0, 121);
-    font-size: 1.3em;
 }
 
 #coracao #numero-vidas{
     color: red;
-    font-size: 1.3em;
 }
 
 #ofensiva #numero-ofensiva{
     color: orange;
-    font-size: 1.3em;
 }
 
 
-
-
-
-/*
 @media screen and (max-width: 767px) and (orientation: portrait){
     
 }
@@ -414,9 +445,170 @@ body{
 
 @media screen and (min-width: 1025px) and (max-width: 1440px){
 
+#config-icon img{
+    width: 48px;
 }
+
+#profile-img{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: hsl(0, 0%, 60%);
+}
+
+#profile-img img{
+    width: 65%;
+}
+
+#names{
+    margin-left: 3%;
+}
+
+.status{
+    width: 100%;
+    height: 33%;
+    padding: 25px;
+}
+
+.status img{
+    width: 40px;
+    height: 40px;
+}
+
+#xp #numero-xp{
+    font-size: 1.2em;
+}
+
+#coracao #numero-vidas{
+    font-size: 1.2em;
+}
+
+#ofensiva #numero-ofensiva{
+    font-size: 1.2em;
+}
+
+#ranking{
+    padding: 10px;
+}
+
+#ranking img{
+    width: 50px;
+}
+
+#posicao-usuario{
+    text-align: center;
+    font-size: 0.9em;
+}
+}
+
 
 @media screen and (min-width: 1441px){
-
-}
+/*
+Separação de classes e Id's para estilização 
 */
+
+/*barra de alteração lateral*/
+#config-icon img{
+    width: 48px;
+}
+
+#settings #titulo{
+    font-size: 32px;
+}
+
+#settings{
+    font-size: 22px;
+}
+
+#settings input{
+    font-size: 18px;
+}
+
+/*Infos do perfil*/
+
+#profile-img{
+    width: 175px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: hsl(0, 0%, 60%);
+}
+
+#profile-img img{
+    width: 65%;
+}
+
+#names{
+    margin-left: 3%;
+    font-size: 1.2em;
+}
+
+/*Medalhas*/
+
+#title-container{
+    font-size: 1.3em;
+}
+
+.medals{
+    width: 70px;
+    height: 70px;
+    margin: 3%;
+    border-radius: 50%;
+    background-color: var(--cinza-escuro);
+}
+
+/*Status*/
+
+.status{
+    width: 100%;
+    height: 33%;
+    padding: 25px;
+    gap: 1em;
+}
+
+.status img{
+    width: 70px;
+    height: 70px;
+}
+
+.status div{
+    font-size: 1.2em;
+}
+
+#xp #numero-xp{
+    font-size: 1.5em;
+}
+
+#coracao #numero-vidas{
+    font-size: 1.5em;
+}
+
+#ofensiva #numero-ofensiva{
+    font-size: 1.5em;
+}
+
+/*Ranking*/
+
+#ranking{
+    padding: 20px;
+}
+
+#ranking img{
+    width: 60px;
+}
+
+#posicao-usuario{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#lista-ranking{
+    font-size: 1.2em;
+}
+}

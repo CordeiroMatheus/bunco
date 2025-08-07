@@ -16,8 +16,11 @@
     <?php session_start(); ?>
     <?php
 
-      if (!isset($_SESSION["usuario_id"])) {
+      header("Cache-Control: no-cache, no-store, must-revalidate");
+      header("Pragma: no-cache");
+      header("Expires: 0");
 
+      if (!isset($_SESSION["usuario_id"])) {
           header("Location: signin.html");
           exit;
       }
@@ -67,11 +70,6 @@
               </div>
             </div>
           </div>
-          <div id="ranking">
-            <h1><img src="../assets/img/icones/Troféu.svg" alt="">Ranking</h1>
-            <div id="posicao-usuario"></div>
-            <ol id="lista-ranking"></ol>
-          </div>
         </div>
       </div>
       <div id="profile-container">
@@ -100,6 +98,7 @@
             </div>
           </div>
           <div id="profile-status">
+            <div id="status-container">
             <div id="xp" class="status">
               <img src="../assets/img/icones/xp.svg" alt="user_xp">
               <div id="numero-xp"><?php echo $usuario['xp']; ?>  <span>xp</span></div>
@@ -116,6 +115,29 @@
               <div>Dias de ofensiva</div>
             </div>
           </div>
+          <div id="medal-container">
+            <div id="title-container"><h1>Suas Medalhas</h1></div>
+            <div id="medals-container">
+              <div id="medal-01-name" class="medals"></div>
+              <div id="medal-02-name" class="medals"></div>
+              <div id="medal-03-name" class="medals"></div>
+              <div id="medal-04-name" class="medals"></div>
+              <div id="medal-05-name" class="medals"></div>
+              <div id="medal-06-name" class="medals"></div>
+              <div id="medal-07-name" class="medals"></div>
+              <div id="medal-08-name" class="medals"></div>
+              <div id="medal-09-name" class="medals"></div>
+              <div id="medal-10-name" class="medals"></div>
+            </div>
+          </div>
+          <div id="ranking-container">
+            <div id="ranking">
+              <h1><img src="../assets/img/icones/Troféu.svg" alt="">Ranking</h1>
+              <ol id="lista-ranking"></ol>
+            </div>
+            <div id="posicao-usuario"></div>
+          </div>
+          </div>
         </div>
       </div>
 
@@ -131,21 +153,21 @@
           </div>
           <div id="campopadrao" class="campos">
             <p><img src="../assets/img/icones/user.svg" alt="formicon" id="icon"><input type="text" id="modalInput" placeholder="alterar"></p>
-            <p><button onclick="confirmarAlteracao()">Confirmar</button></p>
+            <p><button onclick="confirmarAlteracao()" id= "botaoConfirmar" >Confirmar</button></p>
           </div>
 
           <div id="camposenha" class="campos">
             <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
             <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
             <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
-            <p><button onclick="confirmarAlteracao()">Confirmar</button></p>
+            <p><button onclick="confirmarAlteracao()" id="botaoConfirmarSenha">Confirmar</button></p>
           </div>
 
           <div id="campolink" class="campos">
             <p><img src="../assets/img/icones/github.svg" alt="github" style="width: 18px; color: #fff;"><input type="text" id="linkGithub" placeholder="Digite seu link do Github"></p>
             <p><img src="../assets/img/icones/linkedin.svg" alt="linkedin" style="width: 18px; color: #fff;"><input type="text" id="linkLinkedin" placeholder="Digite seu link do LinkedIn"></p>
             <p><img src="../assets/img/icones/instagram.svg" alt="instagram" style="width: 18px; color: #fff;"><input type="text" id="linkInstagram" placeholder="Digite seu link do Instagram"></p>
-            <button onclick="confirmarAlteracao()">Confirmar</button>
+            <button onclick="confirmarAlteracao()" id="botaoConfirmarLinks">Confirmar</button>
           </div>
 
           <div id="campocor" class="campos">
@@ -153,22 +175,20 @@
                     <img src="../assets/img/" alt="profile-img" id="prealterarcorimg">
                 </div>
             <div id="cores">
-                <div id="cinzaclaro" class="opcaocores" style="background-color: #f8f9fa;"></div>
-                <div id="cinzaclaro" class="opcaocores" style="background-color: #f8f9fa;"></div>
-                <div id="cinzamédio" class="opcaocores" style="background-color: #e0e0e0;"></div>
-                <div id="cinzaazulado" class="opcaocores" style="background-color: #b0bec5;"></div>
-                <div id="cinzaescuro" class="opcaocores" style="background-color: #607d8b;"></div>
-                <div id="branco" class="opcaocores" style="background-color: #ffffff;"></div>
-                <div id="preto" class="opcaocores" style="background-color: #000000;"></div>
-                <div id="vermelho" class="opcaocores" style="background-color: #ff5252;"></div>
-                <div id="laranja" class="opcaocores" style="background-color: #ff9800;"></div>
-                <div id="amarelo" class="opcaocores" style="background-color: #ffeb3b;"></div>
-                <div id="verde" class="opcaocores" style="background-color: #4caf50;"></div>
-                <div id="azul" class="opcaocores" style="background-color: #2196f3;"></div>
-                <div id="azulescuro" class="opcaocores" style="background-color: #3f51b5;"></div>
-                <div id="roxo" class="opcaocores" style="background-color: #9c27b0;"></div>
-                <div id="rosa" class="opcaocores" style="background-color: #e91e63;"></div>
-                <div id="marrom" class="opcaocores" style="background-color: #795548;"></div>
+                <div id="azulescuro" class="opcaocores" style="background-color: #586892;"></div>
+                <div id="verdeagua" class="opcaocores" style="background-color: #0E898B;"></div>
+                <div id="azulclaro" class="opcaocores" style="background-color: #7AF0F2;"></div>
+                <div id="laranja" class="opcaocores" style="background-color: #FF9600;"></div>
+                <div id="amarelo" class="opcaocores" style="background-color: #FFC800;"></div>
+                <div id="marrom" class="opcaocores" style="background-color: #E5A259;"></div>
+                <div id="vermelho" class="opcaocores" style="background-color: #EA2B2B;"></div>
+                <div id="roxo" class="opcaocores" style="background-color: #9069CD;"></div>
+                <div id="rosa" class="opcaocores" style="background-color: #FFAADE;"></div>
+                <div id="verdeescuro" class="opcaocores" style="background-color: #5EB200;"></div>
+                <div id="verdeclaro" class="opcaocores" style="background-color: #A5ED6E;"></div>
+                <div id="cinza" class="opcaocores" style="background-color: #8E8E93;"></div>
+                <div id="preto" class="opcaocores" style="background-color: #000;"></div>
+                <div id="branco" class="opcaocores" style="background-color: #fff;"></div>
             </div>
             <button onclick="confirmarCor()">Confirmar</button>
           </div>
@@ -179,6 +199,7 @@
                     </div>
 
                     <div id="imagens">
+                        <div id="buncodefault" class="opcaoimg"><img src="../assets/img/buncodefault.svg" alt="buncodefault" class="opcaoimagens"></div>
                         <div id="buncocavalheiro" class="opcaoimg"><img src="../assets/img/buncocavalheiro.svg" class="opcaoimagens" alt="buncocavalheiro"></div>
                         <div id="buncolegal" class="opcaoimg"><img src="../assets/img/buncolegal.svg" alt="buncolegal" class="opcaoimagens"></div>
                         <div id="buncoandroid" class="opcaoimg"><img src="../assets/img/buncoandroid.svg" alt="buncoandroid" class="opcaoimagens"></div>
@@ -186,6 +207,9 @@
                         <div id="buncoduolingo" class="opcaoimg"><img src="../assets/img/buncoduolingo.svg" alt="buncoduolingo" class="opcaoimagens"></div>
                         <div id="buncoformando" class="opcaoimg"><img src="../assets/img/buncoformando.svg" alt="buncoformando" class="opcaoimagens"></div>
                         <div id="buncomimo" class="opcaoimg"><img src="../assets/img/buncomimo.svg" alt="buncomimo" class="opcaoimagens"></div>
+                        <div id="buncodetetive" class="opcaoimg"><img src="../assets/img/buncodetetive.svg" alt="buncodetetive" class="opcaoimagens"></div>
+                        <div id="buncofazendeiro" class="opcaoimg"><img src="../assets/img/buncofazendeiro.svg" alt="buncofazendeiro" class="opcaoimagens"></div>
+                        <div id="buncoromantico" class="opcaoimg"><img src="../assets/img/buncoromantico.svg" alt="buncoromantico" class="opcaoimagens"></div>
                     </div>
                     <button onclick="confirmarImagem()">Confirmar</button>
             </div>
@@ -199,11 +223,22 @@
       </div>
 
     </div>
+    <script>
+        const dadosUsuario = {
+          username: <?= json_encode($usuario["username"]) ?>,
+          nome: <?= json_encode($usuario["nome"]) ?>,
+          email: <?= json_encode($usuario["email"]) ?>,
+          github: <?= json_encode($usuario["link_github"]) ?>,
+          linkedin: <?= json_encode($usuario["link_linkedin"]) ?>,
+          instagram: <?= json_encode($usuario["link_instagram"]) ?>
+      }
+    </script>
     <script src="../assets/js/alterardados.js"></script>
     <script src="../assets/js/trocacor.js"></script>
     <script src="../assets/js/trocaimagem.js"></script>
     <script src="../assets/js/excluir.js"></script>
     <script src="../assets/js/logout.js"></script>
     <script src="../assets/js/mostrarsenhaperfil.js"></script>
+    <script src="../assets/js/ranking.js"></script>
   </body>
 </html>

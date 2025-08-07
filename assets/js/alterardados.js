@@ -1,26 +1,156 @@
+// Seleciona todos os botões de alteração e o ícone do modal
 let opcoesAlterar = document.querySelectorAll('.alterar')
+let icones = document.querySelector('#icon')
+
+// Aqui fica as funções de validação 
+
+function validarNome(nomeAtual, novoNome) {
+    return novoNome.trim().length >= 4 && novoNome !== nomeAtual
+}
+
+function validarEmail(emailAtual, novoEmail) {
+    const regex = /^[\w\.-]+@[\w\.-]+\.\w+$/
+    return regex.test(novoEmail) && novoEmail.length >= 4 && novoEmail !== emailAtual
+}
+
+function validarUsername(usernameAtual, novoUsername) {
+    const regex = /^[a-zA-Z0-9_]{3,}$/
+    return regex.test(novoUsername) && novoUsername !== usernameAtual
+}
+
+function validarSenha() {
+    const nova = document.querySelector('#novaSenha').value.trim()
+    const confirmar = document.querySelector('#confirmarSenha').value.trim()
+    return nova.length >= 4 && nova === confirmar
+}
+
+function validarLink(linkAtual, novoLink, tipo) {
+    const regexes = {
+        github: /^https:\/\/(www\.)?github\.com\/[a-zA-Z0-9_-]+\/?$/,
+        instagram: /^https:\/\/(www\.)?instagram\.com\/[a-zA-Z0-9._]+\/?$/,
+        linkedin: /^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9À-ÿ\-_%]+\/?$/
+    }
+    const regex = regexes[tipo]
+    return regex.test(novoLink) && novoLink !== linkAtual
+}
+
+
 opcoesAlterar.forEach(
     opcao => {
         opcao.addEventListener('click', ()=>{
             const texto = opcao.textContent
             if(texto === "Alterar nome"){
-                abrirModal(texto)
+                 abrirModal(texto)
                 icones.src = "../assets/img/icones/user.svg"
+                const input = document.querySelector('#modalInput')
+                input.value = dadosUsuario.nome
+
+                const botao = document.querySelector('#botaoConfirmar')
+                function atualizarEstadoBotao() {
+                    const nomeNovo = input.value.trim()
+                    const valido = validarNome(dadosUsuario.nome, nomeNovo)
+                    botao.disabled = !valido
+                    botao.style.backgroundColor = valido ? "#1CB0F6" : '#3a3a3aff'
+                    botao.style.boxShadow = valido ? "2px 2px 0px 1.5px #1453A3" : 'none'
+                    botao.style.cursor = valido ? 'pointer' : 'not-allowed'
+                }
+                    input.addEventListener('input', atualizarEstadoBotao)
+                    atualizarEstadoBotao()
             }
-            if (texto === "Alterar username"){
-                abrirModal(texto)
-                icones.src = "../assets/img/icones/user.svg"
-            }
-            if (texto === "Alterar email"){
-                abrirModal(texto)
-                icones.src = "../assets/img/icones/email.svg"
-            }
-            if (texto === "Alterar senha"){
-                abrirModalSenha()
-            }
-            if (texto === "Alterar links"){
-                abrirModalLinks()
-            }
+
+            
+    if (texto === "Alterar username"){
+        abrirModal(texto)
+        icones.src = "../assets/img/icones/user.svg"
+        const input = document.querySelector('#modalInput')
+        input.value = dadosUsuario.username
+
+        const botao = document.querySelector('#botaoConfirmar')
+        function atualizarEstadoBotao() {
+            const novoUsername = input.value.trim()
+            const valido = validarUsername(dadosUsuario.username, novoUsername)
+            botao.disabled = !valido
+            botao.style.backgroundColor = valido ? "#1CB0F6" : '#3a3a3aff'
+            botao.style.boxShadow = valido ? "2px 2px 0px 1.5px #1453A3" : 'none'
+            botao.style.cursor = valido ? 'pointer' : 'not-allowed'
+    }
+            input.addEventListener('input', atualizarEstadoBotao)
+            atualizarEstadoBotao()
+
+    }
+
+
+    if (texto === "Alterar email"){
+        abrirModal(texto)
+        icones.src = "../assets/img/icones/email.svg"
+        const input = document.querySelector('#modalInput')
+        input.value = dadosUsuario.email
+
+        const botao = document.querySelector('#botaoConfirmar')
+        function atualizarEstadoBotao() {
+            const novoEmail = input.value.trim()
+            const valido = validarEmail(dadosUsuario.email, novoEmail)
+            botao.disabled = !valido
+            botao.style.backgroundColor = valido ? "#1CB0F6" : '#3a3a3aff'
+            botao.style.boxShadow = valido ? "2px 2px 0px 1.5px #1453A3" : 'none'
+            botao.style.cursor = valido ? 'pointer' : 'not-allowed'
+    }
+            input.addEventListener('input', atualizarEstadoBotao)
+            atualizarEstadoBotao()
+    }
+
+
+    if (texto === "Alterar senha"){
+        abrirModalSenha()
+
+        const inputNova = document.querySelector('#novaSenha')
+        const inputConfirmar = document.querySelector('#confirmarSenha')
+        const botao = document.querySelector('#botaoConfirmarSenha')
+
+        function atualizarEstadoBotaoSenha() {
+            const valido = validarSenha()
+            botao.disabled = !valido
+            botao.style.backgroundColor = valido ? "#1CB0F6" : '#3a3a3aff'
+            botao.style.boxShadow = valido ? "2px 2px 0px 1.5px #1453A3" : 'none'
+            botao.style.cursor = valido ? 'pointer' : 'not-allowed'
+    }
+
+            inputNova.addEventListener('input', atualizarEstadoBotaoSenha)
+            inputConfirmar.addEventListener('input', atualizarEstadoBotaoSenha)
+            atualizarEstadoBotaoSenha()
+    }
+
+
+
+    if (texto === "Alterar links"){
+        abrirModalLinks()
+
+        const github = document.querySelector('#linkGithub')
+        const linkedin = document.querySelector('#linkLinkedin')
+        const instagram = document.querySelector('#linkInstagram')
+        const botao = document.querySelector('#botaoConfirmarLinks')
+
+        github.value = dadosUsuario.github
+        linkedin.value = dadosUsuario.linkedin
+        instagram.value = dadosUsuario.instagram
+
+        function atualizarEstadoBotaoLinks() {
+            const g = validarLink(dadosUsuario.github, github.value.trim(), "github")
+            const l = validarLink(dadosUsuario.linkedin, linkedin.value.trim(), "linkedin")
+            const i = validarLink(dadosUsuario.instagram, instagram.value.trim(), "instagram")
+
+            const algumValido = g || l || i
+            botao.disabled = !algumValido
+            botao.style.backgroundColor = algumValido ? "#1CB0F6" : '#3a3a3aff'
+            botao.style.boxShadow = algumValido ? "2px 2px 0px 1.5px #1453A3" : 'none'
+            botao.style.cursor = algumValido ? 'pointer' : 'not-allowed'
+    }
+
+            github.addEventListener('input', atualizarEstadoBotaoLinks)
+            linkedin.addEventListener('input', atualizarEstadoBotaoLinks)
+            instagram.addEventListener('input', atualizarEstadoBotaoLinks)
+            atualizarEstadoBotaoLinks()
+    }
         })
     }
 )
