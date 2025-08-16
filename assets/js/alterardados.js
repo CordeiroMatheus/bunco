@@ -14,14 +14,15 @@ function validarEmail(emailAtual, novoEmail) {
 }
 
 function validarUsername(usernameAtual, novoUsername) {
-    const regex = /^[a-zA-Z0-9_]{3,}$/
+    const regex = /^[a-zA-Z0-9_]{4,}$/
     return regex.test(novoUsername) && novoUsername !== usernameAtual
 }
 
 function validarSenha() {
+    const atual = document.querySelector('#senhaAtual').value.trim()
     const nova = document.querySelector('#novaSenha').value.trim()
     const confirmar = document.querySelector('#confirmarSenha').value.trim()
-    return nova.length >= 4 && nova === confirmar
+    return nova.length >= 4 && nova === confirmar && atual != ""
 }
 
 function validarLink(linkAtual, novoLink, tipo) {
@@ -40,7 +41,8 @@ opcoesAlterar.forEach(
         opcao.addEventListener('click', ()=>{
             const texto = opcao.textContent
             if(texto === "Alterar nome"){
-                 abrirModal(texto)
+                abrirModal(texto)
+                document.querySelector('#modalInput').setAttribute('maxlength', '30')
                 icones.src = "../assets/img/icones/user.svg"
                 const input = document.querySelector('#modalInput')
                 input.value = dadosUsuario.nome
@@ -61,6 +63,7 @@ opcoesAlterar.forEach(
             
     if (texto === "Alterar username"){
         abrirModal(texto)
+        document.querySelector('#modalInput').setAttribute('maxlength', '30')
         icones.src = "../assets/img/icones/user.svg"
         const input = document.querySelector('#modalInput')
         input.value = dadosUsuario.username
@@ -82,6 +85,7 @@ opcoesAlterar.forEach(
 
     if (texto === "Alterar email"){
         abrirModal(texto)
+        document.querySelector('#modalInput').setAttribute('maxlength', '254')
         icones.src = "../assets/img/icones/email.svg"
         const input = document.querySelector('#modalInput')
         input.value = dadosUsuario.email
@@ -216,6 +220,9 @@ function confirmarAlteracao(){
         let atual = document.querySelector('#senhaAtual').value
         let nova = document.querySelector('#novaSenha').value
         let confirmar = document.querySelector('#confirmarSenha').value
+        atual = atual.trim()
+        nova = nova.trim()
+        confirmar = confirmar.trim()
         if (nova !== confirmar) {
             alert("A nova senha e a confirmação não coincidem!")
             return
@@ -246,6 +253,9 @@ function confirmarAlteracao(){
         let github = document.querySelector('#linkGithub').value
         let linkedin = document.querySelector('#linkLinkedin').value
         let instagram = document.querySelector('#linkInstagram').value
+        github = github.trim()
+        instagram = instagram.trim()
+        linkedin = linkedin.trim()
         fetch("../php/alterarLinks.php",{
             method: "POST",
             headers:{
@@ -268,6 +278,7 @@ function confirmarAlteracao(){
     }
     if(titulo === "Alterar username"){ 
         let valor = document.querySelector('#modalInput').value
+        valor = valor.trim()
         fetch("../php/alterarUsername.php",{
             method: "POST",
             headers:{
@@ -290,6 +301,7 @@ function confirmarAlteracao(){
     }
     if(titulo === "Alterar nome"){
         let valor = document.querySelector('#modalInput').value
+        valor = valor.trim()
         fetch("../php/alterarNome.php",{
             method: "POST",
             headers:{
@@ -311,7 +323,9 @@ function confirmarAlteracao(){
         })
     }
     if(titulo === "Alterar email"){
+        document.querySelector('#modalInput').setAttribute('maxlength', '254')
         let valor = document.querySelector('#modalInput').value
+        valor = valor.trim().toLowerCase()
         fetch("../php/alterarEmail.php",{
             method: "POST",
             headers:{

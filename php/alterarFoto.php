@@ -19,6 +19,21 @@ try {
         exit;
     }
 
+    $query = "SELECT id, username, foto FROM usuarios WHERE (id = ?) AND (foto = ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(1, $id);
+    $stmt->bindParam(2, $foto);
+    $stmt->execute();
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($resultado) {
+        echo json_encode([
+            "sucesso" => false,
+            "mensagem" => "Você não trocou a foto!",
+        ]);
+        exit;
+    }
+
     $query = "UPDATE usuarios SET foto = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(1, $foto);

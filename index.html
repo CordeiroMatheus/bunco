@@ -62,22 +62,22 @@
             <div id="campos">
               <div>
                 <i class="fas fa-user"></i>
-                <input type="text" name="nome" id="nomeusuariotxt" class="input" placeholder="Digite seu nome" required>
+                <input type="text" name="nome" id="nomeusuariotxt" class="input" placeholder="Digite seu nome" maxlength="30" required>
               </div>
 
               <div>
                 <i class="fas fa-user-circle"></i>
-                <input type="text" name="username" id="apelidotxt" class="input" placeholder="Nome de usuário" required>
+                <input type="text" name="username" id="apelidotxt" class="input" placeholder="Nome de usuário" maxlength="30" required>
               </div>
 
               <div>
                 <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com" required>
+                <input type="email" name="email" id="emailtxt" class="input" placeholder="exemplo@gmail.com" maxlength="254" required>
               </div>
 
               <div id="senhatxt">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="senha" id="senha" class="input" placeholder="Digite sua senha" maxlength="16" required>
+                <input type="password" name="senha" id="senha" class="input" placeholder="Digite sua senha" minlength="4" maxlength="16" required>
                 <p id="opcaosenha"><i class="fa-solid fa-eye" id="openedeye"></i><i class="fa-solid fa-eye-slash" id="closedeye"></i></p>
               </div>
 

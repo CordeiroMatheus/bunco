@@ -71,6 +71,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    font-family: 'Inter', 'sans-serif';
 }
 
 .modal {
@@ -83,6 +84,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     min-width: 400px;
     text-align: center;
     z-index: 2;
+    font-family: 'Inter', sans-serif;
 }
 
 #top-modal{
@@ -160,10 +162,18 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     padding: 30px;
 }
 
+header{
+    top: 0;
+    position: sticky;
+    z-index: 10;
+}
+
 @media screen and (max-width: 767px) and (orientation: portrait){
 
 header{
     border-bottom: 2px solid var(--azul-principal);
+    background-color: var(--cor-de-fundo);
+    position: static;
 }
 
 nav{
@@ -710,8 +720,12 @@ footer a{
 /*Celular na horizontal*/
 @media screen and (max-width: 767px) and (orientation: landscape){
     
-    header{
+header{
     border-bottom: 2px solid var(--azul-principal);
+}
+
+header{
+    position: static;
 }
 
 nav{
@@ -3116,10 +3130,6 @@ footer a{
     header{
     padding: 0;
     border-bottom: 2px solid var(--azul-principal);
-    /*
-    position: sticky;
-    top: 0;
-    */
 }
 
 nav{

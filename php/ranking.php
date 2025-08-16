@@ -14,7 +14,7 @@ try {
 
     //Seleciona os primeiros
     $sql = "SELECT u.id, u.username, u.nome, u.email, u.foto, u.cor, u.link_github, u.link_instagram, u.link_linkedin,
-    st.vidas, st.ofensiva, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id ORDER BY st.xp DESC LIMIT 15";
+    st.vidas, st.ofensiva, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id ORDER BY st.xp DESC LIMIT 10";
     $stmt = $conn->query($sql);
     $primeiros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

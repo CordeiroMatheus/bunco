@@ -50,24 +50,20 @@
       <div id="settings-container">
         <div id="settings">
           <div id="config-icon">
-            <img src="../assets/img/icones/config.svg" alt="Configurações">
+            <img src="../assets/img/icones/bunco-config.svg" alt="Configurações">
           </div>
           <h2 id="titulo">Configurações</h2>
           <div id="settings-options">
             <div id="opcoes-alterar">
-              <div id="alterar-nome" class="alterar">Alterar nome</div>
-              <div id="alterar-username" class="alterar">Alterar username</div>
-              <div id="alterar-email" class="alterar">Alterar email</div>
-              <div id="alterar-senha" class="alterar">Alterar senha</div>
-              <div id="alterar-links" class="alterar">Alterar links</div>
+              <div id="alterar-nome" class="alterar"><button class="alterarbtn">Alterar nome</button></div>
+              <div id="alterar-username" class="alterar"><button class="alterarbtn">Alterar username</button></div>
+              <div id="alterar-email" class="alterar"><button class="alterarbtn">Alterar email</button></div>
+              <div id="alterar-senha" class="alterar"><button class="alterarbtn">Alterar senha</button></div>
+              <div id="alterar-links" class="alterar"><button class="alterarbtn">Alterar links</button></div>
             </div>
             <div id="opcoes-conta">
-              <div id="sair">
-                <input type="button" class="opcoes-btn" id="btnsair" value="sair da conta">
-              </div>
-              <div id="excluir">
-                <input type="button" class="opcoes-btn" id="btnexcluir" value="excluir a conta">
-              </div>
+                <button class="opcoes-btn" id="btnsair"><img src="../assets/img/icones/sairicone.svg" alt="sairicone">sair da conta</button>
+                <button class="opcoes-btn" id="btnexcluir"><img src="../assets/img/icones/excluiricone.svg" alt="excluiricone">excluir a conta</button>
             </div>
           </div>
         </div>
@@ -88,12 +84,41 @@
                 </div>
               </div>
             </div>
+          <?php
+            echo '<div id="profile-social">';
+            if (!empty($usuario['link_instagram'])) {
+                echo '<div id="profile-instagram" class="profilesocialmedia">
+                        <a href="' . htmlspecialchars($usuario['link_instagram']) . '">
+                            <img src="../assets/img/icones/instagramicon.svg" alt="instagram-profile">
+                        </a>
+                      </div>';
+            }
+
+            if (!empty($usuario['link_github'])) {
+                echo '<div id="profile-github" class="profilesocialmedia">
+                        <a href="' . htmlspecialchars($usuario['link_github']) . '">
+                            <img src="../assets/img/icones/githubicon.svg" alt="github-profile">
+                        </a>
+                      </div>';
+            }
+            if (!empty($usuario['link_linkedin'])) {
+                echo '<div id="profile-linkedin" class="profilesocialmedia">
+                        <a href="' . htmlspecialchars($usuario['link_linkedin']) . '">
+                            <img src="../assets/img/icones/linkedinicon.svg" alt="linkedin-profile">
+                        </a>
+                      </div>';
+            }
+            echo '</div>';
+          ?>
             <div id="profile-options">
               <div id="alterar-img">
                 <img src="../assets/img/icones/editarfoto.svg" alt="alterar-imagem">
               </div>
               <div id="alterar-cor">
-                <img src="../assets/img/icones/editar.svg" alt="alterar-cor">
+                <img src="../assets/img/icones/editarcor.svg" alt="alterar-cor">
+              </div>
+              <div id="profile-config">
+                <img src="../assets/img/icones/configicon.svg" alt="config-profile">
               </div>
             </div>
           </div>
@@ -132,7 +157,7 @@
           </div>
           <div id="ranking-container">
             <div id="ranking">
-              <h1><img src="../assets/img/icones/Troféu.svg" alt="">Ranking</h1>
+              <img src="../assets/img/rankingimg.svg" alt="">
               <ol id="lista-ranking"></ol>
             </div>
             <div id="posicao-usuario"></div>
@@ -157,9 +182,9 @@
           </div>
 
           <div id="camposenha" class="campos">
-            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
-            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
-            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/lock.svg" alt="senhaAtual"><input type="password" id="senhaAtual" class="inputssenha" placeholder="Senha atual" minlength="4" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="novaSenha"><input type="password" id="novaSenha" class="inputssenha" placeholder="Nova senha" minlength="4" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
+            <p><img src="../assets/img/icones/key.svg" alt="confirmarSenha"><input type="password" id="confirmarSenha" class="inputssenha" placeholder="Confirmar nova senha" minlength="4" maxlength="16"><span class="opcaosenha"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash" class="closedeye"></i></span></p>
             <p><button onclick="confirmarAlteracao()" id="botaoConfirmarSenha">Confirmar</button></p>
           </div>
 

@@ -28,6 +28,21 @@ try {
     $id = $_SESSION["usuario_id"];
     $cor = $_POST["cor"];
 
+    $query = "SELECT id, username, cor FROM usuarios WHERE (id = ?) AND (cor = ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(1, $id);
+    $stmt->bindParam(2, $cor);
+    $stmt->execute();
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($resultado) {
+        echo json_encode([
+            "sucesso" => false,
+            "mensagem" => "Você não trocou a cor de fundo!",
+        ]);
+        exit;
+    }
+
     // Atualiza a cor no banco
     $query = "UPDATE usuarios SET cor = ? WHERE id = ?";
     $stmt = $conn->prepare($query);

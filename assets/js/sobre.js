@@ -9,7 +9,7 @@ let integrantes = [
     {
         id: 2,
         nome: "João D'Allessio",
-        trabalho: "Programador Back-end",
+        trabalho: "Programador Back-end e mobile",
         imagem: 'assets/img/integrantes/joão.svg',
         texto: 'Trabalhou no back-end e mobile do TCC'
     },

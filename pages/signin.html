@@ -45,7 +45,7 @@
 
                     <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="senha" id="senha" placeholder="password" maxlength="16" required>
+                        <input type="password" name="senha" id="senha" placeholder="password" minlength="4" maxlength="16" required>
                         <p id="opcaosenha"><i class="fa-solid fa-eye" id="openedeye"></i><i class="fa-solid fa-eye-slash" id="closedeye"></i></p>
                     </div>
 
@@ -107,6 +107,7 @@
 
         function confirmarAviso() {
             document.getElementById("modalOverlay").style.display = "none"
+            window.location.href = "signin.html"
         }
     </script>
     <script src="../assets/js/mostrarsenha.js"></script>

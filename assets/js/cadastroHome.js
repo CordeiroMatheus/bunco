@@ -6,7 +6,7 @@ function abrirModalAvisoCadastro(mensagem){
 }
 
 function confirmarAviso(){
-    window.location.reload()
+    document.querySelector('#modalOverlay').style.display = "none"
 }
 
 document.getElementById('btnCadastro').addEventListener('click', function(e) {
@@ -18,7 +18,7 @@ document.getElementById('btnCadastro').addEventListener('click', function(e) {
 
             const nome = document.getElementById('nomeusuariotxt').value.trim();
             const username = document.getElementById('apelidotxt').value.trim();
-            const email = document.getElementById('emailtxt').value.trim();
+            const email = document.getElementById('emailtxt').value.trim().toLowerCase();
             const senha = document.getElementById('senha').value.trim();
 
             if (!nome || !username || !email || !senha) {
@@ -36,15 +36,30 @@ if (!regex.test(email)) {
     return;
 }
 
-if (nome.length < 4 || username.length < 4) {
-    abrirModalAvisoCadastro("Nome e username precisam ter no mínimo 4 caracteres")
+const regexUser = /^[a-zA-Z0-9_]{4,}$/
+    if (!regexUser.test(username)) {
+        abrirModalAvisoCadastro("Insira um username válido! Apenas letras, números e underline (_), e no mínimo 4 caracteres!")
+        return;
+    }
+
+if (nome.length < 4) {
+    abrirModalAvisoCadastro("Nome precisa ter no mínimo 4 caracteres!")
+    return;
+}
+
+if (senha.length < 4) {
+    abrirModalAvisoCadastro("Senha precisa ter no mínimo 4 caracteres!")
     return;
 }
             
             // Enviar requisição para o PHP
             fetch('php/cadastrar.php', {
+                headers:{
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                credentials: "include",
                 method: 'POST',
-                body: formData
+                body: `username=${encodeURIComponent(username)}&nome=${encodeURIComponent(nome)}&senha=${encodeURIComponent(senha)}&email=${encodeURIComponent(email)}`,
             })
             .then(response => {
                 // Verificar se a resposta é JSON

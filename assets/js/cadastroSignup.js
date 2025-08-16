@@ -6,7 +6,7 @@ function abrirModalAvisoCadastro(mensagem){
 }
 
 function confirmarAviso(){
-    window.location.reload()
+    document.querySelector('#modalOverlay').style.display = "none"
 }
 
 document.getElementById('formCadastro').addEventListener('submit', function(e) {
@@ -15,12 +15,17 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     // Coletar dados dos campos
     const nome = document.getElementById('nome').value.trim();
     const username = document.getElementById('username').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById('email').value.trim().toLowerCase();
     const senha = document.getElementById('senha').value.trim();
 
     // Validações
     if (!nome || !username || !email || !senha) {
         abrirModalAvisoCadastro("Preencha todos os campos!");
+        return;
+    }
+
+    if (senha.length < 4) {
+        abrirModalAvisoCadastro("Senha precisa ter no mínimo 4 caracteres!")
         return;
     }
 
@@ -35,18 +40,25 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
         return;
     }
 
-    if (nome.length < 4 || username.length < 4) {
-        abrirModalAvisoCadastro("Nome e username precisam ter no mínimo 4 caracteres");
+    if (nome.length < 4) {
+        abrirModalAvisoCadastro("Nome precisa ter no mínimo 4 caracteres!");
+        return;
+    }
+
+    const regexUser = /^[a-zA-Z0-9_]{4,}$/
+    if (!regexUser.test(username)) {
+        abrirModalAvisoCadastro("Insira um username válido! Apenas letras, números e underline (_), e no mínimo 4 caracteres!")
         return;
     }
     
-    // Criar objeto FormData
-    const formData = new FormData(this);
-    
     // Enviar requisição para o PHP
     fetch('../php/cadastrar.php', {
+        headers:{
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        credentials: "include",
         method: 'POST',
-        body: formData
+        body: `nome=${encodeURIComponent(nome)}&username=${encodeURIComponent(username)}&senha=${encodeURIComponent(senha)}&email=${encodeURIComponent(email)}`,
     })
     .then(response => {
         // Verificar se a resposta é JSON
