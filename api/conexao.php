@@ -7,7 +7,7 @@ function conexao()
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $db = "bunco";
+    $db = "bunco_database";
 
     try {
         //Cria a conexão e retorna ela quando a função for chamada
