@@ -50,6 +50,7 @@ try {
 } catch (Exception $e) {
     echo json_encode([
         "sucesso" => false,
+        //"mensagem" => "Erro no servidor: " . $e->getMessage()
         "mensagem" => "Erro no servidor"
     ]);
 }

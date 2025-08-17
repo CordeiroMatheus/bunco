@@ -32,6 +32,10 @@ try {
         echo json_encode(["sucesso" => false, "mensagem" => "Erro ao alterar o username do usuário!"]);
     }
 } catch (Exception $e) {
-    echo json_encode(["sucesso" => false, "mensagem" => "Erro no servidor"]);
+    echo json_encode([
+        "sucesso" => false, 
+        //"mensagem" => "Erro no servidor: " . $e->getMessage()
+        "mensagem" => "Erro no servidor"
+    ]);
 }
 ?>

@@ -40,7 +40,8 @@ try {
 } catch (Exception $e) {
     echo json_encode([
         "sucesso" => "false",
-        "mensagem" => "Erro: " . $e->getMessage()
+        //"mensagem" => "Erro: " . $e->getMessage()
+        "mensagem" => "Erro no servidor"
     ]);
 }
 ?>
