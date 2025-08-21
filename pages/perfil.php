@@ -88,7 +88,7 @@
             echo '<div id="profile-social">';
             if (!empty($usuario['link_instagram'])) {
                 echo '<div id="profile-instagram" class="profilesocialmedia">
-                        <a href="' . htmlspecialchars($usuario['link_instagram']) . '">
+                        <a href="' . htmlspecialchars($usuario['link_instagram']) . '" target="_blank">
                             <img src="../assets/img/icones/instagramicon.svg" alt="instagram-profile">
                         </a>
                       </div>';
@@ -96,14 +96,14 @@
 
             if (!empty($usuario['link_github'])) {
                 echo '<div id="profile-github" class="profilesocialmedia">
-                        <a href="' . htmlspecialchars($usuario['link_github']) . '">
+                        <a href="' . htmlspecialchars($usuario['link_github']) . '" target="_blank">
                             <img src="../assets/img/icones/githubicon.svg" alt="github-profile">
                         </a>
                       </div>';
             }
             if (!empty($usuario['link_linkedin'])) {
                 echo '<div id="profile-linkedin" class="profilesocialmedia">
-                        <a href="' . htmlspecialchars($usuario['link_linkedin']) . '">
+                        <a href="' . htmlspecialchars($usuario['link_linkedin']) . '" target="_blank">
                             <img src="../assets/img/icones/linkedinicon.svg" alt="linkedin-profile">
                         </a>
                       </div>';
@@ -111,13 +111,13 @@
             echo '</div>';
           ?>
             <div id="profile-options">
-              <div id="alterar-img">
+              <div id="alterar-img" class="profile-alterar">
                 <img src="../assets/img/icones/editarfoto.svg" alt="alterar-imagem">
               </div>
-              <div id="alterar-cor">
+              <div id="alterar-cor" class="profile-alterar">
                 <img src="../assets/img/icones/editarcor.svg" alt="alterar-cor">
               </div>
-              <div id="profile-config">
+              <div id="profile-config" class="profile-alterar">
                 <img src="../assets/img/icones/configicon.svg" alt="config-profile">
               </div>
             </div>
@@ -143,16 +143,16 @@
           <div id="medal-container">
             <div id="title-container"><h1>Suas Medalhas</h1></div>
             <div id="medals-container">
-              <div id="medal-01-name" class="medals"></div>
-              <div id="medal-02-name" class="medals"></div>
-              <div id="medal-03-name" class="medals"></div>
-              <div id="medal-04-name" class="medals"></div>
-              <div id="medal-05-name" class="medals"></div>
-              <div id="medal-06-name" class="medals"></div>
-              <div id="medal-07-name" class="medals"></div>
-              <div id="medal-08-name" class="medals"></div>
-              <div id="medal-09-name" class="medals"></div>
-              <div id="medal-10-name" class="medals"></div>
+              <div id="medal-01-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo01.svg" alt="medalha01-"></div>
+              <div id="medal-02-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo02.svg" alt="medalha02-"></div>
+              <div id="medal-03-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo03.svg" alt="medalha03-"></div>
+              <div id="medal-04-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo04.svg" alt="medalha04-"></div>
+              <div id="medal-05-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo05.svg" alt="medalha05-"></div>
+              <div id="medal-06-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo06.svg" alt="medalha06-"></div>
+              <div id="medal-07-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo07.svg" alt="medalha07-"></div>
+              <div id="medal-08-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo08.svg" alt="medalha08-"></div>
+              <div id="medal-09-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo09.svg" alt="medalha09-"></div>
+              <div id="medal-10-name" class="medals"><img src="../assets/img/medalhas/medalhafinal.svg" alt="medalhafinal"></div>
             </div>
           </div>
           <div id="ranking-container">
@@ -238,15 +238,12 @@
                     </div>
                     <button onclick="confirmarImagem()">Confirmar</button>
             </div>
-
             <div id="campoaviso" class="campos">
                 <p id="aviso"></p>
                 <button onclick="confirmarAviso()">Ok</button>
-            </div>
-            
+            </div>          
         </div>
       </div>
-
     </div>
     <script>
         const dadosUsuario = {
@@ -265,5 +262,6 @@
     <script src="../assets/js/logout.js"></script>
     <script src="../assets/js/mostrarsenhaperfil.js"></script>
     <script src="../assets/js/ranking.js"></script>
+    <script src="../assets/js/configuracoes.js"></script>
   </body>
 </html>

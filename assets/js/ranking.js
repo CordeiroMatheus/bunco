@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Preenche a posição do usuário logado
       if (dados.voce) {
         posicaoUsuario.innerHTML = `
-          <p>Sua posição: <br> <strong>#${dados.voce.posicao}</strong> - ${dados.voce.username} (XP: ${dados.voce.xp})</p>
+          <p>Sua posição: <br> <strong>#${dados.voce.posicao}</strong> - ${dados.voce.nome} (XP: ${dados.voce.xp})</p>
         `
       }
 

@@ -155,6 +155,8 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 #modalTitle{
     text-align: center;
     flex: 1;
+    font-family: 'Baloo 2';
+    font-weight: bolder;
 }
 
 .campos p{
@@ -175,6 +177,8 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     font-size: 1.0em;
     transition: 0.1s ease;
     margin-bottom: 10%;
+    font-family: 'Baloo 2';
+    font-weight: bolder;
 }
 
 .campos button:active{
@@ -186,6 +190,8 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     text-align: center;
     font-size: 18px;
     padding: 30px;
+    font-family: 'Baloo 2';
+    font-weight: bolder;
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait){

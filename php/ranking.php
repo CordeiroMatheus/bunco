@@ -19,7 +19,7 @@ try {
     $primeiros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Pega o XP do usuário atual
-    $sql = "SELECT u.username, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id WHERE u.id = :id";
+    $sql = "SELECT u.username, u.nome, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id WHERE u.id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
@@ -29,7 +29,8 @@ try {
         echo json_encode(["sucesso" => false, "mensagem" => "Usuário não encontrado no ranking!"]);
         exit;
     }
-
+    
+    $nome = $dadosUsuario['nome'];
     $username = $dadosUsuario['username'];
     $xpUsuario = (int)$dadosUsuario['xp'];
 
@@ -45,7 +46,8 @@ try {
         "voce" => [
             "posicao" => $posicao,
             "username" => $username,
-            "xp" => $xpUsuario
+            "nome" => $nome,
+            "xp" => $xpUsuario,
         ]
     ]);
 

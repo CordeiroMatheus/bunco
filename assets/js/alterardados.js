@@ -32,7 +32,7 @@ function validarLink(linkAtual, novoLink, tipo) {
         linkedin: /^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9À-ÿ\-_%]+\/?$/
     }
     const regex = regexes[tipo]
-    return regex.test(novoLink) && novoLink !== linkAtual
+    return regex.test(novoLink) && novoLink !== linkAtual || (novoLink == "" && novoLink !== linkAtual)
 }
 
 
