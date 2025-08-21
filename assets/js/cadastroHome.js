@@ -13,9 +13,6 @@ document.getElementById('btnCadastro').addEventListener('click', function(e) {
             e.preventDefault(); // Impede o envio tradicional do formulário
             
             // Coletar dados do formulário
-            const form = document.getElementById('formCadastro');
-            const formData = new FormData(form);
-
             const nome = document.getElementById('nomeusuariotxt').value.trim();
             const username = document.getElementById('apelidotxt').value.trim();
             const email = document.getElementById('emailtxt').value.trim().toLowerCase();
@@ -80,6 +77,6 @@ if (senha.length < 4) {
                 }
             })
             .catch(error => {
-                abrirModalAvisoCadastro(error)
+                abrirModalAvisoCadastro("Algo deu errado ao fazer o cadastro!")
             });
         });

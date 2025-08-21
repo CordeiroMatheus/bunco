@@ -245,7 +245,7 @@ function confirmarAlteracao(){
         }
         })
         .catch(err => {
-            abrirModalAviso(err.message)
+            abrirModalAviso("Algo deu errado ao alterar a senha!")
         })
 
     }
@@ -256,6 +256,23 @@ function confirmarAlteracao(){
         github = github.trim()
         instagram = instagram.trim()
         linkedin = linkedin.trim()
+        const regexes = {
+        github: /^https:\/\/(www\.)?github\.com\/[a-zA-Z0-9_-]+\/?$/,
+        instagram: /^https:\/\/(www\.)?instagram\.com\/[a-zA-Z0-9._]+\/?$/,
+        linkedin: /^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9À-ÿ\-_%]+\/?$/
+    }
+        if (!regexes.github.test(github) && github != "") {
+            abrirModalAviso("O link do GitHub é inválido!")
+            return
+        }
+        if (!regexes.instagram.test(instagram) && instagram != "") {
+            abrirModalAviso("O link do Instagram é inválido!")
+            return
+        }
+        if (!regexes.linkedin.test(linkedin) && linkedin != "") {
+            abrirModalAviso("O link do LinkedIn é inválido!")
+            return
+        }
         fetch("../php/alterarLinks.php",{
             method: "POST",
             headers:{
@@ -273,7 +290,7 @@ function confirmarAlteracao(){
         }
         })
         .catch(err => {
-            abrirModalAviso(err.message)
+            abrirModalAviso("Algo deu errado ao alterar os links!")
         })
     }
     if(titulo === "Alterar username"){ 
@@ -296,7 +313,7 @@ function confirmarAlteracao(){
         }
         })
         .catch(err => {
-            abrirModalAviso(err.message)
+            abrirModalAviso("Algo deu errado ao alterar o username!")
         })
     }
     if(titulo === "Alterar nome"){
@@ -319,7 +336,7 @@ function confirmarAlteracao(){
         }
         })
         .catch(err => {
-            abrirModalAviso(err.message)
+            abrirModalAviso("Algo deu errado ao alterar o nome!")
         })
     }
     if(titulo === "Alterar email"){
@@ -343,7 +360,7 @@ function confirmarAlteracao(){
         }
         })
         .catch(err => {
-            abrirModalAviso(err.message)
+            abrirModalAviso("Algo deu errado ao alterar o email!")
         })
     }
 }

@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
     .catch(erro => {
-      console.log("Erro ao carregar o ranking:", erro)
+      console.log("Erro ao carregar o ranking!")
       document.getElementById("ranking").innerHTML = `<p>Erro ao carregar ranking!</p>`
     })
 })

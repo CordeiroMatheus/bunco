@@ -44,6 +44,6 @@ function confirmarImagem(){
         }
     })
     .catch(err => {
-        abrirModalAviso(err.message)
+        abrirModalAviso("Erro ao trocar a imagem de perfil!")
     });
 }

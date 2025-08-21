@@ -20,6 +20,6 @@ btnExcluir.addEventListener('click', () => {
         }
     })
     .catch(err => {
-        alert("Erro na requisição: " + err.message);
+        alert("Erro ao excluir a conta!");
     });
 })

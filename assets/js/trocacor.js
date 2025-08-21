@@ -52,7 +52,7 @@ function confirmarCor() {
         }
     })
     .catch(err => {
-        console.error("Erro completo:", err)
+        console.error("Erro ao trocar a cor de fundo!")
         abrirModalAviso(err.message)
     });
 }

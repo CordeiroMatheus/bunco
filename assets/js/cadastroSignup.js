@@ -79,7 +79,6 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
         }
     })
     .catch(error => {
-        console.error('Erro:', error);
-        abrirModalAvisoCadastro(`Erro na comunicação com o servidor: ${error.message}`);
+        abrirModalAvisoCadastro("Algo deu errado ao alterar o cadastro!");
     });
 });
