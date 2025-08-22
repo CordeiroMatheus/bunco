@@ -345,7 +345,6 @@ body{
     border-radius: 18px;
     flex: 1;
     max-height: 85%;
-    overflow: auto;
 }
 
 #posicao-usuario{
@@ -357,7 +356,6 @@ body{
     border-radius: 18px;
     background-color: #2E3D52;
     box-shadow: 5px 5px 0px 0px #1F2433;
-    overflow: auto;
 }
 
 /*Modal de alterar*/
@@ -798,11 +796,13 @@ body{
 
 #ranking{
     padding: 5%;
+    font-size: 0.8em;
 }
 
 #posicao-usuario{
     padding: 5%;
     min-height: 25%;
+    font-size: 0.75em;
 }
 
 }
@@ -974,6 +974,14 @@ body{
     margin-bottom: 8%;
     margin-top: 8%;
     font-size: 18px;
+}
+
+#ranking{
+    font-size: 1em;
+}
+
+#posicao-usuario{
+    font-size: 1em;
 }
 
 #medal-container{
@@ -1209,6 +1217,14 @@ body{
     font-size: 18px;
 }
 
+#ranking{
+    font-size: 1em;
+}
+
+#posicao-usuario{
+    font-size: 1em;
+}
+
 #medal-container{
     order: 3;
     width: 80%;
@@ -1400,7 +1416,7 @@ body{
 
 #ranking{
     padding: 10px;
-    font-size: 0.8em;
+    font-size: 1.0em;
 }
 
 #ranking img{
@@ -1409,7 +1425,7 @@ body{
 
 #posicao-usuario{
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1.0em;
     margin-bottom: 5%;
 }
 }
@@ -1524,7 +1540,7 @@ body{
 
 #ranking{
     padding: 10px;
-    font-size: 0.8em;
+    font-size: 0.575em;
 }
 
 #ranking img{
@@ -1533,7 +1549,7 @@ body{
 
 #posicao-usuario{
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.6em;
 }
 }
 
@@ -1627,13 +1643,17 @@ body{
     padding: 10px;
 }
 
+#ranking{
+    font-size: 0.8em;
+}
+
 #ranking img{
     width: 100px;
 }
 
 #posicao-usuario{
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 }
 
@@ -1769,7 +1789,7 @@ Separação de classes e Id's para estilização
     font-size: 1.25em;
 }
 
-#lista-ranking{
+#ranking{
     font-size: 1.25em;
 }
 
@@ -1906,11 +1926,11 @@ Separação de classes e Id's para estilização
 
 #posicao-usuario{
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
-#lista-ranking{
-    font-size: 2em;
+#ranking{
+    font-size: 1.5em;
 }
 
 .opcaosenha{

@@ -27,7 +27,7 @@ function ajustarConfig() {
         settingscontainer.style.display = "none";
 
     // Tablets médios
-    } else if (window.innerWidth >= 768 && window.innerWidth <= 1024 && window.innerHeight <= 600) {
+    } else if (window.innerWidth >= 768 && window.innerWidth <= 1024 && window.innerHeight <= 764 /*Era 600*/ ) {
         settingscontainer.style.position = "static";
         settingscontainer.style.display = "flex";
 

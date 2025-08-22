@@ -2599,8 +2599,8 @@ nav #signup-button{
     max-width: 175px;
     background-color: var(--azul-principal);
     color: #fff;
-    box-shadow: 0px 5.5px 0px var(--azul-escuro);
-    transition: box-shadow 0.4s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 0px var(--azul-escuro);
+    transition: all box-shadow 0.4s ease, transform 0.2s ease;
     cursor: pointer;
 }
 
