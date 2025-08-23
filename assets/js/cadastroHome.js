@@ -1,3 +1,5 @@
+let deuCerto = false
+
 function abrirModalAvisoCadastro(mensagem){
     document.querySelector('#modalOverlay').style.display = "flex"
     document.querySelector('#modalTitle').textContent = "Aviso"
@@ -7,6 +9,10 @@ function abrirModalAvisoCadastro(mensagem){
 
 function confirmarAviso(){
     document.querySelector('#modalOverlay').style.display = "none"
+    if (deuCerto) {
+        deuCerto = false
+        window.location.href = "pages/signin.php"
+    }
 }
 
 document.getElementById('btnCadastro').addEventListener('click', function(e) {
@@ -70,8 +76,7 @@ if (senha.length < 4) {
                 // Mostrar mensagem de acordo com a resposta
                 if(data.sucesso === "true") {
                     abrirModalAvisoCadastro("Cadastro feito com sucesso!")
-                    // Limpar formulário
-                    document.getElementById('formCadastro').reset();
+                    deuCerto = true
                 } else {
                     abrirModalAvisoCadastro(data.mensagem)
                 }

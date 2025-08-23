@@ -1,3 +1,5 @@
+let deuCerto = false
+
 function abrirModalAvisoCadastro(mensagem){
     document.querySelector('#modalOverlay').style.display = "flex"
     document.querySelector('#modalTitle').textContent = "Aviso"
@@ -7,6 +9,10 @@ function abrirModalAvisoCadastro(mensagem){
 
 function confirmarAviso(){
     document.querySelector('#modalOverlay').style.display = "none"
+    if (deuCerto) {
+        deuCerto = false
+        window.location.href = "signin.php"
+    }
 }
 
 document.getElementById('formCadastro').addEventListener('submit', function(e) {
@@ -70,10 +76,8 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     .then(data => {
         // Mostrar mensagem de acordo com a resposta
         if(data.sucesso === "true") {
-            abrirModalAvisoCadastro("Cadastro feito com sucesso!");
-            
-            // Limpar formulário
-            this.reset();
+            abrirModalAvisoCadastro("Cadastro feito com sucesso!")
+            deuCerto = true
         } else {
             abrirModalAvisoCadastro(data.mensagem || "Erro desconhecido no cadastro");
         }
