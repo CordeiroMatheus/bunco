@@ -238,13 +238,29 @@
                     </div>
                     <button onclick="confirmarImagem()">Confirmar</button>
             </div>
+
             <div id="campoaviso" class="campos">
                 <p id="aviso"></p>
                 <button onclick="confirmarAviso()">Ok</button>
-            </div>          
+            </div>
+            
+            <div id="camposair" class="campos">
+                <p id="aviso">Tem certeza que deseja sair da sua conta?</p>
+                <div class="campobtns">
+                <button onclick="fecharModal()" id="btncancel">Cancelar</button>
+                <button onclick="sairConta()" class="btnsoptionaccount">Sair</button>
+                </div>
+              </div>
+
+            <div id="campoexcluir" class="campos">
+                <p id="aviso">Tem certeza que deseja excluir sua conta?</p>
+                <div class="campobtns">
+                <button onclick="fecharModal()" id="btncancel">Cancelar</button>
+                <button onclick="excluirConta()" class="btnsoptionaccount">Excluir</button>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
     <script>
         const dadosUsuario = {
           username: <?= json_encode($usuario["username"]) ?>,
