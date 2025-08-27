@@ -426,7 +426,6 @@ function excluirConta(){
     .then(res => res.json())
     .then(data => {
         if (data.sucesso) {
-            //abrirModalAviso(data.mensagem)
             window.location.href = "../index.html"
         } else {
             abrirModalAviso("Erro: " + data.mensagem)

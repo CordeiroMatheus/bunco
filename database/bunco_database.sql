@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 26-Ago-2025 às 21:01
+-- Tempo de geração: 27-Ago-2025 às 23:43
 -- Versão do servidor: 8.0.30
 -- versão do PHP: 8.1.10
 
@@ -120,7 +120,7 @@ INSERT INTO `modulos` (`id`, `titulo`, `descricao`) VALUES
 (2, 'Tipos de dados', 'Explicação sobre os diferentes tipos de informações que o Python pode manipular, como números inteiros, decimais, textos e valores lógicos.'),
 (3, 'Print e input', 'Como mostrar mensagens na tela com o print() e como receber informações do usuário com o input().'),
 (4, 'Operadores', 'Estudo dos operadores aritméticos, relacionais e lógicos em Python, essenciais para realizar cálculos, comparações e tomadas de decisão.'),
-(5, 'Estruturas de seleção (if/else e switch case)', 'Como criar condições nos programas: executar certos blocos de código apenas quando critérios forem atendidos, usando if/else e match case.'),
+(5, 'Estruturas de seleção', 'Como criar condições nos programas: executar certos blocos de código apenas quando critérios forem atendidos, usando if/else e match case.'),
 (6, 'While', 'Introdução ao laço de repetição que executa um bloco de código enquanto uma condição for verdadeira.'),
 (7, 'For', 'Exploração do laço de repetição usado para percorrer sequências, listas e intervalos de valores de forma prática.'),
 (8, 'Arrays', 'Trabalhando com coleções de dados em Python, organizando e manipulando várias informações dentro de uma única estrutura chamada lista.'),
@@ -154,6 +154,13 @@ CREATE TABLE `status` (
   `modulos` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Extraindo dados da tabela `status`
+--
+
+INSERT INTO `status` (`id`, `usuario`, `vidas`, `ofensiva`, `xp`, `modulos`) VALUES
+(1, 1, 5, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -173,6 +180,13 @@ CREATE TABLE `usuarios` (
   `link_linkedin` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `username`, `nome`, `email`, `senha`, `foto`, `cor`, `link_github`, `link_instagram`, `link_linkedin`, `created_at`) VALUES
+(1, 'administrador', 'Administrador', 'administrador@email.com', '7580adf5151c6b79c90597aeab91838f', 'buncoformando', '7af0f2', NULL, NULL, NULL, '2025-08-27 18:11:39');
 
 --
 -- Índices para tabelas despejadas
@@ -240,13 +254,13 @@ ALTER TABLE `progresso`
 -- AUTO_INCREMENT de tabela `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
