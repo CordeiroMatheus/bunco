@@ -46,13 +46,13 @@
             <form action="../php/login.php" method="post">
                 <div class="input-group">
                     <div class="input-box">
-                        <i class="fas fa-envelope"></i>
-                        <input type="text" name="login" id="email" placeholder="e-mail ou username" required>
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="login" id="email" placeholder="E-mail ou username" required>
                     </div>
 
                     <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="senha" id="senha" placeholder="password" minlength="4" maxlength="16" required>
+                        <input type="password" name="senha" id="senha" placeholder="Senha" minlength="4" maxlength="16" required>
                         <p id="opcaosenha"><i class="fa-solid fa-eye" id="openedeye"></i><i class="fa-solid fa-eye-slash" id="closedeye"></i></p>
                     </div>
 

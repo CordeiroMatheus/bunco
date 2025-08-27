@@ -479,24 +479,6 @@ body {
   box-shadow: 1px 1px 0px 0px var(--azul-escuro);
 }
 
-.campobtns {
-  display: flex;
-  gap: 2em;
-  width: 80%;
-}
-
-.campos button.btnsoptionaccount {
-  border: none;
-  background-color: var(--vermelho);
-  color: white;
-  box-shadow: 2px 2px 0px 1.5px var(--vermelho-escuro);
-}
-
-.campos button.btnsoptionaccount:active {
-  transform: translateY(6px);
-  box-shadow: 1px 1px 0px 0px var(--vermelho-escuro);
-}
-
 #aviso {
   text-align: center;
 }

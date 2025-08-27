@@ -417,7 +417,7 @@ input[type="button"]::placeholder {
 
 #card-section #title h3 {
   color: #a1dffc;
-  font-family: "Poppins";
+  font-family: "Poppins", serif, sans-serif;
   text-shadow: 0 0 50px var(--azul-principal);
 }
 
@@ -892,7 +892,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -4px 4px 0px 0px var(--cor-texto);
+    box-shadow: 5px 5px 0px 0px var(--cor-texto);
     border-radius: 5%;
     width: 85%;
     height: auto;
@@ -1149,7 +1149,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -6px 6px 0px 0px var(--cor-texto);
+    box-shadow: 7px 7px 0px 0px var(--cor-texto);
     border-radius: 5%;
     width: 85%;
     height: auto;
@@ -1344,7 +1344,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -6px 6px 0px 0px var(--cor-texto);
+    box-shadow: 8px 8px 0px 0px var(--cor-texto);
     border-radius: 40px;
     width: 70%;
     height: 70%;
@@ -1573,7 +1573,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -6px 6px 0px 0px var(--cor-texto);
+    box-shadow: 8px 8px 0px 0px var(--cor-texto);
     border-radius: 40px;
     width: 70%;
     height: 75%;
@@ -1834,7 +1834,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -6px 6px 0px 0px var(--cor-texto);
+    box-shadow: 8px 8px 0px 0px var(--cor-texto);
     border-radius: 40px;
     width: 70%;
     max-width: 1000px;
@@ -2108,7 +2108,7 @@ footer a {
   }
 
   #about-container {
-    box-shadow: -6px 6px 0px 0px var(--cor-texto);
+    box-shadow: 11px 11px 0px 0px var(--cor-texto);
     border-radius: 40px;
     width: 70%;
     height: 85%;

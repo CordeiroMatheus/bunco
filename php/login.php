@@ -41,10 +41,10 @@ if ($resultado) {
     header("Location: ../pages/perfil.php");
     exit;
 } else {
-    header("Location: ../pages/signin.html?erro=1");
+    header("Location: ../pages/signin.php?erro=1");
     exit;
 }
 } 
 catch (Exception $e) {
-    header("Location: ../pages/login.html?erro=4");
+    header("Location: ../pages/signin.php?erro=4");
 }
