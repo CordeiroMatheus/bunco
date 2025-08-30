@@ -490,7 +490,7 @@ body {
   background-color: var(--vermelho);
   color: white;
   box-shadow: 2px 2px 0px 1.5px var(--vermelho-escuro);
-} 
+}
 
 .campos button.btnsoptionaccount:active {
   transform: translateY(6px);

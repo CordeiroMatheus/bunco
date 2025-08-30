@@ -1894,6 +1894,10 @@ footer a {
     gap: 12em;
   }
 
+  footer p{
+    font-size: 18px;
+  }
+
   #footer-section {
     margin-left: 5%;
     margin-right: 5%;
@@ -2169,6 +2173,10 @@ footer a {
 
   footer {
     margin-top: 5%;
+  }
+
+  footer p{
+    font-size: 24px;
   }
 
   #footer-section {

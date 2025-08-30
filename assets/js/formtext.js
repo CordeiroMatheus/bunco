@@ -16,9 +16,9 @@ if (isDeleting) {
 } else {
     currentText = fullWord.substring(0, currentText.length + 1);
 }
-                
+
     formTextElement.innerHTML = '&nbsp;' + currentText + '<span class="cursor"></span>';
-                
+
 if (!isDeleting && currentText === fullWord) {
     isDeleting = true;
     setTimeout(typeWriter, pauseBetweenWords);
