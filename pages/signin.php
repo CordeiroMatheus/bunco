@@ -114,7 +114,7 @@
 
         function confirmarAviso() {
             document.getElementById("modalOverlay").style.display = "none"
-            window.location.href = "signin.html"
+            window.location.href = "signin.php"
         }
     </script>
     <script src="../assets/js/mostrarsenha.js"></script>
