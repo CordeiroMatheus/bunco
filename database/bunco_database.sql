@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 27-Ago-2025 às 23:43
--- Versão do servidor: 8.0.30
--- versão do PHP: 8.1.10
+-- Host: mysql-bunco.alwaysdata.net
+-- Generation Time: Sep 03, 2025 at 03:44 PM
+-- Server version: 10.11.13-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,29 +18,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bunco_database`
+-- Database: `bunco_database`
 --
-CREATE DATABASE IF NOT EXISTS `bunco_database` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `bunco_database` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `bunco_database`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `licoes`
+-- Table structure for table `licoes`
 --
 
 CREATE TABLE `licoes` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `conteudo` text NOT NULL,
   `tipo` enum('teoria','exercicio') NOT NULL,
-  `modulo` int DEFAULT NULL,
-  `ordem` int NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `modulo` int(11) DEFAULT NULL,
+  `ordem` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `licoes`
+-- Dumping data for table `licoes`
 --
 
 INSERT INTO `licoes` (`id`, `titulo`, `conteudo`, `tipo`, `modulo`, `ordem`, `created_at`) VALUES
@@ -102,21 +102,21 @@ INSERT INTO `licoes` (`id`, `titulo`, `conteudo`, `tipo`, `modulo`, `ordem`, `cr
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `modulos`
+-- Table structure for table `modulos`
 --
 
 CREATE TABLE `modulos` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `titulo` varchar(80) NOT NULL,
   `descricao` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `modulos`
+-- Dumping data for table `modulos`
 --
 
 INSERT INTO `modulos` (`id`, `titulo`, `descricao`) VALUES
-(1, 'Algoritmos', 'Introdução ao raciocínio lógico por trás da programação. Você aprende a criar sequências de passos bem definidos para resolver problemas, sem ainda depender de uma linguagem de programação.'),
+(1, 'Algoritmos', 'Introdução ao raciocínio lógico por trás da programação. Você aprende a criar sequências de passos bem definidos para resolver problemas.'),
 (2, 'Tipos de dados', 'Explicação sobre os diferentes tipos de informações que o Python pode manipular, como números inteiros, decimais, textos e valores lógicos.'),
 (3, 'Print e input', 'Como mostrar mensagens na tela com o print() e como receber informações do usuário com o input().'),
 (4, 'Operadores', 'Estudo dos operadores aritméticos, relacionais e lógicos em Python, essenciais para realizar cálculos, comparações e tomadas de decisão.'),
@@ -129,84 +129,84 @@ INSERT INTO `modulos` (`id`, `titulo`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `progresso`
+-- Table structure for table `progresso`
 --
 
 CREATE TABLE `progresso` (
-  `id` int NOT NULL,
-  `usuario` int NOT NULL,
-  `licao` int NOT NULL,
-  `data` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int(11) NOT NULL,
+  `usuario` int(11) NOT NULL,
+  `licao` int(11) NOT NULL,
+  `data` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `status`
+-- Table structure for table `status`
 --
 
 CREATE TABLE `status` (
-  `id` int NOT NULL,
-  `usuario` int NOT NULL,
-  `vidas` int NOT NULL DEFAULT '5',
-  `ofensiva` int NOT NULL DEFAULT '0',
-  `xp` int NOT NULL DEFAULT '0',
-  `modulos` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int(11) NOT NULL,
+  `usuario` int(11) NOT NULL,
+  `vidas` int(11) NOT NULL DEFAULT 5,
+  `ofensiva` int(11) NOT NULL DEFAULT 0,
+  `xp` int(11) NOT NULL DEFAULT 0,
+  `modulos` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `status`
+-- Dumping data for table `status`
 --
 
 INSERT INTO `status` (`id`, `usuario`, `vidas`, `ofensiva`, `xp`, `modulos`) VALUES
-(1, 1, 5, 0, 0, 0);
+(1, 1, 5, 0, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(64) NOT NULL,
-  `foto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'buncodefault',
-  `cor` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'FFFFFF',
+  `foto` varchar(100) NOT NULL DEFAULT 'buncodefault',
+  `cor` varchar(20) NOT NULL DEFAULT 'F2F2F2',
   `link_github` varchar(255) DEFAULT NULL,
   `link_instagram` varchar(255) DEFAULT NULL,
   `link_linkedin` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `created_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `nome`, `email`, `senha`, `foto`, `cor`, `link_github`, `link_instagram`, `link_linkedin`, `created_at`) VALUES
-(1, 'administrador', 'Administrador', 'administrador@email.com', '7580adf5151c6b79c90597aeab91838f', 'buncoformando', '7af0f2', NULL, NULL, NULL, '2025-08-27 18:11:39');
+(1, 'administrador', 'Administrador', 'administrador@email.com', '7580adf5151c6b79c90597aeab91838f', 'buncoduolingo', 'F2F2F2', '', '', '', '2025-08-27 18:11:39');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `licoes`
+-- Indexes for table `licoes`
 --
 ALTER TABLE `licoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_licoes_modulos` (`modulo`);
 
 --
--- Índices para tabela `modulos`
+-- Indexes for table `modulos`
 --
 ALTER TABLE `modulos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `progresso`
+-- Indexes for table `progresso`
 --
 ALTER TABLE `progresso`
   ADD PRIMARY KEY (`id`),
@@ -214,14 +214,14 @@ ALTER TABLE `progresso`
   ADD KEY `progresso_ibfk_1` (`usuario`);
 
 --
--- Índices para tabela `status`
+-- Indexes for table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`),
   ADD KEY `status_ibfk_1` (`usuario`);
 
 --
--- Índices para tabela `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -229,58 +229,58 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `licoes`
+-- AUTO_INCREMENT for table `licoes`
 --
 ALTER TABLE `licoes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT de tabela `modulos`
+-- AUTO_INCREMENT for table `modulos`
 --
 ALTER TABLE `modulos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de tabela `progresso`
+-- AUTO_INCREMENT for table `progresso`
 --
 ALTER TABLE `progresso`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `status`
+-- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `licoes`
+-- Constraints for table `licoes`
 --
 ALTER TABLE `licoes`
   ADD CONSTRAINT `fk_licoes_modulos` FOREIGN KEY (`modulo`) REFERENCES `modulos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `progresso`
+-- Constraints for table `progresso`
 --
 ALTER TABLE `progresso`
   ADD CONSTRAINT `progresso_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `progresso_ibfk_2` FOREIGN KEY (`licao`) REFERENCES `licoes` (`id`);
 
 --
--- Limitadores para a tabela `status`
+-- Constraints for table `status`
 --
 ALTER TABLE `status`
   ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;

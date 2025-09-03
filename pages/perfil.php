@@ -200,20 +200,21 @@
                     <img src="../assets/img/" alt="profile-img" id="prealterarcorimg">
                 </div>
             <div id="cores">
-                <div id="azulescuro" class="opcaocores" style="background-color: #586892;"></div>
-                <div id="verdeagua" class="opcaocores" style="background-color: #0E898B;"></div>
-                <div id="azulclaro" class="opcaocores" style="background-color: #7AF0F2;"></div>
-                <div id="laranja" class="opcaocores" style="background-color: #FF9600;"></div>
-                <div id="amarelo" class="opcaocores" style="background-color: #FFC800;"></div>
-                <div id="marrom" class="opcaocores" style="background-color: #E5A259;"></div>
-                <div id="vermelho" class="opcaocores" style="background-color: #EA2B2B;"></div>
-                <div id="roxo" class="opcaocores" style="background-color: #9069CD;"></div>
-                <div id="rosa" class="opcaocores" style="background-color: #FFAADE;"></div>
-                <div id="verdeescuro" class="opcaocores" style="background-color: #5EB200;"></div>
-                <div id="verdeclaro" class="opcaocores" style="background-color: #A5ED6E;"></div>
-                <div id="cinza" class="opcaocores" style="background-color: #8E8E93;"></div>
-                <div id="preto" class="opcaocores" style="background-color: #000;"></div>
-                <div id="branco" class="opcaocores" style="background-color: #fff;"></div>
+                <div id="verdelima" class="opcaocores" style="background-color: #A4E451;"></div>
+                <div id="azulceleste" class="opcaocores" style="background-color: #4BC1FF ;"></div>
+                <div id="laranjacoral" class="opcaocores" style="background-color: #FF9E4A ;"></div>
+                <div id="roxolavanda" class="opcaocores" style="background-color: #B084F1;"></div>
+                <div id="amarelocanario" class="opcaocores" style="background-color: #FFF275;"></div>
+                <div id="vermelhocoral" class="opcaocores" style="background-color: #FF6B6B;"></div>
+                <div id="verdementa" class="opcaocores" style="background-color: #7AE7C7  ;"></div>
+                <div id="azulpetroleo" class="opcaocores" style="background-color: #41729F;"></div>
+                <div id="pessegoclaro" class="opcaocores" style="background-color: #FEC89A ;"></div>
+                <div id="roxouva" class="opcaocores" style="background-color: #A259FF;"></div>
+                <div id="begequente" class="opcaocores" style="background-color: #FFD8A9 ;"></div>
+                <div id="turquesasuave" class="opcaocores" style="background-color: #88E1F2;"></div>
+                <div id="mostardaclaro" class="opcaocores" style="background-color: #F2C94C;"></div>
+                <div id="branco" class="opcaocores" style="background-color: #F2F2F2;"></div>
+                <div id="preto" class="opcaocores" style="background-color: #202020;"></div>
             </div>
             <button onclick="confirmarCor()">Confirmar</button>
           </div>
