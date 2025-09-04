@@ -6,6 +6,29 @@ header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
+function validarLinks($github, $instagram, $linkedin) {
+    // Regex igual ao do Dart
+    $regexGithub   = "/^https:\/\/(www\.)?github\.com\/[a-zA-Z0-9_-]+\/?$/";
+    $regexInstagram = "/^https:\/\/(www\.)?instagram\.com\/[a-zA-Z0-9._]+\/?$/";
+    $regexLinkedin  = "/^https:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9À-ÿ\-_%]+\/?$/i";
+
+    // Github
+    if (!empty($github) && !preg_match($regexGithub, $github)) {
+        return false;
+    }
+
+    // Instagram
+    if (!empty($instagram) && !preg_match($regexInstagram, $instagram)) {
+        return false;
+    }
+
+    // Linkedin
+    if (!empty($linkedin) && !preg_match($regexLinkedin, $linkedin)) {
+        return false;
+    }
+    return true;
+}
+
 try {
     //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
@@ -33,6 +56,10 @@ try {
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o link do linkedin!"]);
         exit;
+    }
+    if (!validarLinks($github, $instagram, $linkedin)) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "Alguns dos links mandados é inválido!"]);
+        exit; 
     }
     
     //Atualizando com os links novos

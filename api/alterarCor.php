@@ -20,6 +20,10 @@ try {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a cor nova!"]);
         exit;
     }
+    if (strlen($cor) != 6) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "A cor é inválida!"]);
+        exit;
+    }
 
     //Atualiza a cor do usuário
     $query = "UPDATE usuarios SET cor = ? WHERE username = ?";

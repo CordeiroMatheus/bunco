@@ -6,8 +6,25 @@ header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
+function validarEmail($email) {
+    $email = trim($email);
+    $regex = "/^[\w\.-]+@[\w\.-]+\.\w+$/";
+
+    // Regras
+    if (empty($email)) {
+        return false;
+    }
+
+    if (strlen($email) < 4 || strlen($email) > 254) {
+        return false;
+    }
+
+    if (!preg_match($regex, $email)) {
+        return false;
+    }
+    return true;
+}
 try {
-    //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
     } else {
@@ -15,9 +32,13 @@ try {
         exit;
     }
     if (isset($_POST["email"])) {
-        $email = $_POST["email"];
+        $email = trim($_POST["email"]);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o email novo!"]);
+        exit;
+    }
+    if (!validarEmail($email)) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "O email é inválido!"]);
         exit;
     }
 

@@ -3,38 +3,79 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Content-Type: application/json");
-
 include_once("conexao.php");
-
 $conn = conexao();
+
+function validarCadastro($nome, $username, $email, $senha) {
+
+    if (empty($nome) || empty($username) || empty($email) || empty($senha)) {
+        return false;
+    }
+
+    // Username não pode ter espaço
+    if (strpos($username, ' ') !== false || strpos($nome, ' ') !== false) {
+        return false;
+    }
+
+    // Email válido
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
+
+    // Nome e username: mínimo 4 caracteres
+    if (strlen($nome) < 4 || strlen($username) < 4) {
+        return false;
+    }
+
+    // Senha: mínimo 4 caracteres
+    if (strlen($senha) < 4) {
+        return false;
+    }
+
+    // Nome e username: máximo 30 caracteres
+    if (strlen($nome) > 30 || strlen($username) > 30) {
+        return false;
+    }
+
+    // Email: máximo 254 caracteres
+    if (strlen($email) > 254) {
+        return false;
+    }
+    return true;
+}
+
 try {
     //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
-        $username = $_POST["username"];
+        $username = trim($_POST["username"]);
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "username ausente"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Username ausente"]);
         exit;
     }
 
     if (isset($_POST["nome"])) {
-        $nome = $_POST["nome"];
+        $nome = trim($_POST["nome"]);
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "nome ausente"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Nome ausente"]);
         exit;
     }
 
     if (isset($_POST["email"])) {
-        $email = $_POST["email"];
+        $email = trim($_POST["email"]);
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "email ausente"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Email ausente"]);
         exit;
     }
 
     if (isset($_POST["senha"])) {
-        $senha = $_POST["senha"];
+        $senha = trim($_POST["senha"]);
         $senha = md5($senha);
     } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "senha ausente"]);
+        echo json_encode(["sucesso" => "false", "mensagem" => "Senha ausente"]);
+        exit;
+    }
+    if (!validarCadastro($nome, $username, $email, $senha)) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "Cadastro inválido!"]);
         exit;
     }
 

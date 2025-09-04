@@ -20,6 +20,10 @@ try {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a foto nova!"]);
         exit;
     }
+    if (strlen($foto) < 5 || strpos($foto, ".") !== false) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "A foto é inválida!"]);
+        exit;
+    }
 
     //Atualiza a foto do usuário
     $query = "UPDATE usuarios SET foto = ? WHERE username = ?";

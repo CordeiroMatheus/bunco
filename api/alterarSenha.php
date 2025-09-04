@@ -6,6 +6,21 @@ header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
+function validarSenha($senhaAtual, $senhaNova) {
+    if (empty($senhaAtual) || empty($senhaNova)) {
+        return false;
+    }
+
+    if ($senhaAtual === $senhaNova) {
+        return false;
+    }
+
+    if (strlen($senhaNova) < 4) {
+        return false;
+    }
+    return true;
+}
+
 try {
     //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
@@ -15,17 +30,21 @@ try {
         exit;
     }
     if (isset($_POST["senhaatual"])) {
-        $senhaatual = $_POST["senhaatual"];
+        $senhaatual = trim($_POST["senhaatual"]);
         $senhaatual = md5($senhaatual);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a senha atual!"]);
         exit;
     }
     if (isset($_POST["senhanova"])) {
-        $senhanova = $_POST["senhanova"];
+        $senhanova = trim($_POST["senhanova"]);
         $senhanova = md5($senhanova);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a senha nova!"]);
+        exit;
+    }
+    if (!validarSenha($senhaAtual, $senhaNova)) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "A senha é inválida!"]);
         exit;
     }
 

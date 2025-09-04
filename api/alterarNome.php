@@ -6,6 +6,19 @@ header("Content-Type: application/json");
 include_once("conexao.php");
 $conn = conexao();
 
+function validarNome($nome) {
+    if (empty($nome)) {
+        return false;
+    }
+    if (strlen($nome) < 4 || strlen($nome) > 30) {
+        return false;
+    }
+    if (strpos($nome, " ")) {
+        return false;
+    }
+    return true;
+}
+
 try {
     //Verifica se os campos foram passados
     if (isset($_POST["username"])) {
@@ -15,9 +28,13 @@ try {
         exit;
     }
     if (isset($_POST["nomenovo"])) {
-        $nomenovo = $_POST["nomenovo"];
+        $nomenovo = trim($_POST["nomenovo"]);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu o nome novo!"]);
+        exit;
+    }
+    if (!validarNome($nomenovo)) {
+        echo json_encode(["sucesso" => "false", "mensagem" => "O nome novo é inválido!"]);
         exit;
     }
 

@@ -31,7 +31,7 @@
       $usuario_id = $_SESSION["usuario_id"];
 
       $sql = "SELECT u.username, u.nome, u.email, u.foto, u.cor, u.link_github, u.link_instagram, u.link_linkedin,
-              st.vidas, st.ofensiva, st.xp
+              st.vidas, st.ofensiva, st.xp, st.modulos 
               FROM usuarios u 
               INNER JOIN status st ON st.usuario = u.id
               WHERE u.id = :id";
