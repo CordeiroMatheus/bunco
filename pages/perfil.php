@@ -143,16 +143,23 @@
           <div id="medal-container">
             <div id="title-container"><h1>Suas Medalhas</h1></div>
             <div id="medals-container">
-              <div id="medal-01-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo01.svg" alt="medalha01-"></div>
-              <div id="medal-02-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo02.svg" alt="medalha02-"></div>
-              <div id="medal-03-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo03.svg" alt="medalha03-"></div>
-              <div id="medal-04-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo04.svg" alt="medalha04-"></div>
-              <div id="medal-05-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo05.svg" alt="medalha05-"></div>
-              <div id="medal-06-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo06.svg" alt="medalha06-"></div>
-              <div id="medal-07-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo07.svg" alt="medalha07-"></div>
-              <div id="medal-08-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo08.svg" alt="medalha08-"></div>
-              <div id="medal-09-name" class="medals"><img src="../assets/img/medalhas/medalhamodulo09.svg" alt="medalha09-"></div>
-              <div id="medal-10-name" class="medals"><img src="../assets/img/medalhas/medalhafinal.svg" alt="medalhafinal"></div>
+              <?php
+              $modulos = $usuario['modulos'];
+              for ($i=1; $i < 10; $i++) { 
+                if ($modulos >=  $i) {
+                  echo '<div id="medal-0' . $modulos . '-name" class="medals"><img src="../assets/img/medalhas/modulo' . $i . 'completo.png" alt="medalha0' . $modulos . '"></div>';
+                } 
+                else {
+                echo '<div id="medal-0' . $modulos . '-name" class="medals"><img src="../assets/img/medalhas/modulo' . $i . 'bloqueado.svg" alt="medalha0' . $modulos . '"></div>';
+                }
+              }
+              if ($modulos == 9) {
+                echo '<div id="medal-10-name" class="medals"><img src="../assets/img/medalhas/modulofinalcompleto.png" alt="Medalha final"></div>';
+              }
+              else{
+                echo '<div id="medal-10-name" class="medals"><img src="../assets/img/medalhas/modulofinalbloqueado.svg" alt="Medalha final"></div>';
+              }
+              ?>
             </div>
           </div>
           <div id="ranking-container">
@@ -248,16 +255,16 @@
             <div id="camposair" class="campos">
                 <p id="aviso">Tem certeza que deseja sair da sua conta?</p>
                 <div class="campobtns">
-                <button onclick="fecharModal()">Cancelar</button>
                 <button onclick="sairConta()" class="btnsoptionaccount">Sair</button>
+                <button onclick="fecharModal()">Cancelar</button>
                 </div>
               </div>
 
             <div id="campoexcluir" class="campos">
                 <p id="aviso">Tem certeza que deseja excluir sua conta?</p>
                 <div class="campobtns">
-                <button onclick="fecharModal()">Cancelar</button>
                 <button onclick="excluirConta()" class="btnsoptionaccount">Excluir</button>
+                <button onclick="fecharModal()">Cancelar</button>
                 </div>
               </div>
         </div>
