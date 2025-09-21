@@ -1,6 +1,7 @@
 <?php 
 require_once "headers/headers.php";
-include_once("conexao.php");
+include_once("conexao/conexao.php");
+include_once("ofensiva.php");
 
 $conn = conexao();
 
@@ -27,6 +28,13 @@ try {
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($resultado) {
+        if (!atualizarOfensiva($resultado['id'], $conn)) {
+    echo json_encode([
+        "sucesso" => "false",
+        "mensagem" => "Erro ao atualizar a ofensiva do usuário!"
+    ]);
+    exit;
+    }
         // Adiciona sucesso=true aos dados
         $resultado['sucesso'] = "true";
         echo json_encode($resultado);

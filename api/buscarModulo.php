@@ -4,7 +4,7 @@
 // Retorna JSON com todas as lições do módulo com informações de status
 
 require_once "headers/headers.php";
-include_once("conexao.php");
+include_once("conexao/conexao.php");
 $conn = conexao();
 
 try {
@@ -146,6 +146,10 @@ try {
 
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['sucesso' => 'false', 'mensagem' => "Erro ao buscar lições: " . $e->getMessage()]);
+    echo json_encode(
+    ['sucesso' => 'false',
+     //'mensagem' => "Erro ao buscar lições: " . $e->getMessage()
+     'mensagem' => "Erro ao buscar lições."
+    ]);
     exit;
 }

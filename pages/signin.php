@@ -16,8 +16,12 @@
 
 <body>
     <?php 
+    include_once("../php/perderVida.php");
+    include_once("../php/conexao.php");
     session_start();
     if (isset($_SESSION["usuario_id"])) {
+        $conn = conexao();
+        atualizarOfensiva($_SESSION["usuario_id"], $conn);
         header("Location: perfil.php");
         exit;
     }
