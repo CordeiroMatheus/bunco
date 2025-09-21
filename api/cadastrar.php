@@ -10,7 +10,7 @@ function validarCadastro($nome, $username, $email, $senha) {
     }
 
     // Username não pode ter espaço
-    if (strpos($username, ' ') !== false || strpos($nome, ' ') !== false) {
+    if (strpos($username, ' ') !== false) {
         return false;
     }
 
