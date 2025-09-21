@@ -10,9 +10,6 @@ function validarNome($nome) {
     if (strlen($nome) < 4 || strlen($nome) > 30) {
         return false;
     }
-    if (strpos($nome, " ")) {
-        return false;
-    }
     return true;
 }
 
