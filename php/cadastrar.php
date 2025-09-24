@@ -91,6 +91,10 @@ try {
         $resultado = $stmt->execute();
     }
 
+    session_start();
+    session_unset();
+    session_destroy();
+    
     $arr = [];
     if ($resultado) {
         $arr["sucesso"] = "true";

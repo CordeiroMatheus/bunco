@@ -284,8 +284,6 @@
     <script src="../assets/js/alterardados.js"></script>
     <script src="../assets/js/trocacor.js"></script>
     <script src="../assets/js/trocaimagem.js"></script>
-    <script src="../assets/js/excluir.js"></script>
-    <script src="../assets/js/logout.js"></script>
     <script src="../assets/js/mostrarsenhaperfil.js"></script>
     <script src="../assets/js/ranking.js"></script>
     <script src="../assets/js/configuracoes.js"></script>
