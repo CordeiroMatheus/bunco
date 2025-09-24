@@ -16,8 +16,8 @@
 
 <body>
     <?php 
-    include_once("../php/ofensiva.php");
     include_once("../php/conexao.php");
+    include_once("../php/ofensiva.php");
     session_start();
     if (isset($_SESSION["usuario_id"])) {
         $conn = conexao();

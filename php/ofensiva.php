@@ -4,8 +4,7 @@
  * Baseada nos registros de progresso da tabela progresso
  */
 
-require_once "headers/headers.php";
-include_once("conexao/conexao.php");
+include_once("conexao.php");
 
 /**
  * Atualiza a ofensiva do usuário baseada nos dias consecutivos com atividades
