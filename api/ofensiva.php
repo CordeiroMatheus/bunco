@@ -101,4 +101,23 @@ function atualizarOfensiva($usuarioId, $conn) {
         return false;
     }
 }
+
+/**
+ * Atualiza a ofensiva do usuário baseada nos dias consecutivos com atividades
+ * @param int $usuarioId ID do usuário
+ * @param PDO $conn Conexão com o banco de dados
+ * @return int Resultado da operação
+ */
+function retornarOfensiva($usuarioId, $conn) {
+    try {
+        $query = "SELECT ofensiva FROM status WHERE usuario = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(1, $usuarioId);
+        $stmt->execute();
+        $ofensiva = $stmt->fetch(PDO::FETCH_ASSOC)['ofensiva'];
+        return $ofensiva;
+    } catch (Exception $e) {
+        return 366;
+    }
+}
 ?>

@@ -26,16 +26,16 @@ try {
         echo json_encode(["sucesso" => "false", "mensagem" => "Usuário não está logado!"]);
         exit;
     }
-    if (isset($_POST["senhaatual"])) {
-        $senhaatual = trim($_POST["senhaatual"]);
-        $senhaatual = md5($senhaatual);
+    if (isset($_POST["senhaAtual"])) {
+        $senhaAtual = trim($_POST["senhaAtual"]);
+        $senhaAtual = md5($senhaAtual);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a senha atual!"]);
         exit;
     }
-    if (isset($_POST["senhanova"])) {
-        $senhanova = trim($_POST["senhanova"]);
-        $senhanova = md5($senhanova);
+    if (isset($_POST["senhaNova"])) {
+        $senhaNova = trim($_POST["senhaNova"]);
+        $senhaNova = md5($senhaNova);
     } else {
         echo json_encode(["sucesso" => "false", "mensagem" => "O servidor não recebeu a senha nova!"]);
         exit;
@@ -49,7 +49,7 @@ try {
     $sql = "SELECT * FROM usuarios WHERE username = ? AND senha = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $username);
-    $stmt->bindParam(2, $senhaatual);
+    $stmt->bindParam(2, $senhaAtual);
     $stmt->execute();
 
     if ($stmt->rowCount() == 0) {
@@ -60,7 +60,7 @@ try {
     //Atualizando com a senha nova
     $sql = "UPDATE usuarios SET senha = ? WHERE username = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(1, $senhanova);
+    $stmt->bindParam(1, $senhaNova);
     $stmt->bindParam(2, $username);
     $resultado = $stmt->execute();
 

@@ -98,7 +98,7 @@ try {
     
     // Atualiza a ofensiva do usuário
     atualizarOfensiva($usuarioId, $conn);
-    
+    $ofensiva = retornarOfensiva($usuarioId, $conn);
     // Prepara a mensagem de resposta
     $mensagem = $jaConcluida 
         ? "Aula revisitada! Você ganhou $xpGanho de XP." 
@@ -113,6 +113,7 @@ try {
         "mensagem" => $mensagem,
         "xp_ganho" => $xpGanho,
         "modulo_ganho" => $moduloGanho,
+        "ofensiva" => $ofensiva
     ]);
 
 } catch (Exception $e) {
