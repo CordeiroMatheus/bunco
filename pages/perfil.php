@@ -26,6 +26,7 @@
       }
 
       include_once("../php/conexao.php");
+      include_once("../php/ofensiva.php");
       $conn = conexao();
 
       $usuario_id = $_SESSION["usuario_id"];
