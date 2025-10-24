@@ -170,7 +170,6 @@ body {
   align-items: center;
   border-bottom: 2px solid var(--azul-principal);
   width: 100%;
-  max-height: 30vh;
 }
 
 #profile-config {
@@ -248,6 +247,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   width: 50%;
+  min-height: 70px;
 }
 
 #profile-options {
@@ -289,6 +289,7 @@ body {
 #medal-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 30%;
 }
 
@@ -300,17 +301,23 @@ body {
   margin-bottom: 3%;
   background-color: var(--preto-azulado);
   border-radius: 18px;
+  min-height: 15%;
 }
 
 #medals-container {
   background-color: var(--preto-azulado);
   width: 100%;
-  display: flex;
-  padding: 5%;
+  min-height: 80%;
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
-  flex: 1;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5%;
   border-radius: 18px;
+}
+
+#medals-container > :nth-child(10){
+  grid-column: 2;
 }
 
 .medals {
@@ -338,7 +345,7 @@ body {
   background-color: var(--preto-azulado);
   border-radius: 18px;
   flex: 1;
-  max-height: 85%;
+  max-height: 80%;
 }
 
 #posicao-usuario {
@@ -373,6 +380,8 @@ body {
   /*Alterar essas duas linhas debaixo mais pra frente*/
   max-width: 500px;
   min-width: 400px;
+  max-height: 80%;
+  overflow: auto;
 }
 
 #top-modal {
@@ -533,7 +542,7 @@ body {
 }
 
 #prealterar-img img {
-  width: 70%;
+  width: 75%;
 }
 
 #imagens {
@@ -572,6 +581,7 @@ body {
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+
   #container {
     position: relative;
   }
@@ -593,8 +603,8 @@ body {
   }
 
   .opcaoimg {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
   }
 
   .opcaoimg img {
@@ -647,14 +657,8 @@ body {
 
   /*Perfil*/
 
-  #profile {
-    width: auto;
-    height: auto;
-  }
-
   #profile-info {
     flex-wrap: wrap;
-    max-height: 45vh;
     border: none;
   }
 
@@ -688,7 +692,7 @@ body {
   }
 
   #profile-img img {
-    width: 50%;
+    width: 75%;
   }
 
   #names {
@@ -747,12 +751,48 @@ body {
     width: 100%;
   }
 
+  .status {
+    margin-bottom: 5%;
+    padding: 6%;
+    width: 65%;
+  }
+
+  .status img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .status:nth-child(1) {
+    margin-top: 3%;
+  }
+
+  .status:nth-last-child(1) {
+    margin-bottom: 0%;
+  }
+
   #ranking-container {
     width: 80%;
     height: auto;
     order: 2;
     margin-bottom: 8%;
     margin-top: 8%;
+  }
+
+  #ranking-container{
+    align-items: center;
+  }
+
+  #ranking {
+    width: 90%;
+    padding: 5%;
+    font-size: 0.8em;
+  }
+
+  #posicao-usuario {
+    width: 90%;
+    padding: 5%;
+    min-height: 25%;
+    font-size: 0.75em;
   }
 
   #medal-container {
@@ -762,8 +802,14 @@ body {
     margin-bottom: 8%;
   }
 
+  #medals-container{
+    width: 90%;
+  }
+
   #title-container {
+    width: 90%;
     padding: 5%;
+    font-size: 14px;
   }
 
   .medals {
@@ -771,14 +817,6 @@ body {
     height: 55px;
     margin: 3%;
     border-radius: 50%;
-  }
-
-  .status:nth-child(1) {
-    margin-top: 3%;
-  }
-
-  .status:nth-last-child(1) {
-    margin-bottom: 0%;
   }
 
   /*
@@ -792,27 +830,7 @@ body {
     justify-content: space-around;
 }
 */
-  .status {
-    margin-bottom: 5%;
-    padding: 6%;
-    width: 65%;
-  }
 
-  .status img {
-    width: 40px;
-    height: 40px;
-  }
-
-  #ranking {
-    padding: 5%;
-    font-size: 0.8em;
-  }
-
-  #posicao-usuario {
-    padding: 5%;
-    min-height: 25%;
-    font-size: 0.75em;
-  }
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
@@ -872,14 +890,9 @@ body {
   }
 
   /*Perfil*/
-  #profile {
-    width: auto;
-    height: auto;
-  }
 
   #profile-info {
     flex-wrap: wrap;
-    max-height: 80vh;
     border: none;
     font-size: 18px;
   }
@@ -914,7 +927,7 @@ body {
   }
 
   #profile-img img {
-    width: 50%;
+    width: 75%;
   }
 
   #names {
@@ -982,13 +995,16 @@ body {
     margin-bottom: 8%;
     margin-top: 8%;
     font-size: 18px;
+    align-items: center;
   }
 
   #ranking {
+    width: 80%;
     font-size: 1em;
   }
 
   #posicao-usuario {
+    width: 80%;
     font-size: 1em;
   }
 
@@ -1003,9 +1019,14 @@ body {
     gap: 0.5em;
   }
 
-  #title-container {
+  #title-container{
+    width: 80%;
     padding: 5%;
     font-size: 20px;
+  }
+
+  #medals-container{
+    width: 80%;
   }
 
   .medals {
@@ -1111,14 +1132,9 @@ body {
   }
 
   /*Perfil*/
-  #profile {
-    width: auto;
-    height: auto;
-  }
 
   #profile-info {
     flex-wrap: wrap;
-    max-height: 80vh;
     border: none;
     font-size: 18px;
   }
@@ -1153,7 +1169,7 @@ body {
   }
 
   #profile-img img {
-    width: 50%;
+    width: 75%;
   }
 
   #names {
@@ -1220,13 +1236,16 @@ body {
     margin-bottom: 8%;
     margin-top: 8%;
     font-size: 18px;
+    align-items: center;
   }
 
   #ranking {
+    width: 80%;
     font-size: 1em;
   }
 
   #posicao-usuario {
+    width: 80%;
     font-size: 1em;
   }
 
@@ -1238,10 +1257,12 @@ body {
   }
 
   #medals-container {
+    width: 80%;
     gap: 0.5em;
   }
 
   #title-container {
+    width: 80%;
     padding: 5%;
     font-size: 20px;
   }
@@ -1337,7 +1358,7 @@ body {
   }
 
   #profile-img img {
-    width: 65%;
+    width: 75%;
   }
 
   #names {
@@ -1471,7 +1492,7 @@ body {
   }
 
   #profile-img img {
-    width: 65%;
+    width: 75%;
   }
 
   #names {
@@ -1593,7 +1614,7 @@ body {
   }
 
   #profile-img img {
-    width: 65%;
+    width: 75%;
   }
 
   #names {
@@ -1714,7 +1735,7 @@ Separação de classes e Id's para estilização
   }
 
   #profile-img img {
-    width: 65%;
+    width: 75%;
   }
 
   #names {
@@ -1852,7 +1873,7 @@ Separação de classes e Id's para estilização
   }
 
   #profile-img img {
-    width: 65%;
+    width: 75%;
   }
 
   #names {

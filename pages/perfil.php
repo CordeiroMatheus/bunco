@@ -235,7 +235,6 @@
 
                     <div id="imagens">
                         <div id="buncodefault" class="opcaoimg"><img src="../assets/img/buncos/buncodefault.svg" alt="buncodefault" class="opcaoimagens"></div>
-                        <div id="buncoromantico" class="opcaoimg"><img src="../assets/img/buncos/buncoromantico.svg" class="opcaoimagens" alt="buncoromantico"></div>
                         <div id="buncolegal" class="opcaoimg"><img src="../assets/img/buncos/buncogoat.svg" alt="buncolegal" class="opcaoimagens"></div>
                         <div id="buncoandroid" class="opcaoimg"><img src="../assets/img/buncos/buncoandroid.svg" alt="buncoandroid" class="opcaoimagens"></div>
                         <div id="buncoapple" class="opcaoimg"><img src="../assets/img/buncos/buncoapple.svg" alt="buncoapple" class="opcaoimagens"></div>
@@ -243,10 +242,18 @@
                         <div id="buncomimo" class="opcaoimg"><img src="../assets/img/buncos/buncomimo.svg" alt="buncomimo" class="opcaoimagens"></div>
                         <div id="buncograsshopper" class="opcaoimg"><img src="../assets/img/buncos/buncograsshopper.svg" alt="buncograsshopper" class="opcaoimagens"></div>
                         <div id="buncoformando" class="opcaoimg"><img src="../assets/img/buncos/buncoformando.svg" alt="buncoformando" class="opcaoimagens"></div>
-                        <div id="buncodetetive" class="opcaoimg"><img src="../assets/img/buncos/buncodetetitve.svg" alt="buncodetetive" class="opcaoimagens"></div>
+                        <div id="buncodetetive" class="opcaoimg"><img src="../assets/img/buncos/buncodetetive.svg" alt="buncodetetive" class="opcaoimagens"></div>
                         <div id="buncojardineiro" class="opcaoimg"><img src="../assets/img/buncos/buncojardineiro.svg" alt="buncojardineiro" class="opcaoimagens"></div>
                         <div id="buncoromantico" class="opcaoimg"><img src="../assets/img/buncos/buncoromantico.svg" alt="buncoromantico" class="opcaoimagens"></div>
                         <div id="buncoalien" class="opcaoimg"><img src="../assets/img/buncos/buncoalien.svg" alt="buncoalien" class="opcaoimagens"></div>
+                        <div id="buncobobo" class="opcaoimg"><img src="../assets/img/buncos/buncobobo.svg" alt="buncobobo" class="opcaoimagens"></div>
+                        <div id="buncodesanimado" class="opcaoimg"><img src="../assets/img/buncos/buncodesanimado.svg" alt="buncodesanimado" class="opcaoimagens"></div>
+                        <div id="buncodesapontado" class="opcaoimg"><img src="../assets/img/buncos/buncodesapontado.svg" alt="buncodesapontado" class="opcaoimagens"></div>
+                        <div id="buncodesconfiado" class="opcaoimg"><img src="../assets/img/buncos/buncodesconfiado.svg" alt="buncodesconfiado" class="opcaoimagens"></div>
+                        <div id="buncomexicano" class="opcaoimg"><img src="../assets/img/buncos/buncomexicano.svg" alt="buncomexicano" class="opcaoimagens"></div>
+                        <div id="buncomorto" class="opcaoimg"><img src="../assets/img/buncos/buncomorto.svg" alt="buncomorto" class="opcaoimagens"></div>
+                        <div id="bunconerd" class="opcaoimg"><img src="../assets/img/buncos/bunconerd.svg" alt="bunconerd" class="opcaoimagens"></div>
+                        <div id="buncoprofessor" class="opcaoimg"><img src="../assets/img/buncos/buncoprofessor.svg" alt="buncoprofessor" class="opcaoimagens"></div>
                     </div>
                     <button onclick="confirmarImagem()">Confirmar</button>
             </div>

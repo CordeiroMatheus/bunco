@@ -16,7 +16,12 @@
   --cor-de-fundo: #0d141f;
   --cinza: #4d4d4d;
   --cinza-escuro: #333333;
+  --cinza-claro: #BBBBBE;
   --azul-claro: #84d8ff;
+  --preto-azulado: #1F2433;
+  --verde-texto: #96C13E;
+  --verde-claro: #BBE87D;
+  --verde-escuro: #5A7425;
 }
 
 body {
@@ -415,11 +420,104 @@ input[type="button"]::placeholder {
   cursor: pointer;
 }
 
-#card-section #title h3 {
-  color: #a1dffc;
-  font-family: "Poppins", serif, sans-serif;
+.titlesections{
+  text-align: center;
+}
+
+.titlesections h3{
+  font-family: 'Baloo 2', Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  color: var(--azul-claro);
   text-shadow: 0 0 50px var(--azul-principal);
 }
+
+#download-section{
+  margin: 5%;
+  margin-top: 12.5%;
+}
+
+#downloadsection-content{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  align-items: center;
+}
+
+#cellphone-container{
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+#cellphone-container img{
+  width: 100%;
+}
+
+#buttons-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  width: 35%;
+}
+
+#buttons-container button{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Baloo 2', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 5px;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+}
+
+#buttons-container button img, span{
+  width: 50%;
+}
+
+#buttons-container span{
+  font-size: 16px;
+}
+
+#buttons-container span p{
+  font-size: 22px;
+}
+
+#btndownloadandroid{
+  box-shadow: 0px 8px 0px 0px var(--verde-escuro);
+  border: 4px solid var(--verde-escuro);
+  color: var(--verde-texto);
+  background-color: var(--verde-claro);
+  cursor: pointer;
+}
+
+#btndownloadios{
+  box-shadow: 0px 8px 0px 0px var(--cinza);
+  border: 4px solid var(--cinza);
+  color: #4d4d4d6c;
+  background-color: var(--cinza-claro);
+  position: relative;
+  z-index: 0;
+  cursor: not-allowed;
+}
+
+#btndownloadios::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url(../img/backgroundbutton.svg);
+  background-repeat: no-repeat;
+  z-index: 1;
+  background-position: center;
+}
+
+
+/* Parte nova aqui */
+/*Revisar o que mantem em cima e o que mantem dentro das medias queries*/
+
 
 #card-section {
   margin: 5%;
@@ -431,88 +529,62 @@ input[type="button"]::placeholder {
 
 #card-section .card-body {
   background-color: #0d141f;
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: "Inter", serif;
-  border: 2px solid var(--azul-principal);
+  border: 4px solid var(--preto-azulado);
   transition: 0.7s ease;
   color: var(--cor-de-fundo);
+  box-shadow: 0px 8px 0px 0px var(--preto-azulado);
+  padding: 15px;
+  padding-top: 20px;
+  font-family: 'Baloo 2', 'Times New Roman', Times, serif;
 }
 
-#card-section .card-body:hover {
-  box-shadow: 0px 0px 30px 4px var(--azul-escuro);
+.card-body .titleimg-card img{
+  width: 50px;
+  height: 50px;
 }
 
-#card-section .inner-card {
-  height: auto;
-  background-color: var(--azul-principal);
-  border-radius: 10px;
-  border-top-left-radius: 0px;
-  margin-left: 3%;
-  margin-right: 3%;
+.title-card{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--azul-claro);
   margin-top: 3%;
-  text-align: center;
-  overflow: hidden;
-  color: var(--cor-de-fundo);
+}
+
+.card-content{
+  color: white;
+  margin-top: 3%;
+  font-size: 14px;
   font-weight: bold;
 }
 
-#card-section .inner-card::before {
-  content: "";
+.card-list{
+  color: white;
+  font-size: 14px;
+}
+
+.list-content{
+  margin-top: 3%;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background-color: var(--azul-principal);
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  position: absolute;
-  top: -10%;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style-type: none;
 }
 
-#cards-container .card-body:nth-child(1) .inner-card::before {
-  content: "Iniciante";
-}
-
-#cards-container .card-body:nth-child(2) .inner-card::before {
-  content: "Intermediário";
-}
-
-#cards-container .card-body:nth-child(3) .inner-card::before {
-  content: "Avançado";
-}
-
-.inner-text {
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.infos {
-  color: #fff;
-  height: 50%;
-  font-family: "Inter", serif, sans-serif;
-}
-
-.info-desc {
-  text-align: center;
+.list-content li{
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin-bottom: 10%;
+  margin: 2%;
 }
 
-.info-desc .quant-desc {
-  color: var(--azul-principal);
+.list-content li img{
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
 }
 
-.divider {
-  width: 2px;
-  height: 35px;
-  background-color: #586892;
-}
-
-.info-desc p {
-  color: #586892;
-}
+/* Parte nova acaba aqui*/
 
 #icons-section #icons-container {
   display: flex;
@@ -761,8 +833,34 @@ footer a {
     padding: 4px;
   }
 
-  #card-section #title {
-    text-align: center;
+  #downloadsection-content{
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+
+  #cellphone-container{
+    display: none;
+  }
+
+  #buttons-container{
+    width: 60%;
+  }
+
+  #buttons-container button{
+    width: 100%;
+  }
+
+  #buttons-container span{
+    font-size: 13px;
+  }
+
+  #buttons-container span p{
+    font-size: 18px;
+  }
+
+  #btndownloadios::before{
+    background-size: cover;
   }
 
   #cards-container {
@@ -780,38 +878,6 @@ footer a {
     width: 75%;
     height: auto; /*antes era 50%*/
     margin-bottom: 15%;
-  }
-
-  #card-section .inner-card {
-    width: 93%;
-    margin-bottom: 12.5%;
-    font-size: 14px;
-  }
-  #card-section .inner-card::before {
-    content: "";
-    width: 55%;
-    height: 15%;
-    font-size: 15px;
-  }
-
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
-  }
-
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
-  }
-
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  .divider {
-    width: 1px;
-  }
-
-  #cards-container .infos {
-    font-size: 14px;
   }
 
   #icons-section {
@@ -1024,10 +1090,6 @@ footer a {
     padding: 3px;
   }
 
-  #card-section #title {
-    text-align: center;
-  }
-
   #cards-container {
     margin-top: 15%;
   }
@@ -1046,36 +1108,34 @@ footer a {
     margin-bottom: 15%;
   }
 
-  #card-section .inner-card {
-    width: 94%;
-    margin-bottom: 12.5%;
-    font-size: 16px;
+  #downloadsection-content{
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
   }
-  #card-section .inner-card::before {
-    content: "";
+
+  #cellphone-container{
+    display: none;
+  }
+
+  #buttons-container{
     width: 55%;
-    height: 15%;
-    font-size: 18px;
   }
 
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
+  #buttons-container button{
+    width: 100%;
   }
 
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
+  #buttons-container span{
+    font-size: 12px;
   }
 
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  .divider {
-    width: 1px;
-  }
-
-  #cards-container .infos {
+  #buttons-container span p{
     font-size: 16px;
+  }
+
+  #btndownloadios::before{
+    background-size: cover;
   }
 
   #icons-section {
@@ -1169,7 +1229,7 @@ footer a {
 
   #button-container {
     display: flex;
-    gap: clamp(4em, 8em, 12em);
+    gap: clamp(6em, 10em, 12em);
   }
 
   #footer-section {
@@ -1230,7 +1290,7 @@ footer a {
     top: 0;
     position: absolute;
     width: 100%;
-    transform: translateY(-30%);
+    transform: translateY(-35%);
   }
 
   #form-section #form form #campos {
@@ -1251,11 +1311,6 @@ footer a {
     cursor: pointer;
   }
 
-  #form form p:last-child {
-    display: flex;
-    justify-content: center;
-  }
-
   #form form label {
     font-family: "Jetbrains Mono";
   }
@@ -1266,10 +1321,6 @@ footer a {
 
   #circles p {
     margin-left: 5%;
-  }
-
-  #card-section #title h3 {
-    font-size: 22px;
   }
 
   #cards-container {
@@ -1285,35 +1336,6 @@ footer a {
     width: 30%;
     height: auto; /*antes era 50%*/
     margin-bottom: 5%;
-  }
-
-  #card-section .inner-card {
-    width: 94%;
-    margin-bottom: 10%;
-    font-size: 13px;
-  }
-
-  #card-section .inner-card::before {
-    content: "";
-    width: 20%;
-    height: 15%;
-    font-size: 14px;
-  }
-
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
-  }
-
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
-  }
-
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  #cards-container .infos {
-    font-size: 13px;
   }
 
   #icons-section {
@@ -1463,7 +1485,7 @@ footer a {
     top: 0;
     position: absolute;
     width: 100%;
-    transform: translateY(-30%);
+    transform: translateY(-35%);
   }
 
   #form-section #form form #campos {
@@ -1480,11 +1502,6 @@ footer a {
     width: 65%;
   }
 
-  #form form p:last-child {
-    display: flex;
-    justify-content: center;
-  }
-
   #form form label {
     font-family: "Jetbrains Mono";
   }
@@ -1495,10 +1512,6 @@ footer a {
 
   #circles p {
     margin-left: 5%;
-  }
-
-  #card-section #title h3 {
-    font-size: 22px;
   }
 
   #cards-container {
@@ -1514,35 +1527,6 @@ footer a {
     width: 30%;
     height: auto; /*antes era 50%*/
     margin-bottom: 5%;
-  }
-
-  #card-section .inner-card {
-    width: 94%;
-    margin-bottom: 10%;
-    font-size: 15px;
-  }
-
-  #card-section .inner-card::before {
-    content: "";
-    width: 20%;
-    height: 15%;
-    font-size: 16px;
-  }
-
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
-  }
-
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
-  }
-
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  #cards-container .infos {
-    font-size: 15px;
   }
 
   #icons-section {
@@ -1727,11 +1711,6 @@ footer a {
     width: 55%;
   }
 
-  #form form p:last-child {
-    display: flex;
-    justify-content: center;
-  }
-
   #form form label {
     font-family: "Jetbrains Mono";
   }
@@ -1752,8 +1731,8 @@ footer a {
     margin: 3px;
   }
 
-  #card-section #title h3 {
-    font-size: 28px;
+  .titlesections h3{
+    font-size: 32px;
   }
 
   #cards-container {
@@ -1768,39 +1747,7 @@ footer a {
   #card-section .card-body {
     width: 25%;
     max-width: 300px;
-    max-height: 250px;
     height: auto; /*antes era 50%*/
-  }
-
-  #card-section .inner-card {
-    width: 94%;
-    margin-bottom: 10%;
-    font-size: 18px;
-  }
-
-  #card-section .inner-card::before {
-    content: "";
-    width: 20%;
-    max-width: 240px;
-    max-height: 40px;
-    height: 15%;
-    font-size: 19px;
-  }
-
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
-  }
-
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
-  }
-
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  .infos {
-    font-size: 18px;
   }
 
   #icons-section {
@@ -2006,11 +1953,6 @@ footer a {
     width: 65%;
   }
 
-  #form form p:last-child {
-    display: flex;
-    justify-content: center;
-  }
-
   #form form label {
     font-family: "Jetbrains Mono";
   }
@@ -2031,8 +1973,24 @@ footer a {
     margin: 5px;
   }
 
-  #card-section #title h3 {
-    font-size: 42px;
+  .titlesections h3{
+    font-size: 40px;
+  }
+
+  #cellphone-container{
+    width: 70%;
+  }
+
+  #buttons-container{
+    width: 35%;
+  }
+
+  #buttons-container span{
+    font-size: 20px;
+  }
+
+  #buttons-container span p{
+    font-size: 26px;
   }
 
   #cards-container {
@@ -2044,39 +2002,14 @@ footer a {
     justify-content: space-around;
   }
 
-  #card-section .card-body {
+  #cards-container .card-body {
     width: 25%;
     background-color: #0d141f;
     height: auto; /*antes era 50%*/
   }
 
-  #card-section .inner-card {
-    width: 94%;
-    margin-bottom: 10%;
-    font-size: 22px;
-  }
-
-  #card-section .inner-card::before {
-    content: "";
-    width: 20%;
-    height: 15%;
-    font-size: 24px;
-  }
-
-  #cards-container .card-body:nth-child(1) .inner-card::before {
-    content: "Iniciante";
-  }
-
-  #cards-container .card-body:nth-child(2) .inner-card::before {
-    content: "Intermediário";
-  }
-
-  #cards-container .card-body:nth-child(3) .inner-card::before {
-    content: "Avançado";
-  }
-
-  #cards-container .infos {
-    font-size: 22px;
+  .card-body .title-card, .card-content, .card-list{
+    font-size: 18px;
   }
 
   #icons-section {

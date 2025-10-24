@@ -46,6 +46,25 @@ try {
     $stmtUpdate->bindParam(2, $usuarioId);
     $stmtUpdate->execute();
 
+    // Busca a quantidade atual de vidas do usuário
+    $queryVidas = "SELECT vidas FROM status WHERE usuario = ?";
+    $stmtVidas = $conn->prepare($queryVidas);
+    $stmtVidas->bindParam(1, $usuarioId);
+    $stmtVidas->execute();
+    $resultadoVidas = $stmtVidas->fetch(PDO::FETCH_ASSOC);
+
+    $vidasAtuais = $resultadoVidas['vidas'];
+
+    // Verifica se o usuário ainda tem vidas
+    if ($vidasAtuais <= 0) {
+        echo json_encode([
+            "sucesso" => true, 
+            "mensagem" => "Você não tem mais vidas!",
+            "vidas_restantes" => 0
+        ]);
+        exit;
+    }
+
     echo json_encode([
         "sucesso" => true,
         "mensagem" => "Você perdeu uma vida!",
