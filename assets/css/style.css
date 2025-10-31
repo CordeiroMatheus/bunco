@@ -492,6 +492,12 @@ input[type="button"]::placeholder {
   color: var(--verde-texto);
   background-color: var(--verde-claro);
   cursor: pointer;
+  transition: all box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#btndownloadandroid:active{
+  transform: translateY(8px);
+  box-shadow: 0px 2px 0px 0px var(--verde-escuro);
 }
 
 #btndownloadios{

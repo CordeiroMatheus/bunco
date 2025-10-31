@@ -77,17 +77,30 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   border-radius: 30px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  min-width: 275px;
+  min-height: 250px;
 }
 
 .form {
   border-radius: 30px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+  min-width: 275px;
+  min-height: 250px;
 }
+
+.form:has(input#username){
+  min-width: 310px;
+  min-height: 310px;
+}
+
+
 
 .signup-image {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  min-width: 310px;
+  min-height: 310px;
 }
 
 /*Modal*/
@@ -362,7 +375,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 20px 0px 0px 20px;
   }
 
   .form {
@@ -407,7 +420,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 0.8rem;
-    width: 75%;
+    width: 80%;
   }
 
   .input-box input:hover {
@@ -700,14 +713,13 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   }
 
   .form {
-    min-width: 50%;
-    max-width: 50%;
     background-color: #ffffffec;
     padding: 1rem;
     height: auto;
   }
 
   .form {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;

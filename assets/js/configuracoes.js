@@ -4,6 +4,7 @@ profileconfig.addEventListener('click', (e)=>{
     e.stopPropagation()
     settingscontainer.style.display = "flex"
     settingscontainer.style.position = "fixed"
+    document.querySelector('#profile').style.overflow = "hidden"
 })
 
 const profile = document.querySelector('#profile')
@@ -13,6 +14,7 @@ function fecharConfig(e){
     if (window.innerWidth <= 767 || window.innerWidth >= 768 && window.innerWidth <= 915 && window.innerHeight <= 500){
         settingscontainer.style.display = "none"
     }
+    document.querySelector('#profile').style.overflow = "auto"
 }
 
 window.addEventListener('resize', ajustarConfig)
