@@ -11,7 +11,7 @@ const profile = document.querySelector('#profile')
 profile.addEventListener('click', fecharConfig)
 
 function fecharConfig(e){
-    if (window.innerWidth <= 767 || window.innerWidth >= 768 && window.innerWidth <= 915 && window.innerHeight <= 500){
+    if (window.innerWidth <= 767 || window.innerWidth >= 768 && window.innerWidth <= 996 && window.innerHeight <= 600){
         settingscontainer.style.display = "none"
     }
     document.querySelector('#profile').style.overflow = "auto"
@@ -25,7 +25,7 @@ function ajustarConfig() {
         settingscontainer.style.display = "none";
 
     // Celulares maiores
-    } else if (window.innerWidth >= 768 && window.innerWidth <= 915 && window.innerHeight <= 500) {
+    } else if (window.innerWidth <= 767 || window.innerWidth >= 768 && window.innerWidth <= 996 && window.innerHeight <= 600) {
         settingscontainer.style.display = "none";
 
     // Tablets médios

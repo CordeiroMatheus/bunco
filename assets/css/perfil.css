@@ -646,6 +646,8 @@ body {
   }
 
   #opcoes-conta {
+    margin-top: 10%;
+    flex: none;
     gap: 0.7em;
   }
 
@@ -879,7 +881,7 @@ body {
   }
 
   #opcoes-conta {
-    margin-top: 10%;
+    flex: none;
     gap: 0.7em;
   }
 
@@ -1075,7 +1077,7 @@ body {
 }
 
 /* Celular horizontal grande (ex.: iPhone 14 Pro Max, Galaxy S Ultra) */
-@media screen and (min-width: 768px) and (max-width: 915px /*896*/) and (max-height: 500px) and (orientation: landscape) {
+@media screen and (min-width: 768px) and (max-width: 996px /*896*/) and (max-height: 600px) and (orientation: landscape) {
   .modal {
     background: #2e2e2e;
     border-radius: 10px;
@@ -1121,7 +1123,7 @@ body {
   }
 
   #opcoes-conta {
-    margin-top: 10%;
+    flex: none;
     gap: 0.7em;
   }
 
