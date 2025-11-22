@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="icon" href="../assets/img/buncosilhueta.svg">
-    <link rel="stylesheet" href="../assets/css/perfil.css">
-    <title>Perfil</title>
-  </head>
-  <body>
-    <?php session_start(); ?>
     <?php
+      require_once("../php/configsession.php"); 
 
       header("Cache-Control: no-cache, no-store, must-revalidate");
       header("Pragma: no-cache");
       header("Expires: 0");
 
       if (!isset($_SESSION["usuario_id"])) {
-          header("Location: signin.html");
+          header("Location: signin.php");
           exit;
       }
 
@@ -48,6 +33,22 @@
     die("Usuário não encontrado");
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="../assets/img/buncosilhueta.svg">
+    <link rel="stylesheet" href="../assets/css/perfil.css">
+    <title>Perfil</title>
+  </head>
+  <body>
+
     <div id="container">
       <div id="settings-container">
         <div id="settings">

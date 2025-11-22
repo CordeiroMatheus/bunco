@@ -1,3 +1,14 @@
+    <?php 
+    require_once("../php/configsession.php"); 
+    include_once("../php/conexao.php");
+    include_once("../php/ofensiva.php");
+    if (isset($_SESSION["usuario_id"])) {
+        $conn = conexao();
+        atualizarOfensiva($_SESSION["usuario_id"], $conn);
+        header("Location: perfil.php");
+        exit;
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,17 +26,7 @@
 </head>
 
 <body>
-    <?php 
-    include_once("../php/conexao.php");
-    include_once("../php/ofensiva.php");
-    session_start();
-    if (isset($_SESSION["usuario_id"])) {
-        $conn = conexao();
-        atualizarOfensiva($_SESSION["usuario_id"], $conn);
-        header("Location: perfil.php");
-        exit;
-    }
-    ?>
+
     <div class="modal-overlay" id="modalOverlay" onclick="fecharModal(event)">
         <div class="modal" onclick="event.stopPropagation()">
           <div id="top-modal">

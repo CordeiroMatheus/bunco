@@ -346,6 +346,7 @@ body {
   border-radius: 18px;
   flex: 1;
   max-height: 80%;
+  overflow: auto;
 }
 
 #posicao-usuario {
@@ -811,7 +812,7 @@ body {
   #title-container {
     width: 90%;
     padding: 5%;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .medals {
@@ -1032,8 +1033,8 @@ body {
   }
 
   .medals {
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
   }
 
@@ -1602,6 +1603,11 @@ body {
   }
 
   /* perfil */
+  #profile-info{
+    min-height: 160px;
+    max-height: 180px;
+  }
+
   #profile-img {
     width: 150px;
     height: 150px;

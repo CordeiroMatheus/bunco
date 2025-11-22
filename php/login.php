@@ -1,28 +1,32 @@
 <?php
 
+require_once("configsession.php");
 include_once("conexao.php");
+
 $conn = conexao();
 
 try {
-    // Verifica se os campos foram enviados
-    if (isset($_POST["login"])) {
-        $login = $_POST["login"]; // pode ser username ou email
-    } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "Login não enviado"]);
+
+    // Campos obrigatórios
+    if (!isset($_POST["login"]) || empty($_POST["login"])) {
+        header("Location: ../pages/signin.php?erro=2"); // login não enviado
         exit;
     }
 
-    if (isset($_POST["senha"])) {
-        $senha = md5($_POST["senha"]);
-    } else {
-        echo json_encode(["sucesso" => "false", "mensagem" => "Senha não enviada"]);
+    if (!isset($_POST["senha"]) || empty($_POST["senha"])) {
+        header("Location: ../pages/signin.php?erro=3"); // senha não enviada
         exit;
     }
-    
-    //Verifica se o login e a senha estão corretos e passa os dados
-    $sql = "SELECT u.id, u.username, u.nome, u.email, u.foto, u.cor, u.link_github, u.link_instagram, u.link_linkedin,
-    st.vidas, st.ofensiva, st.xp FROM usuarios u INNER JOIN status st ON st.usuario = u.id
-    WHERE (u.username = :login OR u.email = :login) AND u.senha = :senha";
+
+    $login = $_POST["login"];
+    $senha = md5($_POST["senha"]);
+
+    // Validação
+    $sql = "SELECT u.id, u.username, u.nome
+            FROM usuarios u 
+            INNER JOIN status st ON st.usuario = u.id
+            WHERE (u.username = :login OR u.email = :login)
+            AND u.senha = :senha";
 
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":login", $login);
@@ -31,20 +35,24 @@ try {
 
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //Se o login e senha estão corretos
-if ($resultado) {
-    session_start();
-    $_SESSION["usuario_id"] = $resultado["id"];
-    $_SESSION["nome"] = $resultado["nome"];
-    $_SESSION["username"] = $resultado["username"];
-    
-    header("Location: ../pages/perfil.php");
-    exit;
-} else {
-    header("Location: ../pages/signin.php?erro=1");
-    exit;
-}
-} 
-catch (Exception $e) {
+    if ($resultado) {
+
+        // sessão já é iniciada no config_session.php
+        $_SESSION["usuario_id"] = $resultado["id"];
+        $_SESSION["nome"] = $resultado["nome"];
+        $_SESSION["username"] = $resultado["username"];
+
+        header("Location: ../pages/perfil.php");
+        exit;
+    } 
+    else {
+        header("Location: ../pages/signin.php?erro=1"); // usuário/senha inválidos
+        exit;
+    }
+
+} catch (Exception $e) {
+
     header("Location: ../pages/signin.php?erro=4");
+    exit;
 }
+
